@@ -7,6 +7,7 @@ import backup_data
 
 # Create your views here.
 def dbase_populate(request):
+    # listing the articles
     collection_of_articles = backup_data.read_ref_file()
     return render_to_response("list_papers.html", \
                     {'collection_of_articles' : collection_of_articles}, 
