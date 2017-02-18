@@ -1,0 +1,19 @@
+{% if collection_of_articles %}
+	<ol>
+		{% for paper_entry in collection_of_articles %}
+			<li>
+				{{ paper_entry.title }} <br>
+				{{ paper_entry.author }} <br>
+				{% if paper_entry.journal %}
+					{{ paper_entry.journal }} <br>
+				{% endif %}
+				{% if paper_entry.booktitle %}
+					{{ paper_entry.booktitle }} <br>
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ol>
+
+{% else %}
+	<p> Blog is empty </p>
+{% endif %}

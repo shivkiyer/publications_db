@@ -1,0 +1,511 @@
+@ARTICLE{5454403, 
+author={S. V. Iyer and M. N. Belur and M. C. Chandorkar}, 
+journal={IEEE Transactions on Power Electronics}, 
+title={A Generalized Computational Method to Determine Stability of a Multi-inverter Microgrid}, 
+year={2010}, 
+volume={25}, 
+number={9}, 
+pages={2420-2432}, 
+abstract={Microgrid-containing parallel-connected inverters, where each inverter is controlled by decentralized active power/voltage frequency and reactive power/voltage magnitude droop control laws results in flexible and expandable systems. These systems have been known to have stability problems for large values of active power/voltage frequency droop control gain. However, so far the stability analysis of multi-inverter systems has always been performed in a computationally intensive manner by considering the entire microgrid. In a practical microgrid, where the number of inverters may be large or the capacity of the units may differ, it becomes essential to develop a method by which stability can be examined without much computational burden. The system of differential algebraic equations has been simplified using justifiable assumptions to result in a final expression that allows the stability of the microgrid to be examined separately with respect to the droop control laws of each inverter transformed into an equivalent network. Moreover, the procedure allows taking into consideration the R/X ratio of the interconnecting cables. Analysis of final expressions validate the stability results reported in literature. Experimental results on hardware show the stable operation of the microgrid.}, 
+keywords={differential equations;invertors;power grids;power system stability;R/X ratio;differential algebraic equations;droop control laws;generalized computational method;interconnecting cables;multi-inverter microgrid;power system stability;voltage frequency droop control gain;Communication system control;Control systems;Eigenvalues and eigenfunctions;Frequency;Inverters;Power supplies;Power system modeling;Reactive power control;Stability analysis;Voltage control;Droop control laws;inverter;microgrid;model-order reduction;system modeling}, 
+doi={10.1109/TPEL.2010.2048720}, 
+ISSN={0885-8993}, 
+month={Sept},}
+
+
+
+@article{Iyer2005161,
+title = "Inverter topologies for \{DSTATCOM\} applications - a simulation study ",
+journal = "Electric Power Systems Research ",
+volume = "75",
+number = "2 - 3",
+pages = "161 - 170",
+year = "2005",
+note = "",
+issn = "0378-7796",
+doi = "http://dx.doi.org/10.1016/j.epsr.2005.02.003",
+url = "http://www.sciencedirect.com/science/article/pii/S0378779605001033",
+author = "Shivkumar Iyer and Arindam Ghosh and Avinash Joshi",
+keywords = "DSTATCOM",
+keywords = "VSC",
+keywords = "Hysteresis current control ",
+abstract = "This paper describes a few different topologies of inverters used for realizing a distribution static compensator (DSTATCOM). A brief introduction of the need for shunt compensation as well as the requirements of the shunt compensator has also been given. An algorithm for generating references has been described. Three major topologies of inverters - three-leg inverter with single dc capacitor, three-leg inverter with neutral clamped dc capacitors, four-leg inverter and three single-phase inverters with common dc capacitor - have been described and simulated. \{DSTATCOM\} topologies for high voltage distribution systems have also been described. The Voltage Source Converter (VSC) topologies have been compared on the basis of the performance of the inverter for certain chosen system conditions and the number of switch devices and dc capacitors used. All simulations have been performed using PSCAD/EMTDC. "
+}
+
+
+@INPROCEEDINGS{1354758, 
+author={R. H. Lasseter and P. Paigi}, 
+booktitle={2004 IEEE 35th Annual Power Electronics Specialists Conference (IEEE Cat. No.04CH37551)}, 
+title={Microgrid: a conceptual solution}, 
+year={2004}, 
+volume={6}, 
+pages={4285-4290 Vol.6}, 
+abstract={Application of individual distributed generators can cause as many problems as it may solve. A better way to realize the emerging potential of distributed generation is to take a system approach which views generation and associated loads as a subsystem or a "microgrid". During disturbances, the generation and corresponding loads can separate from the distribution system to isolate the microgrid's load from the disturbance (providing UPS services) without harming the transmission grid's integrity. This ability to island generation and loads together has a potential to provide a higher local reliability than that provided by the power system as a whole. In this model it is also critical to be able to use the waste heat by placing the sources near the heat load. This implies that a unit can be placed at any point on the electrical system as required by the location of the heat load.}, 
+keywords={distributed power generation;power generation faults;power generation reliability;power system interconnection;distributed generation;distributed generator;distribution system;generation islanding;load islanding;microgrid;transmission grid;Cogeneration;Distributed control;Distributed power generation;Engines;Inverters;Mesh generation;Power generation;Power system modeling;Power system reliability;Waste heat}, 
+doi={10.1109/PESC.2004.1354758}, 
+ISSN={0275-9306}, 
+month={June},}
+
+
+@INPROCEEDINGS{985005, 
+author={G. Venkataramanan and M. Illindala}, 
+booktitle={2002 IEEE Power Engineering Society Winter Meeting. Conference Proceedings (Cat. No.02CH37309)}, 
+title={Microgrids and sensitive loads}, 
+year={2002}, 
+volume={1}, 
+pages={315-322 vol.1}, 
+abstract={This paper discusses the issues related to the operation of a microgrid being called to feed reliable electric power to sensitive electrical loads. Challenges and solutions involved in terms maintaining adequate voltage quality and load tracking capabilities are discussed in the paper.}, 
+keywords={electric power generation;energy storage;invertors;load (electric);power distribution reliability;power supply quality;adequate voltage quality;energy storage requirements;inverter internal control;load tracking capabilities;microgrid;reliable electric power supply;sensitive electrical loads;Batteries;Computer aided manufacturing;Feeds;Fuel storage;Inverters;Manufacturing industries;Power generation;Power quality;Power supplies;Voltage}, 
+doi={10.1109/PESW.2002.985005}, 
+month={},}
+
+
+@ARTICLE{1224474, 
+author={Poh Chiang Loh and M. J. Newman and D. N. Zmood and D. G. Holmes}, 
+journal={IEEE Transactions on Power Electronics}, 
+title={A comparative analysis of multiloop voltage regulation strategies for single and three-phase UPS systems}, 
+year={2003}, 
+volume={18}, 
+number={5}, 
+pages={1176-1185}, 
+abstract={Most of the many reported control algorithms for uninterruptible power supplies (UPSs) use either filter inductor or filter capacitor currents as feedback variables to regulate the output voltage. This paper explores the fundamental performance issues associated with the use of these quantities as feedback variables, with a view to determining their contribution to the transient system response and output harmonic compensation in any particular situation. A proportional plus resonant (P+resonant) compensator is then added into the outer voltage regulation loop to achieve zero steady error, to develop a high performance UPS control algorithm, which is applicable to both single-phase and three-phase systems. Theory, simulation, and experimental results are presented in the paper.}, 
+keywords={capacitors;compensation;electric current control;feedback;harmonic distortion;harmonics suppression;power conversion harmonics;proportional control;transient analysis;transient response;uninterruptible power supplies;voltage control;PID;THD;control algorithms;current control;feedback variables;filter capacitor currents;filter inductor;harmonic impedance;high performance UPS control algorithm;multiloop voltage regulation strategies;outer voltage regulation loop;output harmonic compensation;output voltage regulation;proportional plus resonant compensator;single-phase UPS systems;three-phase UPS systems;transient analysis;transient system response;uninterruptible power supplies;zero steady error;Capacitors;Control systems;Error correction;Inductors;Output feedback;Power harmonic filters;Proportional control;Resonance;Uninterruptible power systems;Voltage control}, 
+doi={10.1109/TPEL.2003.816199}, 
+ISSN={0885-8993}, 
+month={Sept},}
+
+
+
+@INPROCEEDINGS{539675, 
+author={M. C. Chandorkar and D. M. Divan}, 
+booktitle={Proceedings of International Conference on Power Electronics, Drives and Energy Systems for Industrial Growth}, 
+title={Decentralized operation of distributed UPS systems}, 
+year={1996}, 
+volume={1}, 
+pages={565-571 vol.1}, 
+abstract={This paper presents the decentralized operation of an interconnected network of multiple units of uninterruptible power supplies (UPS). The main aspect of decentralized operation is that the control of individual UPS units is based on local measurements only, and there is no data communication across the interconnected network. Also, special attention is given to achieving a single operating mode of controller operation, regardless of changes in the network configuration. The main emphasis of this paper is on the implementation of a decentralized control system for an experimental distributed UPS system. Operating results from the distributed system are presented and discussed}, 
+keywords={control system synthesis;controllers;decentralised control;distributed control;interconnected systems;uninterruptible power supplies;voltage control;decentralized operation;distributed UPS systems;interconnected network;load voltage vector control;single operating mode;uninterruptible power supplies;Communication system control;Data communication;Drives;Integrated circuit interconnections;Inverters;Power supplies;Power system interconnection;Power systems;Uninterruptible power systems;Voltage}, 
+doi={10.1109/PEDES.1996.539675}, 
+month={Jan},}
+
+
+@ARTICLE{4267747, 
+author={K. De Brabandere and B. Bolsens and J. Van den Keybus and A. Woyte and J. Driesen and R. Belmans}, 
+journal={IEEE Transactions on Power Electronics}, 
+title={A Voltage and Frequency Droop Control Method for Parallel Inverters}, 
+year={2007}, 
+volume={22}, 
+number={4}, 
+pages={1107-1115}, 
+abstract={In this paper, a new control method for the parallel operation of inverters operating in an island grid or connected to an infinite bus is described. Frequency and voltage control, including mitigation of voltage harmonics, are achieved without the need for any common control circuitry or communication between inverters. Each inverter supplies a current that is the result of the voltage difference between a reference ac voltage source and the grid voltage across a virtual complex impedance. The reference ac voltage source is synchronized with the grid, with a phase shift, depending on the difference between rated and actual grid frequency. A detailed analysis shows that this approach has a superior behavior compared to existing methods, regarding the mitigation of voltage harmonics, short-circuit behavior and the effectiveness of the frequency and voltage control, as it takes the R to X line impedance ratio into account. Experiments show the behavior of the method for an inverter feeding a highly nonlinear load and during the connection of two parallel inverters in operation.}, 
+keywords={frequency control;harmonics suppression;invertors;power supply quality;uninterruptible power supplies;voltage control;autonomous power systems;converter control;dispersed generation;finite output-impedance;frequency droop control;infinite bus;island grid;mixed voltage-current control;nonlinear load;parallel inverters;power quality;short-circuit behavior;stand-alone systems;uninterruptible power supplies;virtual impedance;voltage droop control;voltage source inverter;Circuits;Communication system control;Control systems;Frequency;Impedance;Inverters;Power system harmonics;Proportional control;Uninterruptible power systems;Voltage control;Autonomous power systems;converter control;dispersed generation;finite output-impedance ac voltage source emulation;frequency and voltage droops;harmonics;microgrids;mixed voltage-current control;parallel connection;power quality;stand-alone systems;uninterruptible power supplies (UPS);virtual impedance;voltage source inverter}, 
+doi={10.1109/TPEL.2007.900456}, 
+ISSN={0885-8993}, 
+month={July},}
+
+
+
+@ARTICLE{1413346, 
+author={C. K. Sao and P. W. Lehn}, 
+journal={IEEE Transactions on Power Delivery}, 
+title={Autonomous load sharing of voltage source converters}, 
+year={2005}, 
+volume={20}, 
+number={2}, 
+pages={1009-1016}, 
+abstract={An autonomous load-sharing technique for parallel connected three-phase voltage source converters is presented. An improved power-frequency droop scheme computes and sets the phase angle of the voltage source converter (VSC) directly to yield more rapid real power sharing without sacrificing frequency regulation. Reactive power sharing in the presence of a mismatch between the VSC output interface inductors is achieved by having each VSC regulate the high side voltage with a drooped voltage reference. Dynamics of the reactive power control can be tuned without interfering with steady-state reactive power sharing. Simulation results that validate the proposed technique are also provided.}, 
+keywords={power convertors;reactive power control;autonomous load sharing technique;interface inductors;power frequency droop scheme;reactive power control;steady-state reactive power sharing;three-phase voltage source converter;Converters;Distributed power generation;Frequency;Impedance;Inductors;Power conversion;Power system dynamics;Reactive power;Reactive power control;Voltage;Load sharing;parallel operation;voltage source converter}, 
+doi={10.1109/TPWRD.2004.838638}, 
+ISSN={0885-8977}, 
+month={April},}
+
+
+
+@ARTICLE{1490703, 
+author={J. M. Guerrero and Luis Garcia de Vicuna and J. Matas and M. Castilla and J. Miret}, 
+journal={IEEE Transactions on Industrial Electronics}, 
+title={Output Impedance Design of Parallel-Connected UPS Inverters With Wireless Load-Sharing Control}, 
+year={2005}, 
+volume={52}, 
+number={4}, 
+pages={1126-1135}, 
+abstract={This paper deals with the design of the output impedance of uninterruptible power system (UPS) inverters with parallel-connection capability. In order to avoid the need for any communication among modules, the power-sharing control loops are based on the  droop method. Since in these systems the power-sharing accuracy is highly sensitive to the inverters output impedance, novel control loops to achieve both stable output impedance and proper power balance are proposed. In this sense, a novel wireless controller is designed by using three nested loops: 1) the inner loop is performed by using feedback linearization control techniques, providing a good quality output voltage waveform; 2) the intermediate loop enforces the output impedance of the inverter, achieving good harmonic power sharing while maintaining low output voltage total harmonic distortion; and 3) the outer loop calculates the output active and reactive powers and adjusts the output impedance value and the output voltage frequency during the load transients, obtaining excellent power sharing without deviations in either the frequency or the amplitude of the output voltage. Simulation and experimental results are reported from a parallel-connected UPS system sharing linear and nonlinear loads.}, 
+keywords={DC-AC power convertors;harmonic distortion;impedance convertors;invertors;linearisation techniques;load regulation;reactive power control;uninterruptible power supplies;DC-AC power conversion;feedback linearization;impedance design;load transients;parallel-connected UPS inverters;reactive powers;total harmonic distortion;uninterruptible power system;wireless controller;wireless load-sharing control;Communication system control;Control systems;Frequency;Impedance;Inverters;Linear feedback control systems;Output feedback;Uninterruptible power systems;Voltage control;Wireless sensor networks;DC–AC power conversion;pulsewidth-modulated (PWM) inverters;uninterruptible power systems (UPSs)}, 
+doi={10.1109/TIE.2005.851634}, 
+ISSN={0278-0046}, 
+month={Aug},}
+
+
+@ARTICLE{4582449, 
+author={J. M. Guerrero and L. Hang and J. Uceda}, 
+journal={IEEE Transactions on Industrial Electronics}, 
+title={Control of Distributed Uninterruptible Power Supply Systems}, 
+year={2008}, 
+volume={55}, 
+number={8}, 
+pages={2845-2859}, 
+abstract={In the last years, the use of distributed uninterruptible power supply (UPS) systems has been growing into the market, becoming an alternative to large conventional UPS systems. In addition, with the increasing interest in renewable energy integration and distributed generation, distributed UPS systems can be a suitable solution for storage energy in micro grids. This paper depicts the most important control schemes for the parallel operation of UPS systems. Active load-sharing techniques and droop control approaches are described. The recent improvements and variants of these control techniques are presented.}, 
+keywords={distributed power generation;power generation control;power grids;uninterruptible power supplies;UPS systems;active load-sharing techniques;distributed generation;distributed uninterruptible power supply systems;droop control approaches;microgrids storage energy;renewable energy integration;Centralized control;Communication system control;Control systems;Distributed control;Energy storage;Frequency;Impedance;Inverters;Uninterruptible power systems;Voltage;Droop method;load sharing;microgrids;parallel connection;uninterruptible power supply (UPS)}, 
+doi={10.1109/TIE.2008.924173}, 
+ISSN={0278-0046}, 
+month={Aug},}
+
+
+
+@ARTICLE{993176, 
+author={E. A. A. Coelho and P. C. Cortizo and P. F. D. Garcia}, 
+journal={IEEE Transactions on Industry Applications}, 
+title={Small-signal stability for parallel-connected inverters in stand-alone AC supply systems}, 
+year={2002}, 
+volume={38}, 
+number={2}, 
+pages={533-542}, 
+abstract={This paper presents a small-signal analysis for parallel-connected inverters in stand-alone AC supply systems. The control technique of the inverters is based on frequency and voltage droops, which depends on the local variable measurements and does not need control interconnections. Simulation and experimental results show that the system is well represented by the small-signal model. Some root locus plots for the system are provided, which make the stability studies and design easier}, 
+keywords={DC-AC power convertors;control system analysis;control system synthesis;frequency control;invertors;power supplies to apparatus;power system stability;root loci;voltage control;VSI;control technique;frequency droops;local variable measurements;parallel-connected inverters;root locus plots;small-signal stability analysis;stand-alone AC supply systems;voltage droops;Communication system control;Control systems;Electric variables control;Frequency;Inverters;Power system control;Stability;Synchronous machines;Uninterruptible power systems;Voltage control}, 
+doi={10.1109/28.993176}, 
+ISSN={0093-9994}, 
+month={Mar},}
+
+
+
+@ARTICLE{4118327, 
+author={N. Pogaku and M. Prodanovic and T. C. Green}, 
+journal={IEEE Transactions on Power Electronics}, 
+title={Modeling, Analysis and Testing of Autonomous Operation of an Inverter-Based Microgrid}, 
+year={2007}, 
+volume={22}, 
+number={2}, 
+pages={613-625}, 
+abstract={The analysis of the small-signal stability of conventional power systems is well established, but for inverter based microgrids there is a need to establish how circuit and control features give rise to particular oscillatory modes and which of these have poor damping. This paper develops the modeling and analysis of autonomous operation of inverter-based microgrids. Each sub-module is modeled in state-space form and all are combined together on a common reference frame. The model captures the detail of the control loops of the inverter but not the switching action. Some inverter modes are found at relatively high frequency and so a full dynamic model of the network (rather than an algebraic impedance model) is used. The complete model is linearized around an operating point and the resulting system matrix is used to derive the eigenvalues. The eigenvalues (termed "modes") indicate the frequency and damping of oscillatory components in the transient response. A sensitivity analysis is also presented which helps identifying the origin of each of the modes and identify possible feedback signals for design of controllers to improve the system stability. With experience it is possible to simplify the model (reduce the order) if particular modes are not of interest as is the case with synchronous machine models. Experimental results from a microgrid of three 10-kW inverters are used to verify the results obtained from the model}, 
+keywords={control system synthesis;distributed power generation;eigenvalues and eigenfunctions;invertors;matrix algebra;power system stability;state-space methods;synchronous machines;transient response;algebraic impedance model;autonomous operation testing;common reference frame;eigenvalues;inverter-based microgrids;oscillatory damping;oscillatory modes;power system small-signal stability;state-space modeling;synchronous machine models;system matrix;transient response;Circuit stability;Circuit testing;Control systems;Damping;Eigenvalues and eigenfunctions;Frequency;Inverters;Power system modeling;Power system stability;Stability analysis;Inverter;inverter model;microgrid;power control;small-signal stability}, 
+doi={10.1109/TPEL.2006.890003}, 
+ISSN={0885-8993}, 
+month={March},}
+
+
+
+
+@ARTICLE{4636747, 
+author={E. Barklund and N. Pogaku and M. Prodanovic and C. Hernandez-Aramburo and T. C. Green}, 
+journal={IEEE Transactions on Power Electronics}, 
+title={Energy Management in Autonomous Microgrid Using Stability-Constrained Droop Control of Inverters}, 
+year={2008}, 
+volume={23}, 
+number={5}, 
+pages={2346-2352}, 
+abstract={This paper presents an energy management system (EMS) for a stand-alone droop-controlled microgrid, which adjusts generators output power to minimize fuel consumption and also ensures stable operation. It has previously been shown that frequency-droop gains have a significant effect on stability in such microgrids. Relationship between these parameters and stability margins are therefore identified, using qualitative analysis and small-signal techniques. This allows them to be selected to ensure stability. Optimized generator outputs are then implemented in real-time by the EMS, through adjustments to droop characteristics within this constraint. Experimental results from a laboratory-sized microgrid confirm the EMS function.}, 
+keywords={distributed power generation;energy management systems;invertors;power system stability;energy management system;fuel consumption;inverters;qualitative analysis;small-signal techniques;stand-alone droop-controlled microgrid;Droop control;Energy Management System (EMS);microgrids;small-signal stability}, 
+doi={10.1109/TPEL.2008.2001910}, 
+ISSN={0885-8993}, 
+month={Sept},}
+
+
+
+@ARTICLE{4696040, 
+author={Y. A. R. I. Mohamed and E. F. El-Saadany}, 
+journal={IEEE Transactions on Power Electronics}, 
+title={Adaptive Decentralized Droop Controller to Preserve Power Sharing Stability of Paralleled Inverters in Distributed Generation Microgrids}, 
+year={2008}, 
+volume={23}, 
+number={6}, 
+pages={2806-2816}, 
+abstract={This paper addresses the low-frequency relative stability problem in paralleled inverter-based distributed generation (DG) units in microgrids. In the sense of the small-signal dynamics of a microgrid, it can be shown that as the demanded power of each inverter changes, the low-frequency modes of the power sharing dynamics drift to new locations and the relative stability is remarkably affected, and eventually, instability can be yielded. To preserve the power sharing stability, an adaptive decentralized droop controller of paralleled inverter-based DG units is presented in this paper. The proposed power sharing strategy is based on the static droop characteristics combined with an adaptive transient droop function. Unlike conventional droop controllers, which yield 1-DOF tunable controller, the proposed droop controller yields 2-DOF tunable controller. Subsequently, the dynamic performance of the power sharing mechanism can be adjusted, without affecting the static droop gain, to damp the oscillatory modes of the power sharing controller. To account for the power modes immigration at different loading conditions, the transient droop gains are adaptively scheduled via small-signal analysis of the power sharing mechanism along the loading trajectory of each DG unit to yield the desired transient and steady-state response. The gain adaptation scheme utilizes the filtered active and reactive powers as indices; therefore, a stable and smooth power injection performance can be obtained at different loading conditions. The adaptive nature of the proposed controller ensures active damping of power oscillations at different operating conditions, and yields a stable and robust performance of the paralleled inverter system.}, 
+keywords={adaptive control;decentralised control;distributed power generation;invertors;power control;power distribution control;power grids;1-DOF tunable controller;2-DOF tunable controller;active damping;adaptive decentralized droop controller;adaptive transient droop function;distributed generation microgrids;gain adaptation scheme;low-frequency relative stability problem;microgrid small-signal dynamics;paralleled inverters;power modes immigration;power oscillations;power sharing dynamics drift;power sharing stability;small-signal analysis;static droop characteristics;steady-state response;Adaptive control;decentralized control;distributed generation (DG);microgrid;parallel operation;power sharing stability}, 
+doi={10.1109/TPEL.2008.2005100}, 
+ISSN={0885-8993}, 
+month={Nov},}
+
+
+
+@ARTICLE{4504460, 
+author={H. Akagi and Y. Kanazawa and A. Nabae}, 
+journal={IEEE Transactions on Industry Applications}, 
+title={Instantaneous Reactive Power Compensators Comprising Switching Devices without Energy Storage Components}, 
+year={1984}, 
+volume={IA-20}, 
+number={3}, 
+pages={625-630}, 
+abstract={The conventional reactive power in single-phase or three- phase circuits has been defined on the basis of the average value concept for sinusoidal voltage and current waveforms in steady states. The instantaneous reactive power in three-phase circuits is defined on the basis of the instantaneous value concept for arbitrary voltage and current waveforms, including transient states. A new instantaneous reactive power compensator comprising switching devices is proposed which requires practically no energy storage components.}, 
+keywords={Energy storage;Frequency;Industry Applications Society;Power factor correction;Power system harmonics;Reactive power;Space technology;Steady-state;Switching circuits;Voltage}, 
+doi={10.1109/TIA.1984.4504460}, 
+ISSN={0093-9994}, 
+month={May},}
+
+
+
+@INPROCEEDINGS{798760, 
+author={Jun-Seok Cho and Seung-Yo Lee and Hyung-Soo Mok and Gyu-Ha Choe}, 
+booktitle={Conference Record of the 1999 IEEE Industry Applications Conference. Thirty-Forth IAS Annual Meeting (Cat. No.99CH36370)}, 
+title={Modified deadbeat digital controller for UPS with 3-phase PWM inverter}, 
+year={1999}, 
+volume={4}, 
+pages={2208-2215 vol.4}, 
+abstract={In this paper, a modified deadbeat control scheme is proposed for 3-phase PWM inverter control such as uninterruptible power supply (UPS). The deadbeat controller, which is generally constructed with voltage and current controller in UPS, is used for fast transient response, but this might have an instability due to the same pole placement of the double controller. To solve this instability problem, separation of pole placement can be considered, and it is performed by the proposed deadbeat control scheme. In this paper, this control scheme is called the modified deadbeat, which produces a first-order exponential response during one input step. As the overall controller is constructed by deadbeat control, the response of the proposed control system is fast and the structure of the controller is simple. In addition, the disturbance observer with full-order state is constructed, which can cancel the disturbances by adding a feedforward compensating loop in the controller and hence it can compensate the disturbances caused by a sudden load change in the UPS system}, 
+keywords={PWM invertors;compensation;control system synthesis;digital control;electric current control;feedforward;observers;pole assignment;transient response;uninterruptible power supplies;voltage control;3-phase PWM inverter;UPS;control system response;current controller;deadbeat control;disturbance observer;disturbances compensation;fast transient response;feedforward compensating loop;first-order exponential response;full-order state observer;instability;modified deadbeat digital controller;pole placement;uninterruptible power supply;voltage controller;Control systems;Current control;Digital control;Equations;Filters;Pulse width modulation inverters;State feedback;Transient response;Uninterruptible power systems;Voltage control}, 
+doi={10.1109/IAS.1999.798760}, 
+ISSN={0197-2618}, 
+month={},}
+
+
+
+
+@ARTICLE{968200, 
+author={S. Buso and S. Fasolo and P. Mattavelli}, 
+journal={IEEE Transactions on Industry Applications}, 
+title={Uninterruptible power supply multiloop control employing digital predictive voltage and current regulators}, 
+year={2001}, 
+volume={37}, 
+number={6}, 
+pages={1846-1854}, 
+abstract={A digital control technique for the inverter stage of uninterruptible power supplies (UPSs) is described, which is based on voltage and current predictive regulators. Its aim is to achieve a deadbeat dynamic response for the controlled variables (output voltage and inverter current). The controller maintains the advantageous conventional multiloop structure and is capable of guaranteeing a high-quality dynamic performance. Moreover, its design is extremely simple and requires only a reasonably accurate knowledge of the output filter parameters. Finally, the only sensed variables are the output voltage and the converter output current. The validity of the proposed strategy is demonstrated by means of simulation and experimental results referring to a single-phase UPS laboratory prototype (1 kVA)}, 
+keywords={control system analysis;control system synthesis;digital control;electric current control;power engineering computing;predictive control;uninterruptible power supplies;voltage control;1 kVA;control design;control simulation;deadbeat dynamic response;digital predictive current regulators;digital predictive voltage regulators;high-quality dynamic performance;inverter current;output filter parameters;output voltage;single-phase UPS;uninterruptible power supply multiloop control;Control systems;Digital control;Filters;Harmonic distortion;Inverters;Medical simulation;Regulators;Sliding mode control;Uninterruptible power systems;Voltage control}, 
+doi={10.1109/28.968200}, 
+ISSN={0093-9994}, 
+month={Nov},}
+
+
+
+@ARTICLE{602567, 
+author={Ying-Yu Tzou and Rong-Shyang Ou and Shih-Liang Jung and Meng-Yueh Chang}, 
+journal={IEEE Transactions on Power Electronics}, 
+title={High-performance programmable AC power source with low harmonic distortion using DSP-based repetitive control technique}, 
+year={1997}, 
+volume={12}, 
+number={4}, 
+pages={715-725}, 
+abstract={This paper proposes a new control scheme based on a two-layer control structure to improve both the transient and steady-state responses of a closed-loop regulated pulse-width-modulated (PWM) inverter for high-quality sinusoidal AC voltage regulation. The proposed two-layer controller consists of a tracking controller and a repetitive controller. Pole assignment with state feedback has been employed in designing the tracking controller for transient response improvement, and a repetitive control scheme was developed in synthesizing the repetitive controller for steady-state response improvement. A design procedure is given for synthesizing the repetitive controller for PWM inverters to minimize periodic errors induced by rectifier-type nonlinear loads. The proposed control scheme has been realized using a single-chip digital signal processor (DSP) TMS320C14 from Texas Instruments. A 2-kVA PWM inverter has been constructed to verify the proposed control scheme. Total harmonic distortion (THD) below 1.4% for a 60-Hz output voltage under a bridge-rectifier RC load with a current crest factor of 3 has been obtained. Simulation and experimental results show that the DSP-based fully digital-controlled PWM inverter can achieve both good dynamic response and low harmonics distortion}, 
+keywords={DC-AC power convertors;PWM invertors;closed loop systems;control system analysis;control system synthesis;dynamic response;harmonic distortion;load (electric);pole assignment;power system harmonics;state feedback;voltage control;2 kVA;60 Hz;DSP-based repetitive control technique;PWM inverter;bridge-rectifier RC load;closed-loop regulation;contol design;control simulation;current crest factor;dynamic response;harmonic distortion;pole assignment;programmable AC power source;repetitive controller;sinusoidal AC voltage regulation;state feedback;steady-state response;total harmonic distortion;tracking controller;transient response;two-layer control structure;Digital signal processors;Error correction;Power system harmonics;Pulse inverters;Pulse width modulation inverters;Signal synthesis;State feedback;Steady-state;Transient response;Voltage control}, 
+doi={10.1109/63.602567}, 
+ISSN={0885-8993}, 
+month={Jul},}
+
+
+
+
+@ARTICLE{968202, 
+author={U. Burup and P. N. Enjeti and F. Blaabjerg}, 
+journal={IEEE Transactions on Industry Applications}, 
+title={A new space-vector-based control method for UPS systems powering nonlinear and unbalanced loads}, 
+year={2001}, 
+volume={37}, 
+number={6}, 
+pages={1864-1870}, 
+abstract={In this paper, a new real-time space-vector-based control strategy is presented for three-phase uninterruptible power supply systems powering nonlinear and unbalanced loads. The proposed control strategy generates the inverter reference and gating signals in closed loop and guarantees high-quality output voltages at the load terminals. The approach, which is implemented on a digital signal processor, adapts to a wide variation of nonlinear and unbalanced load conditions without specific knowledge of the output filter (L-C) component values. Analysis and experimental results on a 10-kVA prototype are presented. The results show that the output voltage is restored at heavy nonlinear and unbalanced load}, 
+keywords={DC-AC power convertors;PWM invertors;control system analysis;control system synthesis;harmonic distortion;load (electric);power conversion harmonics;power harmonic filters;power supply quality;real-time systems;uninterruptible power supplies;voltage control;10 kVA;UPS systems;closed loop;control design;control strategy;digital signal processor;high-quality output voltages;inverter gating signals;inverter reference signals;nonlinear unbalanced loads;output filter;output voltage restoration;real-time space-vector-based control strategy;three-phase uninterruptible power supply systems;Control systems;Digital filters;Digital signal processors;Inverters;Nonlinear control systems;Prototypes;Real time systems;Signal generators;Uninterruptible power systems;Voltage control}, 
+doi={10.1109/28.968202}, 
+ISSN={0093-9994}, 
+month={Nov},}
+
+
+
+
+@ARTICLE{568015, 
+author={M. J. Ryan and W. E. Brumsickle and R. D. Lorenz}, 
+journal={IEEE Transactions on Industry Applications}, 
+title={Control topology options for single-phase UPS inverters}, 
+year={1997}, 
+volume={33}, 
+number={2}, 
+pages={493-501}, 
+abstract={Four control topologies for single-phase uninterruptible power system (UPS) inverters are presented and compared, with the common objective of providing a dynamically stiff, low total harmonic distortion (THD), sinusoidal output voltage. Full-state feedback, full-state command controllers are shown, utilizing both filter inductor current and filter capacitor current feedback to augment output voltage control. All controllers presented include output voltage decoupling in a manner analogous to “back EMF” decoupling in DC motor drives. Disturbance input decoupling of the load current and its derivative is presented. An observer-based controller is additionally considered and is shown to be a technically viable, economically attractive option. The accuracy transfer function of the observer estimate is used to evaluate its measurement performance. Comparative disturbance rejection is evaluated by overlaying the dynamic stiffness (inverse of output impedance) frequency response of each controller on a single plot. Experimental results for one controller are presented}, 
+keywords={DC-AC power convertors;harmonic distortion;power system harmonics;state feedback;transfer functions;uninterruptible power supplies;voltage control;accuracy transfer function;control topology options;disturbance input decoupling;disturbance rejection;dynamic stiffness frequency response;filter capacitor current;filter inductor current;full-state command controllers;full-state feedback;measurement performance;observer-based controller;output voltage control;output voltage decoupling;single-phase UPS inverters;total harmonic distortion;Capacitors;Control systems;Inductors;Inverters;Power harmonic filters;State feedback;Topology;Total harmonic distortion;Uninterruptible power systems;Voltage control}, 
+doi={10.1109/28.568015}, 
+ISSN={0093-9994}, 
+month={Mar},}
+
+
+
+
+@ARTICLE{481416, 
+author={A. von Jouanne and P. N. Enjeti and D. J. Lucas}, 
+journal={IEEE Transactions on Industrial Electronics}, 
+title={DSP control of high-power UPS systems feeding nonlinear loads}, 
+year={1996}, 
+volume={43}, 
+number={1}, 
+pages={121-125}, 
+abstract={Many facilities, such as patient health care centers, data processing systems, and critical telecommunication links, rely on uninterruptible power supplies (UPS) to maintain a continuous supply of power in case of a line outage. In addition to requiring continuous power, many critical nonlinear loads are sensitive to incoming line transients and input harmonic voltage distortion. Conventional UPS systems operate to protect against such disturbances using complex filtering schemes, often employing large passive components. This paper presents the advantages of using real time digital signal processing (DSP) control of UPS systems. A DSP controlled UPS inverter and harmonic conditioning system is described and the performance is verified on a 150 kVA system}, 
+keywords={PWM invertors;digital control;digital signal processing chips;power engineering computing;power system harmonics;real-time systems;uninterruptible power supplies;150 kVA;DSP control;complex filtering schemes;critical telecommunication links;digital signal processing;harmonic conditioning system;high-power UPS systems;incoming line transients;input harmonic voltage distortion;inverter;nonlinear load;passive components;patient health care centers;real time control;uninterruptible power supplies;Control systems;Data processing;Digital signal processing;Medical services;Nonlinear control systems;Power harmonic filters;Power supplies;Power system harmonics;Telecommunication control;Uninterruptible power systems}, 
+doi={10.1109/41.481416}, 
+ISSN={0278-0046}, 
+month={Feb},}
+
+
+
+@ARTICLE{924769, 
+author={P. Mattavelli}, 
+journal={IEEE Transactions on Industry Applications}, 
+title={Synchronous-frame harmonic control for high-performance AC power supplies}, 
+year={2001}, 
+volume={37}, 
+number={3}, 
+pages={864-872}, 
+abstract={In order to achieve the reduction of voltage distortion in AC power supplies (ACPSs), this paper describes an implementation of synchronous-frame control for selected frequencies in the output voltage. The regulation of the fundamental output voltage, as well as that of some low-order harmonics, is achieved using a synchronous-frame controller for each selected frequency in addition to a conventional control. The conventional part conserves good dynamic performance under load changes, while rotating-frame controllers allow a slow, but very precise compensation of the residual errors within the assumption that the harmonics produced by distorting load are slowly varying. Moreover, motivated by a fixed-point implementation, a set of refinements and modifications of the original scheme is proposed, allowing a reduction of signal processing requirements and a new control algorithm structure less sensitive to quantization and rounding errors. This solution is particularly effective for high-power fully digitally controlled ACPSs, where the voltage loop bandwidth is usually not large enough to provide regulation at harmonic frequencies. The proposed control scheme has been implemented using a fixed-point single-chip digital signal processor (ADMC401 by Analog Devices). Experimental results on a 3-kVA three-phase converter prototype show the effectiveness of the proposed approach}, 
+keywords={DC-AC power convertors;control system synthesis;harmonic distortion;harmonics suppression;invertors;power conversion harmonics;power supplies to apparatus;voltage control;3 kVA;ADMC401;control algorithm structure;control design;control performance;dynamic performance;fixed-point single-chip digital signal processor;fundamental output voltage regulation;high-performance AC power supplies;residual errors compensation;synchronous-frame controller;synchronous-frame harmonic control;three-phase power converter;voltage distortion reduction;voltage loop bandwidth;voltage source invertors;Digital control;Error correction;Frequency;Harmonic distortion;Power supplies;Power system harmonics;Quantization;Roundoff errors;Signal processing algorithms;Voltage control}, 
+doi={10.1109/28.924769}, 
+ISSN={0093-9994}, 
+month={May},}
+
+
+
+@INPROCEEDINGS{474857, 
+author={M. J. Ryan and R. D. Lorenz}, 
+booktitle={Power Electronics Specialists Conference, 1995. PESC '95 Record., 26th Annual IEEE}, 
+title={A high performance sine wave inverter controller with capacitor current feedback and ldquo;back-EMF rdquo; decoupling}, 
+year={1995}, 
+volume={1}, 
+pages={507-513 vol.1}, 
+abstract={This paper presents a state space approach to the problem of controlling a single phase PWM inverter with an LC output filter. These types of inverter are often used in uninterruptable power supplies (UPS) where a sine wave output voltage is to be maintained. Output voltage control is structured around an inner filter capacitor current loop where capacitor current is sensed via a single, small current transformer. This avoids the expense of multiple, active current sensors found in alternative designs. Performance of the capacitor current loop is enhanced with active decoupling of both the DC bus and the equivalent “back-EMF” of the output voltage. The output dynamic stiffness of the system is analyzed and plotted. Experimental results yield less than 0.5% total harmonic distortion (THD) at full load (8 kW), with transient response times of less than 200 μs}, 
+keywords={PWM invertors;control system analysis;control system synthesis;harmonic distortion;power filters;power system harmonics;state-space methods;transient response;uninterruptible power supplies;voltage control;8 kW;DC bus;LC output filter;capacitor current sensing;current transformer;equivalent back-EMF;inner filter capacitor current loop;output dynamic stiffness;output voltage control;performance;single phase PWM inverter;state space approach;total harmonic distortion;transient response;uninterruptable power supplies;Capacitors;Current transformers;Filters;Power supplies;Pulse width modulation inverters;State-space methods;Total harmonic distortion;Transient response;Uninterruptible power systems;Voltage control}, 
+doi={10.1109/PESC.1995.474857}, 
+month={Jun},}
+
+
+
+@ARTICLE{506118, 
+author={N. M. Abdel-Rahim and J. E. Quaicoe}, 
+journal={IEEE Transactions on Power Electronics}, 
+title={Analysis and design of a multiple feedback loop control strategy for single-phase voltage-source UPS inverters}, 
+year={1996}, 
+volume={11}, 
+number={4}, 
+pages={532-541}, 
+abstract={This paper presents the analysis and design of a multiple feedback loop control scheme for single-phase voltage-source uninterruptible power supply (UPS) inverters with an L-C filter. The control scheme is based on sensing the current in the capacitor of the load filter and using it in an inner feedback loop. An outer voltage feedback loop is also incorporated to ensure that the load voltage is sinusoidal and well regulated. A general state-space averaged model of the UPS system is first derived and used to establish the steady-steady quiescent point. A linearized small signal dynamic model is then developed from the system general model using perturbation and small-signal approximation. The linearized system model is employed to examine the incremental dynamics of the power circuit and select appropriate feedback variables for stable operation of the closed-loop UPS system. Experimental verification of a laboratory model of the UPS system under the proposed closed-loop operation is provided for both linear and nonlinear loads. It is shown that the control scheme offers improved performance measures over existing schemes, It is simple to implement and capable of producing nearly perfect sinusoidal load voltage waveform at moderate switching frequency and reasonable size of filter parameters. Furthermore, the scheme has excellent dynamic response and high voltage utilization of the DC source}, 
+keywords={DC-AC power convertors;closed loop systems;feedback;filters;invertors;state-space methods;uninterruptible power supplies;voltage control;DC source;L-C filter;capacitor current sampling;closed-loop UPS system;control scheme;inner feedback loop;linear loads;linearized small signal dynamic model;load filter;multiple feedback loop control strategy;nonlinear loads;outer voltage feedback loop;power circuit;single-phase voltage-source UPS inverters;small-signal approximation;state-space averaged model;steady-steady quiescent point;uninterruptible power supply;Capacitors;Feedback circuits;Feedback loop;Filters;Inverters;Laboratories;Nonlinear dynamical systems;Power system modeling;Uninterruptible power systems;Voltage control}, 
+doi={10.1109/63.506118}, 
+ISSN={0885-8993}, 
+month={Jul},}
+
+
+
+
+@INPROCEEDINGS{575740, 
+author={Jae-Ho Choi and Byoung-Jin Kim}, 
+booktitle={Proceedings of APEC 97 - Applied Power Electronics Conference}, 
+title={Improved digital control scheme of three phase UPS inverter using double control strategy}, 
+year={1997}, 
+volume={2}, 
+pages={820-824 vol.2}, 
+abstract={A novel digital control scheme of a UPS inverter based on the double control strategy is proposed. This method consists of a inner voltage regulated current controller and an outer current regulated voltage controller. In order to improve the dynamic response, the voltage controller has a load predictive feedforward loop and the current controller has an output voltage feedforward loop. PI compensators included in each of the voltage and current controllers are used to guarantee the robustness of the system. The mathematical model and the control algorithm of the proposed scheme are described and digital simulation and experimental results for a 5 kVA prototype are provided to verify the validity of the proposed double control strategy}, 
+keywords={DC-AC power convertors;PWM invertors;control system analysis computing;control system synthesis;digital control;dynamic response;electric current control;feedforward;power engineering computing;robust control;two-term control;uninterruptible power supplies;voltage control;5 kVA;PI compensators;computer simulation;control algorithm;control design;control simulation;current controller;digital control scheme;double control strategy;dynamic response;load predictive feedforward loop;mathematical model;output voltage feedforward loop;robustness;three-phase UPS inverter;voltage controller;Capacitors;Control systems;Digital control;Digital simulation;Filters;Pulse width modulation inverters;Robust control;Uninterruptible power systems;Virtual prototyping;Voltage control}, 
+doi={10.1109/APEC.1997.575740}, 
+month={Feb},}
+
+
+
+@INPROCEEDINGS{750484, 
+author={Hongying Wu and Dong Lin and Dehua Zhang and Kaiwei Yao and Jinfa Zhang}, 
+booktitle={Applied Power Electronics Conference and Exposition, 1999. APEC '99. Fourteenth Annual}, 
+title={A current-mode control technique with instantaneous inductor-current feedback for UPS inverters}, 
+year={1999}, 
+volume={2}, 
+pages={951-957 vol.2}, 
+abstract={A current-mode control technique with output filter inductor-current instantaneously controlled is proposed for the voltage-source inverter of uninterruptible power supplies (UPSs). This technique shows good dynamic response, high stability and current limiting in the case of load short. Small-signal analysis, parameter design simulation and experimental results are given in this paper}, 
+keywords={dynamic response;electric current control;feedback;inductors;invertors;stability;uninterruptible power supplies;UPS inverters;current limiting;current-mode control technique;dynamic response;high stability;instantaneous inductor-current feedback;load short;output filter;parameter design simulation;small-signal analysis;uninterruptible power supplies;voltage-source inverter;Current control;Filters;Hysteresis;Nonlinear dynamical systems;Open loop systems;Output feedback;Pulse width modulation inverters;Stability;Uninterruptible power systems;Voltage control}, 
+doi={10.1109/APEC.1999.750484}, 
+month={Mar},}
+
+
+
+
+@INPROCEEDINGS{801603, 
+author={S. A. O. Da Silva and P. F. Donoso-Garcia and P. C. Cortizo}, 
+booktitle={Conference Record of the 1999 IEEE Industry Applications Conference. Thirty-Forth IAS Annual Meeting (Cat. No.99CH36370)}, 
+title={A three-phase series-parallel compensated line-interactive UPS system with sinusoidal input current and sinusoidal output voltage}, 
+year={1999}, 
+volume={2}, 
+pages={826-832 vol.2}, 
+abstract={This paper deals with a three-phase line-interactive uninterruptible power supply system with active series-parallel power-line conditioning capability, which has sinusoidal output voltage regulation capability and unity power factor. In this system, two active power filter topologies are applied. The first one is a series active power filter which can compensate supply voltage harmonics and voltage unbalances as well. The other is a parallel active power filter which has the following main goals: reactive power compensation; load current harmonics suppression; and battery bank charging during normal power supply conditions. During input power failure, the parallel filter maintains uninterruptible power for critical loads, delivering power from the battery bank without power interruption, ensuring sinusoidal output voltages with constant RMS voltage value and low total harmonic distortion (THD). Therefore the proposed line-interactive UPS has low THD sinusoidal input currents with unity power factor. The control algorithm and mathematical models of the proposed three-phase line-interactive UPS system are described, and digital simulations are presented to verify the good dynamic responses of the versatile scheme}, 
+keywords={active filters;battery chargers;circuit simulation;compensation;dynamic response;harmonic distortion;passive filters;power conversion harmonics;power factor correction;power harmonic filters;uninterruptible power supplies;active power filter topologies;active series-parallel power-line conditioning capability;battery bank charging;computer simulation;control algorithm;critical loads;dynamic response;input power failure;load current harmonics suppression;mathematical models;parallel active power filter;reactive power compensation;series active power filter;sinusoidal input current;sinusoidal output voltage;supply voltage harmonics compensation;three-phase series-parallel compensated line-interactive UPS system;total harmonic distortion;uninterruptible power;unity power factor;voltage unbalances compensation;Active filters;Batteries;Harmonics suppression;Power harmonic filters;Power supplies;Power system harmonics;Reactive power;Topology;Uninterruptible power systems;Voltage control}, 
+doi={10.1109/IAS.1999.801603}, 
+ISSN={0197-2618}, 
+month={},}
+
+
+
+
+@ARTICLE{1058113, 
+author={S. A. O. da Silva and P. F. Donoso-Garcia and P. C. Cortizo and P. F. Seixas}, 
+journal={IEEE Transactions on Industry Applications}, 
+title={A three-phase line-interactive UPS system implementation with series-parallel active power-line conditioning capabilities}, 
+year={2002}, 
+volume={38}, 
+number={6}, 
+pages={1581-1590}, 
+abstract={This paper presents a three-phase line-interactive uninterruptible power supply (UPS) system with series-parallel active power-line conditioning capabilities, using a synchronous-reference-frame (SRF)-based controller, which allows an effective power-factor correction, load harmonic current suppression, and output voltage regulation. The three-phase UPS system is composed of two active power filter topologies. The first one is a series active power filter, which works as a sinusoidal current source in phase with the input voltage. The other is a parallel active power filter, which works as a sinusoidal voltage source in phase with the input voltage, providing to the load a regulated and sinusoidal voltage with low total harmonic distortion. Operation of a three-phase phase-locked loop structure, used in the proposed line-interactive UPS implementation, is presented and experimentally verified under distorted utility conditions. The control algorithm using the SRF method and the active power flow through the UPS system are described and analytically studied. Design procedures, digital simulations, and experimental results for a prototype are presented to verify the good performance of the proposed three-phase line-interactive UPS system.}, 
+keywords={active filters;harmonic distortion;power conversion harmonics;power harmonic filters;uninterruptible power supplies;active power flow;line-interactive UPS implementation;load harmonic current suppression;output voltage regulation;parallel active power filter;power-factor correction;series active power filter;series-parallel active power-line conditioning;sinusoidal current source;sinusoidal voltage source;synchronous reference frame-based controller;three-phase line-interactive uninterruptible power supply;three-phase phase-locked loop structure;total harmonic distortion;Active filters;Control systems;Low voltage;Phase locked loops;Power harmonic filters;Power system harmonics;Topology;Total harmonic distortion;Uninterruptible power systems;Voltage control}, 
+doi={10.1109/TIA.2002.804760}, 
+ISSN={0093-9994}, 
+month={Nov},}
+
+
+
+
+@ARTICLE{913727, 
+author={D. N. Zmood and D. G. Holmes and G. H. Bode}, 
+journal={IEEE Transactions on Industry Applications}, 
+title={Frequency-domain analysis of three-phase linear current regulators}, 
+year={2001}, 
+volume={37}, 
+number={2}, 
+pages={601-610}, 
+abstract={Stationary frame proportional plus integral (PI) current-regulated voltage-source inverters are conventionally regarded as unsatisfactory for AC systems because they cannot eliminate steady-state errors. This paper presents a technique for interpreting the stationary/rotating frame transformations as modulation processes in the Laplace domain, which move the control function from one part of the frequency spectrum to another. The technique is used to compare stationary and synchronous frame PI regulators on a common basis to better understand the advantages of a synchronous frame regulator. A new form of stationary frame resonant regulator is then derived which achieves zero steady-state error without requiring the complex transformations of a synchronous frame regulator. The performance of this new regulator is evaluated and found to be similar to that of the synchronous frame PI regulator}, 
+keywords={DC-AC power convertors;Laplace transforms;control system analysis;electric current control;frequency-domain analysis;invertors;two-term control;Laplace domain;PI current control;PI regulators;control function;control performance;control simulation;frequency-domain analysis;modulation processes;stationary/rotating frame transformations;three-phase linear current regulators;voltage-source inverters;zero steady-state error;AC machines;Frequency domain analysis;Industry Applications Society;Pulse width modulation;Pulse width modulation converters;Pulse width modulation inverters;Regulators;Steady-state;Synchronous motors;Voltage}, 
+doi={10.1109/28.913727}, 
+ISSN={0093-9994}, 
+month={Mar},}
+
+
+
+
+@ARTICLE{915410, 
+author={Byoung-Kuk Lee and M. Ehsami}, 
+journal={IEEE Transactions on Industrial Electronics}, 
+title={A simplified functional simulation model for three-phase voltage-source inverter using switching function concept}, 
+year={2001}, 
+volume={48}, 
+number={2}, 
+pages={309-321}, 
+abstract={In this paper, a functional simulation model for the voltage-source inverter (VSI) using the switching function concept is studied and the actual implementation of the model is proposed with the help of Matlab Simulink. Also, this concept is extended to the voltage-doubler-type pulse width-modulated (PWM) AC-DC rectifier and the PWM AC-DC-AC converter. With the developed functional model, the simplification of the static power circuits can be achieved so that the convergence and long run-time problems can be solved. Also, in the functional model, the design parameters, such as voltage and current ratings of the power semiconductor switches and load current, can be easily calculated. The general switching function concept is reviewed in brief and the proposed functional models for the VSI, voltage-doubler rectifier, and PWM AC-DC-AC converter and their implementations using Matlab Simulink are explained in detail. Also, several informative simulation results verify the validity of the proposed models}, 
+keywords={DC-AC power convertors;PWM invertors;circuit simulation;power engineering computing;switching circuits;Matlab Simulink;PWM AC-DC-AC converter;VSI;current ratings;design parameters;simplified functional simulation model;static power circuits;switching function concept;three-phase voltage-source inverter;voltage ratings;voltage-doubler-type PWM AC-DC rectifier;Analog-digital conversion;Circuits;Convergence;Mathematical model;Power semiconductor switches;Pulse width modulation;Pulse width modulation converters;Pulse width modulation inverters;Rectifiers;Voltage}, 
+doi={10.1109/41.915410}, 
+ISSN={0278-0046}, 
+month={Apr},}
+
+
+
+
+@ARTICLE{968196, 
+author={U. Borup and F. Blaabjerg and P. N. Enjeti}, 
+journal={IEEE Transactions on Industry Applications}, 
+title={Sharing of nonlinear load in parallel-connected three-phase converters}, 
+year={2001}, 
+volume={37}, 
+number={6}, 
+pages={1817-1823}, 
+abstract={In this paper, a new control method is presented which enables equal sharing of linear and nonlinear loads in three-phase power converters connected in parallel, without communication between the converters. The paper focuses on solving the problem that arises when two converters with harmonic compensation are connected in parallel. Without the new solution, they are normally not able to distinguish the harmonic currents that flow to the load and harmonic currents that circulate between the converters. Analysis and experimental results on two 90-kVA 400-Hz converters in parallel are presented. The results show that both linear and nonlinear loads can be shared equally by the proposed concept}, 
+keywords={compensation;control system analysis;control system synthesis;harmonic distortion;harmonics suppression;load (electric);power conversion harmonics;power supply quality;reactive power control;400 Hz;90 kVA;control design;control method;control performance;control simulation;ground power units;harmonic compensation;harmonic currents;harmonic distortion;nonlinear load sharing;parallel-connected three-phase power converters;Communication system control;Frequency conversion;Linear feedback control systems;Pi control;Power system harmonics;Power system reliability;Proportional control;Reactive power;Uninterruptible power systems;Voltage control}, 
+doi={10.1109/28.968196}, 
+ISSN={0093-9994}, 
+month={Nov},}
+
+
+
+
+@INPROCEEDINGS{581439, 
+author={A. Tuladhar and H. Jin and T. Unger and K. Mauch}, 
+booktitle={Proceedings of APEC 97 - Applied Power Electronics Conference}, 
+title={Parallel operation of single phase inverter modules with no control interconnections}, 
+year={1997}, 
+volume={1}, 
+pages={94-100 vol.1}, 
+abstract={To provide reliable power under scheduled and unscheduled outages requires an uninterruptible power supply (UPS) which can be easily expanded to meet the needs of a growing demand. A system suck as this should also be fault tolerant and include the capability for redundancy. These goals can be met by paralleling together smaller inverters if a control scheme can be designed to allow them to operate independently yet still share the load. We have developed a control technique for operating two or more single phase inverter modules in parallel with no auxiliary interconnections. This technique uses frequency, fundamental voltage, and harmonic voltage droop to allow independent inverters to share the load in proportion to their capacities. Simulation results are provided to prove the concept}, 
+keywords={invertors;power control;power system harmonics;reactive power control;redundancy;uninterruptible power supplies;UPS;fault tolerant;frequency;fundamental voltage;harmonic voltage droop;load sharing;parallel operation;reactive power control;real power control;redundancy capability;simulation;single phase inverter modules;uninterruptible power supply;Frequency;Impedance;Integrated circuit interconnections;Master-slave;North America;Power supplies;Pulse width modulation inverters;Scheduling;Uninterruptible power systems;Voltage control}, 
+doi={10.1109/APEC.1997.581439}, 
+month={Feb},}
+
+
+
+
+
+
