@@ -9,7 +9,7 @@ import backup_data
 def dbase_populate(request):
     # listing the articles
     collection_of_articles = backup_data.read_ref_file()
-    return render_to_response("list_papers.html", \
+    return render(request, "list_papers.html", \
                     {'collection_of_articles' : collection_of_articles}, 
                     context_instance = RequestContext(request))
 
