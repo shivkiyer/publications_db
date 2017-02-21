@@ -2,13 +2,12 @@
 	<ol>
 		{% for paper_entry in collection_of_articles %}
 			<li>
-				{{ paper_entry.title }} <br>
-				{{ paper_entry.author }} <br>
-				{% if paper_entry.journal %}
-					{{ paper_entry.journal }} <br>
-				{% endif %}
-				{% if paper_entry.booktitle %}
-					{{ paper_entry.booktitle }} <br>
+				{{ paper_entry.paper_title }} <br>
+				{% for author_entry in paper_entry.author_set %}
+					{{ author_entry }} <br>
+				{% endfor %}
+				{% if paper_entry.paper_journal %}
+					{{ paper_entry.paper_journal }} <br>
 				{% endif %}
 			</li>
 		{% endfor %}
