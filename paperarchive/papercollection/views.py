@@ -11,10 +11,8 @@ def dbase_populate(request):
     # listing the articles
     collection_of_articles = backup_data.read_ref_file()
     for paper_item in collection_of_articles:
-        new_paper_entry = Paper()
-        new_paper_entry.paper_title = paper_item["title"]
         list_of_authors = paper_item["author"].split(" and ")
-        print list_of_authors
+        list_of_authors_in_paper = []
         for author_entry in list_of_authors:
             while author_entry[0]==" ":
                 author_entry = author_entry[1:]
@@ -23,18 +21,25 @@ def dbase_populate(request):
             new_author_item = Author()
             new_author_item.full_name = author_entry
             new_author_item.save()
-            new_paper_entry.paper_authors = new_author_item
+            list_of_authors_in_paper.append(new_author_item)
 
         if "journal" in paper_item.keys():
             new_journal_entry = Journal()
             new_journal_entry.name = paper_item["journal"]
             new_journal_entry.save()
-            new_paper_entry.paper_journal = new_journal_entry
         if "booktitle" in paper_item.keys():
             new_journal_entry = Journal()
             new_journal_entry.name = paper_item["booktitle"]
             new_journal_entry.save()
-            new_paper_entry.paper_journal = new_journal_entry
+
+        new_paper_entry = Paper()
+        new_paper_entry.save()
+        new_paper_entry.paper_title = paper_item["title"]
+
+        for author_in_paper in list_of_authors_in_paper:
+            new_paper_entry.paper_authors.add(author_in_paper)
+        new_paper_entry.save()
+
         if "year" in paper_item.keys():
             new_paper_entry.paper_year = paper_item["year"]
         if "volume" in paper_item.keys():
