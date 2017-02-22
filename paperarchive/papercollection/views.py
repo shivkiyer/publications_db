@@ -33,15 +33,17 @@ def dbase_populate(request):
             new_journal_entry.save()
 
         new_paper_entry = Paper()
-        new_paper_entry.save()
         new_paper_entry.paper_title = paper_item["title"]
-
+        new_paper_entry.paper_journal = new_journal_entry
+        new_paper_entry.save()
         for author_in_paper in list_of_authors_in_paper:
             new_paper_entry.paper_authors.add(author_in_paper)
-        new_paper_entry.save()
+            new_paper_entry.save()
 
         if "year" in paper_item.keys():
             new_paper_entry.paper_year = paper_item["year"]
+        if "month" in paper_item.keys():
+            new_paper_entry.paper_month = paper_item["month"]
         if "volume" in paper_item.keys():
             new_paper_entry.paper_volume = paper_item["volume"]
         if "number" in paper_item.keys():
@@ -59,7 +61,7 @@ def dbase_populate(request):
 
         new_paper_entry.save()
 
-    return HttpResponse("Hello again")
+    return HttpResponse("Database written.")
     
 
 def dbase_display(request):
