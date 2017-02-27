@@ -26,8 +26,8 @@ class Author(models.Model):
 class Paper(models.Model):
     paper_title = models.CharField(max_length=200)
     paper_year = models.IntegerField(blank = True, null = True)
-    paper_volume = models.CharField(max_length = 100,blank = True, null = True)
-    paper_number = models.CharField(max_length = 100,blank = True, null = True)
+    paper_volume = models.CharField(max_length = 100, blank = True, null = True)
+    paper_number = models.CharField(max_length = 100, blank = True, null = True)
     paper_pages = models.CharField(max_length = 100, blank = True, null = True)
     paper_month = models.CharField(max_length = 15, blank = True, null = True)
     paper_doi = models.CharField(max_length = 50, blank = True, null = True)
@@ -39,6 +39,24 @@ class Paper(models.Model):
     def __unicode__(self):
         return self.paper_title
 
+
+class PaperForm(ModelForm):
+    class Meta:
+        model = Paper
+        fields = ('paper_title', 'paper_year', 'paper_volume', 'paper_number', 'paper_pages', 'paper_month', 'paper_doi', 'paper_abstract', \
+        'paper_keywords')
+
+
+class JournalForm(ModelForm):
+    class Meta:
+        model = Journal
+        fields = ('name', 'organization')
+
+
+class AuthorForm(ModelForm):
+    class Meta:
+        model = Author
+        fields = ('first_name', 'last_name', 'middle_name', 'full_name', 'email')
 
 #class Conference(models.Model):
 #    name = models.CharField(max_length = 100)

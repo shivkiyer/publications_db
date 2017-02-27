@@ -5,6 +5,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 import backup_data
 from papercollection.models import Author, Journal, Paper
+from papercollection.models import AuthorForm, JournalForm, PaperForm
 
 # Create your views here.
 def dbase_populate(request):
@@ -69,4 +70,76 @@ def dbase_display(request):
     return render(request, "list_papers.html", \
                     {'collection_of_articles' : collection_of_articles},
                     context_instance = RequestContext(request))
+
+
+def edit_paper(request):
+    if "paper_srno" in request.POST:
+        paper_srno = int(request.POST["paper_srno"])
+        edit_paper = Paper.objects.get(id = paper_srno)
+        edit_paper_form = PaperForm(instance = edit_paper)
+        author_list = edit_paper.paper_authors.all()
+        author_form_list = []
+        for author in author_list:
+            author_form_entry = AuthorForm(instance = author)
+            author_form_list.append(author_form_entry)
+
+        journal = edit_paper.paper_journal
+        journal_form = JournalForm(instance = journal)
+
+    return render(request, "edit_paper.html", \
+                    {'paper_id' : paper_srno,
+                    'paper' : edit_paper_form,
+                    'authors' : author_form_list,
+                    'journal' : journal_form
+                    },
+                    context_instance = RequestContext(request))
+
+
+def verify_paper(request):
+    if request.method == 'POST':
+
+        if "paper_srno" in request.POST:
+            paper_extracted = Paper.objects.get(id = int(request.POST["paper_srno"]))
+        else:
+            paper_extracted = Paper()
+
+        paper_submitted = PaperForm(request.POST)
+        if paper_submitted.is_valid():
+            paper_received = paper_submitted.cleaned_data
+            paper_extracted.paper_title = paper_received["paper_title"]
+            paper_extracted.paper_volume = int(paper_received["paper_volume"])
+            paper_extracted.paper_number = int(paper_received["paper_number"])
+            paper_extracted.paper_pages = paper_received["paper_pages"]
+            paper_extracted.paper_month = paper_received["paper_month"]
+            paper_extracted.paper_year = int(paper_received["paper_year"])
+            paper_extracted.paper_doi = paper_received["paper_doi"]
+            paper_extracted.paper_keywords = paper_received["paper_keywords"]
+            paper_extracted.paper_abstract = paper_received["paper_abstract"]
+            paper_extracted.save()
+
+        if "paper_srno" in request.POST:
+            list_of_authors = paper_extracted.paper_authors.all()
+            if "full_name" in request.POST:
+                full_name_received = request.POST.getlist("full_name")
+            if "first_name" in request.POST:
+                first_name_received = request.POST.getlist("first_name")
+            if "last_name" in request.POST:
+                last_name_received = request.POST.getlist("last_name")
+            if "middle_name" in request.POST:
+                middle_name_received = request.POST.getlist("middle_name")
+            if "email" in request.POST:
+                email_received = request.POST.getlist("email")
+            for author_index in range(len(list_of_authors)):
+                author = list_of_authors[author_index]
+                author.full_name = full_name_received[author_index]
+                author.first_name = first_name_received[author_index]
+                author.last_name = last_name_received[author_index]
+                author.middle_name = middle_name_received[author_index]
+                author.email = email_received[author_index]
+                author.save()
+
+    return HttpResponse("Checking")
+
+
+
 

@@ -1,0 +1,5 @@
+This project aims to build a database of publications for researchers. The objective is to link the elements of this database to offer different possibilities for searching through publications such as chronologically, according to keywords, according to collaboration between researchers etc. Once the relevant list of publications has been generated, the BibTex file with their entries will be automatically generated along with citations that can be included in a Latex file. The hope is that such a searchable database will help researchers while writing manuscripts and their thesis when there is the need to cross-reference literature.
+
+To follow the updates on the project, check out the blog:
+http://djangoforresearch.blogspot.ca/
+

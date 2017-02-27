@@ -1,0 +1,22 @@
+<form action="/verify-paper/" method="post">
+	{% for paper_item in paper %}
+		{{ paper_item }} <br>
+	{% endfor %}
+
+	{% for author in authors %}
+		{{ author }} <br>
+	{% empty %}
+		<p> No authors?
+		</p>
+	{% endfor %}
+
+	{% if journal %}
+		{{ journal }} <br>
+	{% else %}
+		<p> No journal?
+		</p>
+	{% endif %}
+	<input type="hidden" name="paper_srno" value="{{ paper_id }}">
+	<input type="submit" value="Submit paper">
+	{% csrf_token %}
+</form>

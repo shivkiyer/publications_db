@@ -31,6 +31,11 @@
 					{{ paper_entry.paper_pages }}
 				{% endif %}
 				<br>
+				<form action="/edit-paper/" method="post">
+					<input type="hidden" name="paper_srno" value="{{ paper_entry.id }}">
+					<input type="submit" value="Edit paper">
+					{% csrf_token %}
+				</form>
 			</li>
 		{% endfor %}
 	</ol>

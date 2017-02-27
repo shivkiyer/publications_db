@@ -23,4 +23,6 @@ urlpatterns = [
     url(r'^admin/$', include(admin.site.urls)),
     url(r'^start-db/$', views.dbase_populate, name='dbase-init'),
     url(r'^display-db/$', views.dbase_display, name='dbase-listall'),
+    url(r'^edit-paper/$', views.edit_paper, name='edit-paper'),
+    url(r'^verify-paper/$', views.verify_paper, name='verify-paper'),
 ]
