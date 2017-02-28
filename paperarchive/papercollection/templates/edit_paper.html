@@ -4,7 +4,26 @@
 	{% endfor %}
 
 	{% for author in authors %}
-		{{ author }} <br>
+		<b> Author {{ forloop.counter }} </b> <br>
+		{{ author.0 }} <br>
+		{% if author.1 %}
+			<p> This author has one or more similar author entry in the database. The other entries could be identical 
+			or the same author with the name written in a different manner. Use the drop down list to choose an author 
+			to whom you would like to link the above author with. That author's data will be inserted above.
+			</p>
+			{% for other_author_choice in author.1 %}
+				<select name="otherauthors_{{ other_author_choice.id }}">
+				<option value="-1"> Don't merge
+				</option>
+				{{ other_author_choice.full_name }}
+				<option value="{{ other_author_choice.id }}">{{ other_author_choice.full_name }}
+				</option>
+			{% endfor %}
+			</select>
+			<input type="submit" name="author_check"  value="Check this author">
+			<br> <br>
+		{% endif %}
+		 <br>
 	{% empty %}
 		<p> No authors?
 		</p>
@@ -17,6 +36,6 @@
 		</p>
 	{% endif %}
 	<input type="hidden" name="paper_srno" value="{{ paper_id }}">
-	<input type="submit" value="Submit paper">
+	<input type="submit" name="paper_submit"  value="Submit paper">
 	{% csrf_token %}
 </form>
