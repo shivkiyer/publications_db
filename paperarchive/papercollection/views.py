@@ -86,7 +86,7 @@ def edit_paper(request):
             other_author_list = []
             for author in author_list:
                 author_form_entry = AuthorForm(instance = author)
-                author_form_list.append([[], []])
+                author_form_list.append([[], [], []])
                 author_form_list[-1][0] = author_form_entry
                 choices_for_author = []
                 for other_authors in all_authors_in_db:
@@ -95,7 +95,7 @@ def edit_paper(request):
                             if author.full_name.split()[-1] == other_authors.full_name.split()[-1]:
                                 choices_for_author.append(other_authors)
                 author_form_list[-1][1] = choices_for_author
-            
+                author_form_list[-1][2] = author
 
             journal = edit_paper.paper_journal
             journal_form = JournalForm(instance = journal)
@@ -178,35 +178,38 @@ def extract_author_forms(request):
 
 def verify_paper(request):
     if request.method == 'POST':
+        if "paper_srno" in request.POST:
+            paper_extracted = Paper.objects.get(id = int(request.POST["paper_srno"]))
+            list_of_authors = paper_extracted.paper_authors.all()
+            journal_extracted = paper_extracted.paper_journal
+            list_for_author_options = []
+            for author in list_of_authors:
+                list_for_author_options.append("authorcheck_" + str(author.id))
+
         if "paper_submit" in request.POST and request.POST["paper_submit"]=="Submit paper":
             print request.POST
-            
-            if "paper_srno" in request.POST:
-                paper_extracted = Paper.objects.get(id = int(request.POST["paper_srno"]))
-                paper_submitted = PaperForm(request.POST)
-                if paper_submitted.is_valid():
-                    paper_received = paper_submitted.cleaned_data
-                    save_paper_data(paper_extracted, paper_received)
-                
-                list_of_authors = paper_extracted.paper_authors.all()
-                author_form_data = extract_author_forms(request)
 
-                journal_extracted = paper_extracted.paper_journal
-                journal_submitted = JournalForm(request.POST)
-                if journal_submitted.is_valid():
-                    journal_received = journal_submitted.cleaned_data
-                    journal_extracted.name = journal_received["name"]
-                    if journal_received["organization"]:
-                        journal_extracted.organization = journal_received["organization"]
-                    journal_extracted.save()
-                    
-                save_author_data(list_of_authors, author_form_data)
-            else:
-                paper_extracted = Paper()
+            paper_submitted = PaperForm(request.POST)
+            if paper_submitted.is_valid():
+                paper_received = paper_submitted.cleaned_data
+                save_paper_data(paper_extracted, paper_received)
 
-        if "author_check" in request.POST and request.POST["author_check"]=="Check this author":
-            print request.POST
-            
+            author_form_data = extract_author_forms(request)
+            save_author_data(list_of_authors, author_form_data)
+
+            journal_submitted = JournalForm(request.POST)
+            if journal_submitted.is_valid():
+                journal_received = journal_submitted.cleaned_data
+                journal_extracted.name = journal_received["name"]
+                if journal_received["organization"]:
+                    journal_extracted.organization = journal_received["organization"]
+                journal_extracted.save()
+
+        for replace_author in list_for_author_options:
+            if replace_author in request.POST and request.POST[replace_author]=="Check this author":
+                print request.POST
+                author_srno = int(replace_author.split("_")[1])
+                print request.POST["otherauthors_" + str(author_srno)]
 
     return HttpResponse("Checking")
 

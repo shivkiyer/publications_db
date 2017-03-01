@@ -12,7 +12,7 @@
 			to whom you would like to link the above author with. That author's data will be inserted above.
 			</p>
 			{% for other_author_choice in author.1 %}
-				<select name="otherauthors_{{ other_author_choice.id }}">
+				<select name="otherauthors_{{  author.2.id }}">
 				<option value="-1"> Don't merge
 				</option>
 				{{ other_author_choice.full_name }}
@@ -20,7 +20,7 @@
 				</option>
 			{% endfor %}
 			</select>
-			<input type="submit" name="author_check"  value="Check this author">
+			<input type="submit" name="authorcheck_{{ author.2.id }}"  value="Check this author">
 			<br> <br>
 		{% endif %}
 		 <br>
