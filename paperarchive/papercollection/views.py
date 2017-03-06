@@ -210,6 +210,11 @@ def verify_paper(request):
                 print request.POST
                 author_srno = int(replace_author.split("_")[1])
                 print request.POST["otherauthors_" + str(author_srno)]
+                other_author_srno = int(request.POST["otherauthors_" + str(author_srno)])
+                other_author = Author.objects.get(id = other_author_srno)
+                print other_author
+                other_author_papers = other_author.paper_set.all()
+                print other_author_papers
 
     return HttpResponse("Checking")
 
