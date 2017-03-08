@@ -78,15 +78,39 @@ def edit_paper(request):
     else:
         if "paper_srno" in request.POST:
             paper_srno = int(request.POST["paper_srno"])
-            edit_paper = Paper.objects.get(id = paper_srno)
-            edit_paper_form = PaperForm(instance = edit_paper)
-            author_list = edit_paper.paper_authors.all()
-            author_form_list = []
+            edit_paper = Paper.objects.get(id = paper_srno)            
+            author_list = edit_paper.paper_authors.all()            
             all_authors_in_db = Author.objects.all()
+            journal = edit_paper.paper_journal
+            list_for_author_options = []
+            for author in author_list:
+                list_for_author_options.append("authorcheck_" + str(author.id))
+
+        if "paper_submit" in request.POST and request.POST["paper_submit"]=="Submit paper":
+            print request.POST
+
+            paper_submitted = PaperForm(request.POST)
+            if paper_submitted.is_valid():
+                paper_received = paper_submitted.cleaned_data
+                save_paper_data(paper_extracted, paper_received)
+
+            author_form_data = extract_author_forms(request)
+            save_author_data(list_of_authors, author_form_data)
+
+            journal_submitted = JournalForm(request.POST)
+            if journal_submitted.is_valid():
+                journal_received = journal_submitted.cleaned_data
+                journal_extracted.name = journal_received["name"]
+                if journal_received["organization"]:
+                    journal_extracted.organization = journal_received["organization"]
+                journal_extracted.save()
+        else:
+            edit_paper_form = PaperForm(instance = edit_paper)
+            author_form_list = []
             other_author_list = []
             for author in author_list:
                 author_form_entry = AuthorForm(instance = author)
-                author_form_list.append([[], [], []])
+                author_form_list.append([[], [], [], []])
                 author_form_list[-1][0] = author_form_entry
                 choices_for_author = []
                 for other_authors in all_authors_in_db:
@@ -96,12 +120,31 @@ def edit_paper(request):
                                 choices_for_author.append(other_authors)
                 author_form_list[-1][1] = choices_for_author
                 author_form_list[-1][2] = author
-
-            journal = edit_paper.paper_journal
             journal_form = JournalForm(instance = journal)
+            
+            if "edit_paper" in request.POST and request.POST["edit_paper"]=="Edit paper":
+                pass
 
-        else:
-            return HttpResponseRedirect("/display-db/")
+            for replace_author in list_for_author_options:
+                if replace_author in request.POST and request.POST[replace_author]=="Check this author":
+                    #print request.POST
+                    author_srno = int(replace_author.split("_")[1])
+                    #print request.POST["otherauthors_" + str(author_srno)]
+                    other_author_srno = int(request.POST["otherauthors_" + str(author_srno)])
+                    other_author = Author.objects.get(id = other_author_srno)
+                    #print other_author
+                    other_author_papers = other_author.paper_set.all()
+                    for count1 in range(len(author_list)):
+##                    for author in author_list:
+                        if author_list[count1].id == author_srno:
+                            author_form_list[count1][3] = [other_author, ]
+                            other_author_papers = other_author.paper_set.all()
+                            if len(other_author_papers) > 5:
+                                for count2 in range(len(other_author_papers)-1, -1, 4):
+                                    del other_author_papers[count2]
+                            author_form_list[count1][3].append(other_author_papers)
+                    #print other_author_papers
+
 
     return render(request, "edit_paper.html", \
                     {'paper_id' : paper_srno,

@@ -33,7 +33,7 @@
 				<br>
 				<form action="/edit-paper/" method="post">
 					<input type="hidden" name="paper_srno" value="{{ paper_entry.id }}">
-					<input type="submit" value="Edit paper">
+					<input type="submit" name="edit_paper" value="Edit paper">
 					{% csrf_token %}
 				</form>
 			</li>

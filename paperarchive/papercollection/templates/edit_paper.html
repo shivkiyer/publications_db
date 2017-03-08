@@ -1,4 +1,4 @@
-<form action="/verify-paper/" method="post">
+<form action="" method="post">
 	{% for paper_item in paper %}
 		{{ paper_item }} <br>
 	{% endfor %}
@@ -23,7 +23,16 @@
 			<input type="submit" name="authorcheck_{{ author.2.id }}"  value="Check this author">
 			<br> <br>
 		{% endif %}
-		 <br>
+		{% if author.3 %}
+			First name: {{ author.3.0.first_name }} <br>
+			Middle name: {{ author.3.0.middle_name }} <br>
+			Last name: {{ author.3.0.last_name }} <br>
+			Email: {{ author.3.0.email }} <br>
+			{% for paper_choice in author.3.1 %}
+				{{ paper_choice }} <br>
+			{% endfor %}
+		{% endif %}
+		 <br> <br>
 	{% empty %}
 		<p> No authors?
 		</p>
