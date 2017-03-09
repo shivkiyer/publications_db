@@ -72,82 +72,26 @@ def dbase_display(request):
                     context_instance = RequestContext(request))
 
 
-def edit_paper(request):
-    if not request.method == "POST":
-        return HttpResponseRedirect("/display-db/")
-    else:
-        if "paper_srno" in request.POST:
-            paper_srno = int(request.POST["paper_srno"])
-            edit_paper = Paper.objects.get(id = paper_srno)            
-            author_list = edit_paper.paper_authors.all()            
-            all_authors_in_db = Author.objects.all()
-            journal = edit_paper.paper_journal
-            list_for_author_options = []
-            for author in author_list:
-                list_for_author_options.append("authorcheck_" + str(author.id))
+def extract_author_forms(request):
+    if "full_name" in request.POST:
+        full_name_received = request.POST.getlist("full_name")
+    if "first_name" in request.POST:
+        first_name_received = request.POST.getlist("first_name")
+    if "last_name" in request.POST:
+        last_name_received = request.POST.getlist("last_name")
+    if "middle_name" in request.POST:
+        middle_name_received = request.POST.getlist("middle_name")
+    if "email" in request.POST:
+        email_received = request.POST.getlist("email")
 
-        if "paper_submit" in request.POST and request.POST["paper_submit"]=="Submit paper":
-            print request.POST
+    author_form_data = [full_name_received, \
+                                    first_name_received, \
+                                    last_name_received, \
+                                    middle_name_received, \
+                                    email_received]
 
-            paper_submitted = PaperForm(request.POST)
-            if paper_submitted.is_valid():
-                paper_received = paper_submitted.cleaned_data
-                save_paper_data(paper_extracted, paper_received)
+    return author_form_data
 
-            author_form_data = extract_author_forms(request)
-            save_author_data(list_of_authors, author_form_data)
-
-            journal_submitted = JournalForm(request.POST)
-            if journal_submitted.is_valid():
-                journal_received = journal_submitted.cleaned_data
-                journal_extracted.name = journal_received["name"]
-                if journal_received["organization"]:
-                    journal_extracted.organization = journal_received["organization"]
-                journal_extracted.save()
-        else:
-            edit_paper_form = PaperForm(instance = edit_paper)
-            author_form_list = []
-            other_author_list = []
-            for author in author_list:
-                author_form_entry = AuthorForm(instance = author)
-                author_form_list.append([[], [], [], []])
-                author_form_list[-1][0] = author_form_entry
-                choices_for_author = []
-                for other_authors in all_authors_in_db:
-                    if not other_authors.id == author.id:
-                        if author.full_name and other_authors.full_name:
-                            if author.full_name.split()[-1] == other_authors.full_name.split()[-1]:
-                                choices_for_author.append(other_authors)
-                author_form_list[-1][1] = choices_for_author
-                author_form_list[-1][2] = author
-            journal_form = JournalForm(instance = journal)
-            
-            if "edit_paper" in request.POST and request.POST["edit_paper"]=="Edit paper":
-                pass
-
-            for replace_author in list_for_author_options:
-                if replace_author in request.POST and request.POST[replace_author]=="Check this author":
-                    author_srno = int(replace_author.split("_")[1])
-                    other_author_srno = int(request.POST["otherauthors_" + str(author_srno)])
-                    other_author = Author.objects.get(id = other_author_srno)
-                    other_author_papers = other_author.paper_set.all()
-                    for count1 in range(len(author_list)):
-                        if author_list[count1].id == author_srno:
-                            author_form_list[count1][3] = [other_author, ]
-                            other_author_papers = other_author.paper_set.all()
-                            if len(other_author_papers) > 5:
-                                for count2 in range(len(other_author_papers)-1, -1, 4):
-                                    del other_author_papers[count2]
-                            author_form_list[count1][3].append(other_author_papers)
-
-
-    return render(request, "edit_paper.html", \
-                    {'paper_id' : paper_srno,
-                    'paper' : edit_paper_form,
-                    'authors' : author_form_list,
-                    'journal' : journal_form
-                    },
-                    context_instance = RequestContext(request))
 
 
 def save_paper_data(paper_object, paper_form_data):
@@ -179,83 +123,82 @@ def save_author_data(author_objects, author_form_data):
         if author_form_data[4][author_index]:
             author.email = author_form_data[4][author_index]
 
-        create_author_name = ""
-        if author.first_name:
-            create_author_name = create_author_name + author.first_name
-        if author.middle_name:
-            create_author_name = create_author_name + " " + author.middle_name
-        if author.last_name:
-            create_author_name = create_author_name + " " + author.last_name
-        author.full_name = create_author_name
         author.save()
 
     return
 
 
-def extract_author_forms(request):
-    if "full_name" in request.POST:
-        full_name_received = request.POST.getlist("full_name")
-    if "first_name" in request.POST:
-        first_name_received = request.POST.getlist("first_name")
-    if "last_name" in request.POST:
-        last_name_received = request.POST.getlist("last_name")
-    if "middle_name" in request.POST:
-        middle_name_received = request.POST.getlist("middle_name")
-    if "email" in request.POST:
-        email_received = request.POST.getlist("email")
-
-    author_form_data = [full_name_received, \
-                                    first_name_received, \
-                                    last_name_received, \
-                                    middle_name_received, \
-                                    email_received]
-
-    return author_form_data
-
-
-
-def verify_paper(request):
-    if request.method == 'POST':
+def edit_paper(request):
+    if not request.method == "POST":
+        return HttpResponseRedirect("/display-db/")
+    else:
         if "paper_srno" in request.POST:
-            paper_extracted = Paper.objects.get(id = int(request.POST["paper_srno"]))
-            list_of_authors = paper_extracted.paper_authors.all()
-            journal_extracted = paper_extracted.paper_journal
+            paper_srno = int(request.POST["paper_srno"])
+            edit_paper = Paper.objects.get(id = paper_srno)            
+            author_list = edit_paper.paper_authors.all()            
+            all_authors_in_db = Author.objects.all()
+            journal = edit_paper.paper_journal
             list_for_author_options = []
-            for author in list_of_authors:
+            for author in author_list:
                 list_for_author_options.append("authorcheck_" + str(author.id))
 
-        if "paper_submit" in request.POST and request.POST["paper_submit"]=="Submit paper":
-            print request.POST
-
+        if not ("edit_paper" in request.POST):
             paper_submitted = PaperForm(request.POST)
             if paper_submitted.is_valid():
                 paper_received = paper_submitted.cleaned_data
-                save_paper_data(paper_extracted, paper_received)
+                save_paper_data(edit_paper, paper_received)
 
             author_form_data = extract_author_forms(request)
-            save_author_data(list_of_authors, author_form_data)
+            save_author_data(author_list, author_form_data)
 
             journal_submitted = JournalForm(request.POST)
             if journal_submitted.is_valid():
                 journal_received = journal_submitted.cleaned_data
-                journal_extracted.name = journal_received["name"]
+                journal.name = journal_received["name"]
                 if journal_received["organization"]:
-                    journal_extracted.organization = journal_received["organization"]
-                journal_extracted.save()
+                    journal.organization = journal_received["organization"]
+                journal.save()
+
+        if "paper_submit" in request.POST and request.POST["paper_submit"]=="Submit paper":
+            print request.POST
+            return HttpResponseRedirect("/display-db/")
+
+        edit_paper_form = PaperForm(instance = edit_paper)
+        author_form_list = []
+        other_author_list = []
+        for author in author_list:
+            author_form_entry = AuthorForm(instance = author)
+            author_form_list.append([[], [], [], []])
+            author_form_list[-1][0] = author_form_entry
+            choices_for_author = []
+            for other_authors in all_authors_in_db:
+                if not other_authors.id == author.id:
+                    if author.full_name and other_authors.full_name:
+                        if author.full_name.split()[-1] == other_authors.full_name.split()[-1]:
+                            choices_for_author.append(other_authors)
+            author_form_list[-1][1] = choices_for_author
+            author_form_list[-1][2] = author
+        journal_form = JournalForm(instance = journal)
 
         for replace_author in list_for_author_options:
             if replace_author in request.POST and request.POST[replace_author]=="Check this author":
-                print request.POST
                 author_srno = int(replace_author.split("_")[1])
-                print request.POST["otherauthors_" + str(author_srno)]
                 other_author_srno = int(request.POST["otherauthors_" + str(author_srno)])
-                other_author = Author.objects.get(id = other_author_srno)
-                print other_author
-                other_author_papers = other_author.paper_set.all()
-                print other_author_papers
+                if not other_author_srno == -1:
+                    other_author = Author.objects.get(id = other_author_srno)
+                    for count1 in range(len(author_list)):
+                        if author_list[count1].id == author_srno:
+                            author_form_list[count1][3] = [other_author, ]
+                            other_author_papers = other_author.paper_set.all()
+                            if len(other_author_papers) > 5:
+                                for count2 in range(len(other_author_papers)-1, -1, 4):
+                                    del other_author_papers[count2]
+                            author_form_list[count1][3].append(other_author_papers)
 
-    return HttpResponse("Checking")
-
-
-
-
+    return render(request, "edit_paper.html", \
+                    {'paper_id' : paper_srno,
+                    'paper' : edit_paper_form,
+                    'authors' : author_form_list,
+                    'journal' : journal_form
+                    },
+                    context_instance = RequestContext(request))

@@ -11,15 +11,25 @@
 			or the same author with the name written in a different manner. Use the drop down list to choose an author 
 			to whom you would like to link the above author with. That author's data will be inserted above.
 			</p>
-			{% for other_author_choice in author.1 %}
+			{% if author.3 %}
+				<select name="otherauthors_{{  author.2.id }}">
+				{% for other_author_choice in author.1 %}
+					<option value="{{ other_author_choice.id }}">{{ other_author_choice.full_name }}
+					</option>
+				{% endfor %}
+				<option value="-1"> Don't merge
+				</option>
+				</select>
+			{% else %}
 				<select name="otherauthors_{{  author.2.id }}">
 				<option value="-1"> Don't merge
 				</option>
-				{{ other_author_choice.full_name }}
-				<option value="{{ other_author_choice.id }}">{{ other_author_choice.full_name }}
-				</option>
-			{% endfor %}
-			</select>
+				{% for other_author_choice in author.1 %}
+					<option value="{{ other_author_choice.id }}">{{ other_author_choice.full_name }}
+					</option>
+				{% endfor %}
+				</select>
+			{% endif %}
 			<input type="submit" name="authorcheck_{{ author.2.id }}"  value="Check this author">
 			<br> <br>
 		{% endif %}
@@ -28,9 +38,32 @@
 			Middle name: {{ author.3.0.middle_name }} <br>
 			Last name: {{ author.3.0.last_name }} <br>
 			Email: {{ author.3.0.email }} <br>
+			<p>The following are papers by this author:</p>
+			<ol>
 			{% for paper_choice in author.3.1 %}
+				<li>
 				{{ paper_choice }} <br>
+				{% for authors_in_paper_choice in paper_choice.paper_authors.all %}
+					{% if forloop.last %}
+						{{ authors_in_paper_choice }}
+					{% else %}
+						{{ authors_in_paper_choice }} and
+					{% endif %}
+				{% endfor %}
+				<br>
+				{% if paper_choice.paper_volume %}
+					Vol:{{ paper_choice.paper_volume }}, 
+				{% endif %}
+				{% if paper_choice.paper_number %}
+					No:{{ paper_choice.paper_number }}, 
+				{% endif %}
+				{% if paper_choice.paper_pages %}
+					Pages:{{ paper_choice.paper_pages }}
+				{% endif %} <br>
+				{{ paper_choice.paper_journal }} <br>
+				</li>
 			{% endfor %}
+			</ol>
 		{% endif %}
 		 <br> <br>
 	{% empty %}
