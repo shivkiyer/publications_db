@@ -127,15 +127,11 @@ def edit_paper(request):
 
             for replace_author in list_for_author_options:
                 if replace_author in request.POST and request.POST[replace_author]=="Check this author":
-                    #print request.POST
                     author_srno = int(replace_author.split("_")[1])
-                    #print request.POST["otherauthors_" + str(author_srno)]
                     other_author_srno = int(request.POST["otherauthors_" + str(author_srno)])
                     other_author = Author.objects.get(id = other_author_srno)
-                    #print other_author
                     other_author_papers = other_author.paper_set.all()
                     for count1 in range(len(author_list)):
-##                    for author in author_list:
                         if author_list[count1].id == author_srno:
                             author_form_list[count1][3] = [other_author, ]
                             other_author_papers = other_author.paper_set.all()
@@ -143,7 +139,6 @@ def edit_paper(request):
                                 for count2 in range(len(other_author_papers)-1, -1, 4):
                                     del other_author_papers[count2]
                             author_form_list[count1][3].append(other_author_papers)
-                    #print other_author_papers
 
 
     return render(request, "edit_paper.html", \
