@@ -1,0 +1,26 @@
+@INPROCEEDINGS{5555149, 
+author={Y. S. Rao and S. Iyer}, 
+booktitle={2010 IEEE Region 8 International Conference on Computational Technologies in Electrical and Electronics Engineering (SIBIRCON)}, 
+title={DSP/FPGA implementation of a phase locked loop for digital power electronics}, 
+year={2010}, 
+pages={665-670}, 
+abstract={This paper examines the implementation of a Phase Locked Loop (PLL) for obtaining the phase angle information of three-phase grid. The paper compares techniques previously employed to implement the PLL and provides their merits and demerits. A bang-bang type PLL has been designed and implemented in a Digital Signal Processor (DSP) so as to ensure that the PLL continues to function during severe grid conditions. Experimental results have been presented for various cases to verify the theory.}, 
+keywords={digital signal processing chips;field programmable gate arrays;phase locked loops;power electronics;DSP;FPGA;bang-bang type PLL;digital power electronics;digital signal processor;phase angle information;phase locked loop;three-phase grid;Frequency control;Harmonic analysis;Oscillators;Phase locked loops;Power harmonic filters;Switches;Voltage control}, 
+doi={10.1109/SIBIRCON.2010.5555149}, 
+month={July},}
+
+
+
+@INPROCEEDINGS{1708966, 
+author={S. Iyer and A. Ghosh and A. Joshi}, 
+booktitle={2006 IEEE Power Engineering Society General Meeting}, 
+title={Power flow control in a distribution system through an inverter interfaced distributed generator}, 
+year={2006}, 
+pages={7 pp.-}, 
+abstract={This paper discusses power flow control in a radial distribution system in which a distributed generator (DG) is connected. The DG energy source is assumed to give a constant dc output voltage and is connected to the distribution bus through a power electronics based voltage source converter (VSC). The VSC controls the voltage of the bus to which it is connected and injects the required amount of real and reactive power into the ac system. A modification of Newton Raphson load flow is proposed which can calculate the real and reactive power that needs to be injected by the DG based only on the measurement of local variables. It has been shown that the proposed algorithm is capable of handling a change in the load or voltage sag in the ac supply system. The method is validated through simulations performed using PSCAD/EMTDC Version 3.0.7}, 
+keywords={Newton-Raphson method;busbars;distributed power generation;invertors;load flow control;power convertors;power distribution control;power supply quality;Newton Raphson load flow;PSCAD-EMTDC Version 3.0.7;ac supply system;ac system;distributed generator;distribution bus;energy source;inverter;power flow control;radial distribution system;voltage sag;voltage source converter;Control systems;Converters;Distributed power generation;Inverters;Load flow control;Power conversion;Power electronics;Power generation;Voltage control;Voltage fluctuations;Distributed Generator (DG);Newton Raphson load flow;Voltage Source Converter (VSC)}, 
+doi={10.1109/PES.2006.1708966}, 
+ISSN={1932-5517}, 
+month={},}
+
+

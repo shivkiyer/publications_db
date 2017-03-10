@@ -238,7 +238,9 @@ def new_paper(request):
     if not request.POST:
         return render(request, "new_paper.html")
     else:
-        print(request.POST)
         if "paperbibtex" in request.POST:
-            print(request.POST["paperbibtex"])
+            print(request.POST)
+            bibtex_item = request.POST["paperbibtex"].split("\n")
+            collection_of_articles = backup_data.extract_bibtex_entries(bibtex_item)
+            insert_articles_into_db(collection_of_articles)
     return HttpResponseRedirect("/display-db/")

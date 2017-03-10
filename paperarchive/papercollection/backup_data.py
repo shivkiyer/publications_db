@@ -11,6 +11,7 @@ def scrub_elements(input_string):
     removed are forward slashes as they are Latex commands
     and the terminating new line character.
     """
+
     if input_string:
         while input_string[0]==" ":
             input_string = input_string[1:]
@@ -113,6 +114,9 @@ def extract_bibtex_entries(input_file):
 
                 if scrub_elements(new_item[0][0:9]).lower()=="keywords":
                     record["keywords"] = scrub_elements(new_item[1])
+
+    if record:
+        collection_of_articles.append(record)
 
     return collection_of_articles
 
