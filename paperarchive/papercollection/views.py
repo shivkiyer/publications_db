@@ -1,16 +1,17 @@
 from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse,  HttpResponseRedirect
-from django.shortcuts import render_to_response
 from django.template import RequestContext
 import backup_data
 from papercollection.models import Author, Journal, Paper
 from papercollection.models import AuthorForm, JournalForm, PaperForm
 
-# Create your views here.
-def dbase_populate(request):
-    # listing the articles
-    collection_of_articles = backup_data.read_ref_file()
+
+def insert_articles_into_db(collection_of_articles):
+    """
+    Insert a dictionary of publications into separate database rows.
+    """
+    
     for paper_item in collection_of_articles:
         list_of_authors = paper_item["author"].split(" and ")
         list_of_authors_in_paper = []
@@ -62,10 +63,23 @@ def dbase_populate(request):
 
         new_paper_entry.save()
 
+    return
+
+
+def dbase_populate(request):
+    """
+    Extract BibTex items from a BibTex file and insert into
+    the database.
+    """
+    collection_of_articles = backup_data.read_ref_file()
+    insert_articles_into_db(collection_of_articles)
     return HttpResponse("Database written.")
     
 
 def dbase_display(request):
+    """
+    Lists all the papers.
+    """
     collection_of_articles = Paper.objects.all()
     return render(request, "list_papers.html", \
                     {'collection_of_articles' : collection_of_articles},
@@ -73,6 +87,11 @@ def dbase_display(request):
 
 
 def extract_author_forms(request):
+    """
+    Extracts author information from an author form
+    created out of an AuthorForm ModelForm.
+    """
+    
     if "full_name" in request.POST:
         full_name_received = request.POST.getlist("full_name")
     if "first_name" in request.POST:
@@ -95,6 +114,10 @@ def extract_author_forms(request):
 
 
 def save_paper_data(paper_object, paper_form_data):
+    """
+    Will save the cleaned data in a paper form into
+    the paper model object.
+    """
     paper_object.paper_title = paper_form_data["paper_title"]
     paper_object.paper_volume = paper_form_data["paper_volume"]
     paper_object.paper_number = paper_form_data["paper_number"]
@@ -110,6 +133,10 @@ def save_paper_data(paper_object, paper_form_data):
 
 
 def save_author_data(author_objects, author_form_data):
+    """
+    Will save the author data extracted from a request and
+    insert it into the author object model.
+    """
     for author_index in range(len(author_objects)):
         author = author_objects[author_index]
         if author_form_data[0][author_index]:
@@ -129,13 +156,17 @@ def save_author_data(author_objects, author_form_data):
 
 
 def edit_paper(request):
+    """
+    Will create and change the form for editing a paper
+    which includes the author and journal information.
+    """
     if not request.method == "POST":
         return HttpResponseRedirect("/display-db/")
     else:
         if "paper_srno" in request.POST:
             paper_srno = int(request.POST["paper_srno"])
-            edit_paper = Paper.objects.get(id = paper_srno)            
-            author_list = edit_paper.paper_authors.all()            
+            edit_paper = Paper.objects.get(id = paper_srno)
+            author_list = edit_paper.paper_authors.all()
             all_authors_in_db = Author.objects.all()
             journal = edit_paper.paper_journal
             list_for_author_options = []
@@ -160,12 +191,10 @@ def edit_paper(request):
                 journal.save()
 
         if "paper_submit" in request.POST and request.POST["paper_submit"]=="Submit paper":
-            print request.POST
             return HttpResponseRedirect("/display-db/")
 
         edit_paper_form = PaperForm(instance = edit_paper)
         author_form_list = []
-        other_author_list = []
         for author in author_list:
             author_form_entry = AuthorForm(instance = author)
             author_form_list.append([[], [], [], []])
@@ -202,3 +231,14 @@ def edit_paper(request):
                     'journal' : journal_form
                     },
                     context_instance = RequestContext(request))
+
+
+
+def new_paper(request):
+    if not request.POST:
+        return render(request, "new_paper.html")
+    else:
+        print(request.POST)
+        if "paperbibtex" in request.POST:
+            print(request.POST["paperbibtex"])
+    return HttpResponseRedirect("/display-db/")

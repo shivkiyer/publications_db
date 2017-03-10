@@ -58,23 +58,15 @@ def scrub_elements(input_string):
     return input_string
 
 
-def read_ref_file():
+def extract_bibtex_entries(input_file):
     """
-    This file reads the references in a text file which are
-    in BibTex form. It checks for the fields that are present
-    in every publication and adds them to a dictionary. The
-    dictionary for each publication is added to a list.
+    Extract BibTex entires from any block of text.
     """
-
-    input_file = open(os.path.join(BASE_DIR, 'input_data_file.txt'), "r")
-
     collection_of_articles = []
     record = {}
 
     for line in input_file:
-
         line = scrub_elements(line)
-
         if line:
             # The BibTex entry for a publication starts with
             # @article or @inproceedings. So this is the
@@ -83,7 +75,6 @@ def read_ref_file():
                 if record:
                     collection_of_articles.append(record)
                 record = {}
-
 
             new_item = line.split("=")
             if len(new_item)>1:
@@ -126,10 +117,23 @@ def read_ref_file():
     return collection_of_articles
 
 
+def read_ref_file():
+    """
+    This file reads the references in a text file which are
+    in BibTex form. It checks for the fields that are present
+    in every publication and adds them to a dictionary. The
+    dictionary for each publication is added to a list.
+    """
+
+    input_file = open(os.path.join(BASE_DIR, 'input_data_file.txt'), "r")
+    collection_of_articles = extract_bibtex_entries(input_file)
+    return collection_of_articles
+
+
 
 def main():
     collection_of_articles = read_ref_file()
-    print len(collection_of_articles)
+    print(len(collection_of_articles))
     return
 
 
