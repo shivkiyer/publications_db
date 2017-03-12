@@ -170,8 +170,10 @@ def edit_paper(request):
             all_authors_in_db = Author.objects.all()
             journal = edit_paper.paper_journal
             list_for_author_options = []
+            list_for_author_replacements = []
             for author in author_list:
                 list_for_author_options.append("authorcheck_" + str(author.id))
+                list_for_author_replacements.append("replaceauthor_" + str(author.id))
 
         if not ("edit_paper" in request.POST):
             paper_submitted = PaperForm(request.POST)
@@ -220,9 +222,47 @@ def edit_paper(request):
                             author_form_list[count1][3] = [other_author, ]
                             other_author_papers = other_author.paper_set.all()
                             if len(other_author_papers) > 5:
-                                for count2 in range(len(other_author_papers)-1, -1, 4):
+                                for count2 in range(len(other_author_papers)-1, 4, -1):
                                     del other_author_papers[count2]
                             author_form_list[count1][3].append(other_author_papers)
+
+        for change_author in list_for_author_replacements:
+            if change_author in request.POST and request.POST[change_author]=="Use this author data":
+                author_srno = int(change_author.split("_")[1])
+                other_author_srno = int(request.POST["otherauthors_" + str(author_srno)])
+                if not other_author_srno == -1:
+                    other_author = Author.objects.get(id = other_author_srno)
+                    print(other_author)
+                    replaced_author = Author.objects.get(id = author_srno)
+                    print(replaced_author)
+                    replaced_author_papers = replaced_author.paper_set.all()
+                    print(replaced_author_papers)
+                    for paper_item in replaced_author_papers:
+                        print("initial")
+                        print("authors")
+                        paper_item_authors = paper_item.paper_authors.all()
+                        print(paper_item_authors)
+                        copy_of_paper_item_authors = []
+                        for author in paper_item_authors:
+                            copy_of_paper_item_authors.append(author)
+                        print("copyofauthors")
+                        print(copy_of_paper_item_authors)
+                        for author in paper_item_authors:
+                            paper_item.paper_authors.remove(author)
+                        paper_item.save()
+                        print("afterremove")
+                        print(paper_item.paper_authors.all())
+                        print(copy_of_paper_item_authors)
+                        copy_of_paper_item_authors = [other_author if author == replaced_author \
+                                                    else author for author in copy_of_paper_item_authors]
+                        print(copy_of_paper_item_authors)
+                        for author in copy_of_paper_item_authors:
+                            paper_item.paper_authors.add(author)
+                        paper_item.save()
+                        print(paper_item.paper_authors.all())
+                    print
+                    print
+
 
     return render(request, "edit_paper.html", \
                     {'paper_id' : paper_srno,

@@ -13,9 +13,12 @@
 			</p>
 			{% if author.3 %}
 				<select name="otherauthors_{{  author.2.id }}">
+				<option value="{{ author.3.0.id }}">{{ author.3.0.full_name }}
 				{% for other_author_choice in author.1 %}
-					<option value="{{ other_author_choice.id }}">{{ other_author_choice.full_name }}
-					</option>
+					{% if author.3.0.id != other_author_choice.id %}
+						<option value="{{ other_author_choice.id }}">{{ other_author_choice.full_name }}
+						</option>
+					{% endif %}
 				{% endfor %}
 				<option value="-1"> Don't merge
 				</option>
@@ -64,6 +67,8 @@
 				</li>
 			{% endfor %}
 			</ol>
+			</br>
+			<input type="submit" name="replaceauthor_{{ author.2.id }}"  value="Use this author data">
 		{% endif %}
 		 <br> <br>
 	{% empty %}
