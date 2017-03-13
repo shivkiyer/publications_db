@@ -3,7 +3,7 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponse,  HttpResponseRedirect
 from django.template import RequestContext
 import backup_data
-from papercollection.models import Author, Journal, Paper
+from papercollection.models import Author, Journal, Paper, Contributor
 from papercollection.models import AuthorForm, JournalForm, PaperForm
 
 
@@ -38,8 +38,13 @@ def insert_articles_into_db(collection_of_articles):
         new_paper_entry.paper_title = paper_item["title"]
         new_paper_entry.paper_journal = new_journal_entry
         new_paper_entry.save()
+        author_position = 1
         for author_in_paper in list_of_authors_in_paper:
-            new_paper_entry.paper_authors.add(author_in_paper)
+            paper_contributor = Contributor(paper = new_paper_entry,
+                                            author = author_in_paper,
+                                            position = author_position)
+            author_position += 1
+            paper_contributor.save()
             new_paper_entry.save()
 
         if "year" in paper_item.keys():
@@ -81,6 +86,10 @@ def dbase_display(request):
     Lists all the papers.
     """
     collection_of_articles = Paper.objects.all()
+    for paper in collection_of_articles:
+        print(paper.paper_authors.all())
+        for authors in paper.paper_authors.all():
+            print(authors.contributor_set.all())
     return render(request, "list_papers.html", \
                     {'collection_of_articles' : collection_of_articles},
                     context_instance = RequestContext(request))

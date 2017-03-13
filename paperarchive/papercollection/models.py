@@ -34,10 +34,19 @@ class Paper(models.Model):
     paper_abstract = models.TextField(blank = True, null = True)
     paper_keywords = models.TextField(blank = True, null = True)
     paper_journal = models.ForeignKey(Journal)
-    paper_authors = models.ManyToManyField(Author)
+    paper_authors = models.ManyToManyField(Author, through = 'Contributor')
 
     def __unicode__(self):
         return self.paper_title
+
+
+class Contributor(models.Model):
+    author = models.ForeignKey(Author)
+    paper = models.ForeignKey(Paper)
+    position = models.IntegerField(default = 0)
+
+    def __unicode__(self):
+        return self.author.full_name + " wrote " + self.paper.paper_title + " as " + str(self.position) + " author"
 
 
 class PaperForm(ModelForm):
