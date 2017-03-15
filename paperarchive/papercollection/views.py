@@ -89,7 +89,8 @@ def dbase_display(request):
     for paper in collection_of_articles:
         print(paper.paper_authors.all())
         for authors in paper.paper_authors.all():
-            print(authors.contributor_set.all())
+            print(authors)
+            print(authors.contributor_set.get(paper = paper))
     return render(request, "list_papers.html", \
                     {'collection_of_articles' : collection_of_articles},
                     context_instance = RequestContext(request))
@@ -174,7 +175,34 @@ def edit_paper(request):
     else:
         if "paper_srno" in request.POST:
             paper_srno = int(request.POST["paper_srno"])
-            edit_paper = Paper.objects.get(id = paper_srno)
+            if "edit_paper" in request.POST:
+                original_paper = Paper.objects.get(id = paper_srno)
+                edit_paper = Paper()
+                edit_paper.paper_title = original_paper.paper_title
+                edit_paper.paper_journal = original_paper.paper_journal
+                edit_paper.save()
+                edit_paper.paper_year = original_paper.paper_year
+                edit_paper.paper_volume = original_paper.paper_volume
+                edit_paper.paper_number = original_paper.paper_number
+                edit_paper.paper_pages = original_paper.paper_pages
+                edit_paper.paper_month = original_paper.paper_month
+                edit_paper.paper_doi = original_paper.paper_doi
+                edit_paper.paper_abstract = original_paper.paper_abstract
+                edit_paper.paper_keywords = original_paper.paper_keywords
+                author_list = original_paper.paper_authors.all()
+                for author_in_paper in author_list:
+                    author_position = author_in_paper.contributor_set.get(paper = original_paper).position
+                    paper_contributor = Contributor(paper = edit_paper,
+                                                    author = author_in_paper,
+                                                    position = author_position)
+                    paper_contributor.save()
+                    edit_paper.save()
+
+            else:
+                if "original_paper_srno" in request.POST:
+                    original_paper_srno = int(request.POST["original_paper_srno"])
+                edit_paper = Paper.objects.get(id = paper_srno)
+
             author_list = edit_paper.paper_authors.all()
             all_authors_in_db = Author.objects.all()
             journal = edit_paper.paper_journal

@@ -67,6 +67,7 @@ class AuthorForm(ModelForm):
         model = Author
         fields = ('first_name', 'last_name', 'middle_name', 'full_name', 'email')
 
+
 #class Conference(models.Model):
 #    name = models.CharField(max_length = 100)
 #    organization = models.CharField(max_length = 100, blank = True)
