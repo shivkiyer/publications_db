@@ -83,6 +83,7 @@
 		</p>
 	{% endif %}
 	<input type="hidden" name="paper_srno" value="{{ paper_id }}">
+	<input type="hidden" name="original_paper_srno" value="{{ original_paper_id }}">
 	<input type="submit" name="paper_submit"  value="Submit paper">
 	{% csrf_token %}
 </form>
