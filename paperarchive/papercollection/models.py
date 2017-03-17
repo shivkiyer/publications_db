@@ -52,8 +52,21 @@ class Contributor(models.Model):
 class PaperForm(ModelForm):
     class Meta:
         model = Paper
-        fields = ('paper_title', 'paper_year', 'paper_volume', 'paper_number', 'paper_pages', 'paper_month', 'paper_doi', 'paper_abstract', \
-        'paper_keywords')
+        fields = ('paper_title',
+                  'paper_year',
+                  'paper_volume',
+                  'paper_number',
+                  'paper_pages',
+                  'paper_month',
+                  'paper_doi',
+                  'paper_abstract',
+                  'paper_keywords')
+        widgets = {
+            'paper_title': forms.TextInput(attrs={'size': 80}),
+            'paper_doi': forms.TextInput(attrs={'size': 40}),
+            'paper_abstract': forms.Textarea(attrs={'rows': 15, 'cols': 80}),
+            'paper_keywords': forms.Textarea(attrs={'rows': 15, 'cols': 80}),
+            }
 
 
 class JournalForm(ModelForm):

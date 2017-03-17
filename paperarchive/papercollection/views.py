@@ -283,6 +283,17 @@ def edit_paper(request):
             original_paper.delete()
             return HttpResponseRedirect("/display-db/")
 
+        # If cancel button is pressed, all the paper copies and new
+        # Contributor objects with this new paper will be deleted.
+        if "cancel_edit" in request.POST and request.POST["cancel_edit"]=="Cancel":
+            for author in author_list:
+                author_contrib = Contributor.objects.get(paper = edit_paper,
+                                                         author = author)
+                author_contrib.delete()
+            edit_paper.delete()
+            return HttpResponseRedirect("/display-db/")
+
+        
         # Create the forms
         edit_paper_form = PaperForm(instance = edit_paper)
         author_form_list = []
