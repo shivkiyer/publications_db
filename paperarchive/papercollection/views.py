@@ -7,6 +7,14 @@ from papercollection.models import Author, Journal, Paper, Contributor
 from papercollection.models import AuthorForm, JournalForm, PaperForm
 
 
+def index(request):
+    return render(request, "index.html")
+
+
+def dbase_display(request):
+    return render(request, "browse_choices.html")
+
+
 def insert_articles_into_db(collection_of_articles):
     """
     Insert a dictionary of publications into separate database rows.
@@ -81,7 +89,7 @@ def dbase_populate(request):
     return HttpResponse("Database written.")
     
 
-def dbase_display(request):
+def papers_display(request):
     """
     Lists all the papers.
     """

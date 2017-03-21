@@ -21,8 +21,10 @@ import settings
 
 urlpatterns = [
     url(r'^admin/$', include(admin.site.urls)),
+    url(r'^$', views.index, name='web-homepage'),
     url(r'^start-db/$', views.dbase_populate, name='dbase-init'),
     url(r'^display-db/$', views.dbase_display, name='dbase-listall'),
+    url(r'^display-papers/$', views.papers_display, name='papers-listall'),
     url(r'^edit-paper/$', views.edit_paper, name='edit-paper'),
     url(r'^new-paper/$', views.new_paper, name='new-paper'),
 ]

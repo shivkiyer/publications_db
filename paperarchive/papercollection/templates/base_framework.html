@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+	<title>{% block title %}Literature Database{% endblock %}
+	</title>
+</head>
+
+<body>
+	{% block top_heading %}
+	<h1 align="center" style="font-size:200%">Literature Database</h1> <br>
+	<table align="center" style="width:80%;font-size:150%">
+	<th><a href="/display-db/">Browse Library</a></th>
+	<th><a href="/new-paper/">Create New</a></th>
+	<th><a href="">Documentation</a></th>
+	<th><a href="">Contact</a></th>
+	</table>
+	{% endblock %}
+	<br><br>
+	{% block main_body %}
+	<div align="center">
+		<div style="width:80%" align="left">
+			{% block main_body_content %}
+			<p style="font-size:120%">To begin using this application choose any of the links above. The links:
+			<ol style="font-size:120%">
+				<li>Browse library is the list of all the papers, authors and publishers in this database.</li>
+				<li>Create New is if you want to create a new paper entry or upload a new BibTex file.</li>
+				<li>Documention is if you need help on how to use this application.</li>
+			</ol>
+			</p>
+			{% endblock %}
+		</div>
+	</div>
+	{% endblock %}
+	
+</body>
