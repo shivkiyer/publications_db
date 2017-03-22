@@ -267,8 +267,8 @@ def edit_paper(request):
                 paper_received = paper_submitted.cleaned_data
                 save_paper_data(edit_paper, paper_received)
 
-            author_form_data = extract_author_forms(request)
-            save_author_data(author_list, author_form_data)
+            #author_form_data = extract_author_forms(request)
+            #save_author_data(author_list, author_form_data)
 
             journal_submitted = JournalForm(request.POST)
             if journal_submitted.is_valid():
@@ -365,28 +365,28 @@ def edit_paper(request):
                         paper_item.save()
                         old_contribution.delete()
 
-                    for author in author_list:
-                        if author == replaced_author:
-                            this_author_position = author_list.index(author)
-                            author_form_list[this_author_position][0] = AuthorForm(instance = other_author)
-                            choices_for_author = []
-                            all_authors_in_db = []
-                            for author_item in Author.objects.all():
-                                edited_paper_authors = edit_paper.paper_authors.all()
-                                original_paper_authors = original_paper.paper_authors.all()
-                                if not (author_item in edited_paper_authors or \
-                                        author_item in original_paper_authors):
-                                    all_authors_in_db.append(author_item)
-
-                            for other_authors in all_authors_in_db:
-                                if not other_authors.id == author.id:
-                                    if author.full_name and other_authors.full_name:
-                                        if author.full_name.split()[-1] == other_authors.full_name.split()[-1]:
-                                            choices_for_author.append(other_authors)
-                            author_form_list[this_author_position][1] = choices_for_author
-                            author_form_list[-1][2] = other_author
-                            author_form_list[-1][3] = []
-                    replaced_author.delete()
+##                    for author in author_list:
+##                        if author == replaced_author:
+##                            this_author_position = author_list.index(author)
+##                            author_form_list[this_author_position][0] = AuthorForm(instance = other_author)
+##                            choices_for_author = []
+##                            all_authors_in_db = []
+##                            for author_item in Author.objects.all():
+##                                edited_paper_authors = edit_paper.paper_authors.all()
+##                                original_paper_authors = original_paper.paper_authors.all()
+##                                if not (author_item in edited_paper_authors or \
+##                                        author_item in original_paper_authors):
+##                                    all_authors_in_db.append(author_item)
+##
+##                            for other_authors in all_authors_in_db:
+##                                if not other_authors.id == author.id:
+##                                    if author.full_name and other_authors.full_name:
+##                                        if author.full_name.split()[-1] == other_authors.full_name.split()[-1]:
+##                                            choices_for_author.append(other_authors)
+##                            author_form_list[this_author_position][1] = choices_for_author
+##                            author_form_list[-1][2] = other_author
+##                            author_form_list[-1][3] = []
+##                    replaced_author.delete()
 
 
     return render(request, "edit_paper.html", \

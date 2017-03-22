@@ -16,7 +16,37 @@
 
 			{% for author in authors %}
 				<b> Author {{ forloop.counter }} </b> <br>
-				{{ author.0 }} <br>
+				<!-- {{ author.0 }} <br> -->
+				Full name: 
+				{% if author.2.full_name %}
+					{{ author.2.full_name }}
+				{% else %}
+					Not in database
+				{% endif %} <br>
+				First name: 
+				{% if author.2.first_name %}
+					{{ author.2.first_name }}
+				{% else %}
+					Not in database
+				{% endif %} <br>
+				Last name: 
+				{% if author.2.last_name %}
+					{{ author.2.last_name }}
+				{% else %}
+					Not in database
+				{% endif %} <br>
+				Middle name: 
+				{% if author.2.middle_name %}
+					{{ author.2.middle_name }}
+				{% else %}
+					Not in database
+				{% endif %} <br>
+				Email: 
+				{% if author.2.email %}
+					{{ author.2.email }}
+				{% else %}
+					Not in database
+				{% endif %} <br>
 				{% if author.1 %}
 					<p> This author has one or more similar author entry in the database. The other entries could be identical 
 					or the same author with the name written in a different manner. Use the drop down list to choose an author 
