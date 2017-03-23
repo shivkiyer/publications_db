@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^start-db/$', views.dbase_populate, name='dbase-init'),
     url(r'^display-db/$', views.dbase_display, name='dbase-listall'),
     url(r'^display-papers/$', views.papers_display, name='papers-listall'),
+    url(r'^display-authors/$', views.authors_display, name='authors-listall'),
     url(r'^edit-paper/$', views.edit_paper, name='edit-paper'),
     url(r'^new-paper/$', views.new_paper, name='new-paper'),
 ]

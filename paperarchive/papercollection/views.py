@@ -314,7 +314,7 @@ def edit_paper(request):
             # 4 - If the user chooses to check out another author
             # the author info and 5 papers will be listed.
             author_form_list.append([[], [], [], []])
-            author_form_list[-1][0] = author_form_entry
+            #author_form_list[-1][0] = author_form_entry
             choices_for_author = []
             for other_authors in all_authors_in_db:
                 if not other_authors.id == author.id:
@@ -323,6 +323,35 @@ def edit_paper(request):
                             choices_for_author.append(other_authors)
             author_form_list[-1][1] = choices_for_author
             author_form_list[-1][2] = author
+
+        if "add_author" in request.POST:
+            new_author_form = AuthorForm()
+            author_form_list.append([[], [], [], []])
+            author_form_list[-1][0] = new_author_form
+
+        if "submit_author" in request.POST:
+            author_submitted = AuthorForm(request.POST)
+            if author_submitted.is_valid():
+                author_received = author_submitted.cleaned_data
+                author_form_data = extract_author_forms(request)
+                new_author = Author()
+                save_author_data([new_author,], author_form_data)
+                new_contrib = Contributor(paper = edit_paper,
+                                          author = new_author,
+                                          position = len(edit_paper.paper_authors.all())
+                                          )
+
+                author_form_list.append([[], [], [], []])
+                #author_form_list[-1][0] = author_form_entry
+                choices_for_author = []
+                for other_authors in all_authors_in_db:
+                    if not other_authors.id == author.id:
+                        if new_author.full_name and other_authors.full_name:
+                            if new_author.full_name.split()[-1] == other_authors.full_name.split()[-1]:
+                                choices_for_author.append(other_authors)
+                author_form_list[-1][1] = choices_for_author
+                author_form_list[-1][2] = new_author
+
         journal_form = JournalForm(instance = journal)
 
         # The user can check out any other authors with the same last
@@ -410,3 +439,8 @@ def new_paper(request):
             collection_of_articles = backup_data.extract_bibtex_entries(bibtex_item)
             insert_articles_into_db(collection_of_articles)
     return HttpResponseRedirect("/display-db/")
+
+
+def authors_display(request):
+    author_list = Author.objects.all()
+    return render(request, "list_authors.html", {'author_list' : author_list})

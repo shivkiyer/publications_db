@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+{% extends "base_framework.html" %}
+
+<head>
+	<title>
+	</title>
+</head>
+
+<body>
+	{% block main_body_content %}
+		{% if author_list %}
+			<ol>
+			{% for author in author_list %}
+				<li>
+					First name: 
+					{% if author.first_name %}
+						{{ author.first_name }} <br>
+					{% else %}
+						Not in database <br>
+					{% endif %}
+					Middle name: 
+					{% if author.middle_name %}
+						{{ author.middle_name }} <br>
+					{% else %}
+						Not in database <br>
+					{% endif %}
+					Last name: 
+					{% if author.last_name %}
+						{{ author.last_name }} <br>
+					{% else %}
+						Not in database <br>
+					{% endif %}
+					Full name: 
+					{% if author.full_name %}
+						{{ author.full_name }} <br>
+					{% else %}
+						Not in database <br>
+					{% endif %}
+					Email: 
+					{% if author.email %}
+						{{ author.email }} <br>
+					{% else %}
+						Not in database <br>
+					{% endif %}
+					<br>
+					<form action="/edit-author/" method="post">
+						<input type="hidden" name="author_srno" value="{{ author.id }}">
+						<input type="submit" name="edit_author" value="Edit author">
+						{% csrf_token %}
+					</form>
+				</li>
+				<br>
+				{% endfor %}
+			</ol>
+			<br>
+		{% else %}
+			<p> No authors in database. </p>
+		{% endif %}
+	{% endblock %}
+</body>
+
