@@ -10,12 +10,18 @@
 <body>
 	{% block main_body_content %}
 		<form action="" method="post">
+		<table>
 			{% for paper_item in paper %}
-				{{ paper_item }} <br>
+				<tr>
+				<td style="font-weight:bold">{{ paper_item.label }}: </td>
+				<td>{{ paper_item }} </td>
+				</tr>
 			{% endfor %}
+		</table>
 
 			{% for author in authors %}
 				<b> Author {{ forloop.counter }} </b> <br>
+<<<<<<< HEAD
 				{% if author.0 %}
 					{{ author.0 }} <br>
 					<input type="submit" name="submit_author"  value="Add author"> <br> <br>
@@ -116,6 +122,10 @@
 					{% endif %}
 					 <br> <br>
 				{% endif %}
+=======
+				{{ author.0 }} <br>
+				 <br> <br>
+>>>>>>> testing
 			{% empty %}
 				<p> No authors?
 				</p>
@@ -123,13 +133,15 @@
 			<input type="submit" name="add_author"  value="Add author manually">
 			<br> <br>
 			{% if journal %}
-				{{ journal }} <br>
+				<b> Journal conference or book: </b> <br>
+				{% for journal_item in journal %}
+					<b>{{ journal_item.label }}: </b>{{ journal_item }} <br>
+				{% endfor %}
 			{% else %}
 				<p> No journal?
 				</p>
 			{% endif %}
 			<input type="hidden" name="paper_srno" value="{{ paper_id }}">
-			<input type="hidden" name="original_paper_srno" value="{{ original_paper_id }}">
 			<input type="submit" name="paper_submit"  value="Submit paper">
 			<input type="submit" name="cancel_edit"  value="Cancel">
 			{% csrf_token %}

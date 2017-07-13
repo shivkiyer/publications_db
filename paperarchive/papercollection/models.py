@@ -72,7 +72,12 @@ class PaperForm(ModelForm):
 class JournalForm(ModelForm):
     class Meta:
         model = Journal
-        fields = ('name', 'organization')
+        fields = ('name',
+                'organization')
+        widgets = {
+            'name': forms.TextInput(attrs={'size': 80}),
+            'organization': forms.TextInput(attrs={'size': 60}),
+            }
 
 
 class AuthorForm(ModelForm):

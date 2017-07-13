@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+{% extends "base_framework.html" %}
+
+<head>
+	<title>
+	</title>
+</head>
+
+<body>
+	{% block main_body_content %}
+ 		<form action="" method="post">
+			{% for author_item in authors %}
+				{{ author_item.label }}: {{ author_item }} <br>
+			{% endfor %}
+			<br>
+			<input type="submit" name="update_author" value="Update author data">
+			<input type="submit" name="back" value="Go back">
+			<br><br>
+			<p>These are the papers by this author:</p>
+			<ol>
+			{% for paper_entry in papers %}
+				<li>
+				{{ paper_entry.0.paper_title }} <br>
+				{% for author_entry in paper_entry.1 %}
+					{% if forloop.last %}
+						{{ author_entry }} <br>
+					{% else %}
+						{{ author_entry }} and 
+					{% endif %}
+				{% endfor %}
+				{% if paper_entry.0.paper_journal %}
+					{{ paper_entry.0.paper_journal }} <br>
+				{% endif %}
+				{% if paper_entry.0.paper_month %}
+					{{ paper_entry.0.paper_month }}, 
+				{% endif %}
+				{% if paper_entry.0.paper_year %}
+					{{ paper_entry.0.paper_year }}
+				{% endif %}
+				<br>
+				
+				{% if paper_entry.0.paper_volume %}
+					Vol: {{ paper_entry.0.paper_volume }}, 
+				{% endif %}
+				{% if paper_entry.0.paper_number %}
+					No: {{ paper_entry.0.paper_number }}, 
+				{% endif %}
+				{% if paper_entry.0.paper_pages %}
+					{{ paper_entry.0.paper_pages }}
+				{% endif %}
+				<br> <br>
+				</li>
+			{% empty %}
+				<p>No papers by this author.</p>
+			{% endfor %}
+			</ol>
+
+			{% if other_authors %}
+				<p>The following authors have similar names to the above author being edited.</p>
+				<ol>
+				{% for other_author_item in other_authors %}
+					<li>
+					Full name: {{ other_author_item.0.full_name }} <br>
+					First name:
+					{% if other_author_item.0.first_name %}					
+						{{ other_author_item.0.first_name }}
+					{% else %}
+						Not provided.
+					{% endif %} <br>
+					Last name:
+					{% if other_author_item.0.last_name %}
+						{{ other_author_item.0.last_name }}
+					{% else %}
+						Not provided.
+					{% endif %} <br>
+					Middle name:
+					{% if other_author_item.0.middle_name %}
+						{{ other_author_item.0.middle_name }}
+					{% else %}
+						Not provided.
+					{% endif %} <br>
+					Email:
+					{% if other_author_item.0.email %}
+						{{ other_author_item.0.email }}
+					{% else %}
+						Not provided.
+					{% endif %} <br>
+					</li>
+
+					{% if other_author_item.1 %}
+						{% if other_author_papers %}
+						<p>These are the papers by the author.</p>
+						<ol>
+							{% for other_paper_entry in other_author_papers %}
+								<li>
+									{{ other_paper_entry.0.paper_title }} <br>
+									{% for author_entry in other_paper_entry.1 %}
+										{% if forloop.last %}
+											{{ author_entry }} <br>
+										{% else %}
+											{{ author_entry }} and 
+										{% endif %}
+									{% endfor %}
+									{% if other_paper_entry.0.paper_journal %}
+										{{ other_paper_entry.0.paper_journal }} <br>
+									{% endif %}
+									{% if other_paper_entry.0.paper_month %}
+										{{ other_paper_entry.0.paper_month }}, 
+									{% endif %}
+									{% if other_paper_entry.0.paper_year %}
+										{{ other_paper_entry.0.paper_year }}
+									{% endif %}
+									<br>
+									
+									{% if other_paper_entry.0.paper_volume %}
+										Vol: {{ other_paper_entry.0.paper_volume }}, 
+									{% endif %}
+									{% if other_paper_entry.0.paper_number %}
+										No: {{ other_paper_entry.0.paper_number }}, 
+									{% endif %}
+									{% if other_paper_entry.0.paper_pages %}
+										{{ other_paper_entry.0.paper_pages }}
+									{% endif %}
+									<br>
+								</li>
+								<br>
+							{% endfor %}
+						</ol>
+						<input type="submit" name="replaceauthor_{{ other_author_item.0.id }}"
+								value="Replace this author">
+						<input type="submit" name="cancel"
+								value="Cancel"> <br>
+						<p>If you feel this author is the same as the one being edited, you can
+						transfer the papers by the duplicate author to the author currently being
+						edited. This will prevent duplicate entries in the database.</p>
+						<p>Click on Cancel instead if the authors are different and you want to
+						preserve them as separate entries.</p>
+						{% else %}
+							<p>There are no papers by this author. You can click on the delete
+							button below to remove this author entry.</p>
+							<input type="submit" name="deleteauthor_{{ other_author_item.0.id }}"
+								value="Delete this author">
+						{% endif %}
+					{% else %}
+						<input type="submit" name="otherauthorchoice_{{ other_author_item.0.id }}"
+								value="Check this author">
+						<br> <br>
+					{% endif %}
+				{% endfor %}
+				</ol>
+			{% endif %}
+			<br><br>
+			
+
+ 			<input type="hidden" name="author_id" value="{{author_id }}">
+			{% csrf_token %}
+		</form>
+	{% endblock %}
+</body>
