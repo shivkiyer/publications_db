@@ -1,0 +1,868 @@
+@ARTICLE{4608749,
+author={R. A. Mastromauro and M. Liserre and T. Kerekes and A. Dell'Aquila},
+journal={IEEE Transactions on Industrial Electronics},
+title={A Single-Phase Voltage-Controlled Grid-Connected Photovoltaic System With Power Quality Conditioner Functionality},
+year={2009},
+volume={56},
+number={11},
+pages={4436-4444},
+abstract={Future ancillary services provided by photovoltaic (PV) systems could facilitate their penetration in power systems. In addition, low-power PV systems can be designed to improve the power quality. This paper presents a single-phase PV system that provides grid voltage support and compensation of harmonic distortion at the point of common coupling thanks to a repetitive controller. The power provided by the PV panels is controlled by a Maximum Power Point Tracking algorithm based on the incremental conductance method specifically modified to control the phase of the PV inverter voltage. Simulation and experimental results validate the presented solution.},
+keywords={photovoltaic power systems;power grids;power supply quality;power system control;voltage control;PV inverter voltage;grid voltage compensation;grid voltage support;harmonic distortion;maximum power point tracking algorithm;power systems;quality conditioner functionality;single-phase voltage-controlled grid-connected photovoltaic system;Maximum Power Point Tracking (MPPT) algorithm;shunt controller;single-phase photovoltaic (PV) inverter},
+doi={10.1109/TIE.2008.2004383},
+ISSN={0278-0046},
+month={Nov},}
+
+
+
+@ARTICLE{6151875,
+author={M. Savaghebi and A. Jalilian and J. C. Vasquez and J. M. Guerrero},
+journal={IEEE Transactions on Smart Grid},
+title={Secondary Control Scheme for Voltage Unbalance Compensation in an Islanded Droop-Controlled Microgrid},
+year={2012},
+volume={3},
+number={2},
+pages={797-807},
+abstract={The concept of microgrid hierarchical control is presented recently. In this paper, a hierarchical scheme is proposed which includes primary and secondary control levels. The primary level comprises distributed generators (DGs) local controllers. The local controllers mainly consist of power, voltage and current controllers, and virtual impedance control loop. The central secondary controller is designed to manage the compensation of voltage unbalance at the point of common coupling (PCC) in an islanded microgrid. Unbalance compensation is achieved by sending proper control signals to the DGs local controllers. The design procedure of the control system is discussed in detail and the simulation results are presented. The results show the effectiveness of the proposed control structure in compensating the voltage unbalance.},
+keywords={distributed power generation;electric current control;power control;power generation control;voltage control;voltage regulators;DG local controllers;PCC;current controllers;distributed generators local controllers;islanded droop-controlled microgrid;power controllers;secondary control scheme;virtual impedance control loop;voltage controllers;voltage unbalance compensation;Control systems;Frequency control;Impedance;Inverters;Reactive power;Smart grids;Voltage control;Distributed generator (DG);hierarchical control;microgrid;secondary control;voltage unbalance compensation},
+doi={10.1109/TSG.2011.2181432},
+ISSN={1949-3053},
+month={June},}
+
+
+
+
+@ARTICLE{5208302,
+author={M. C. Cavalcanti and K. C. de Oliveira and A. M. de Farias and F. A. S. Neves and G. M. S. Azevedo and F. C. Camboim},
+journal={IEEE Transactions on Industrial Electronics},
+title={Modulation Techniques to Eliminate Leakage Currents in Transformerless Three-Phase Photovoltaic Systems},
+year={2010},
+volume={57},
+number={4},
+pages={1360-1368},
+abstract={In some photovoltaic (PV) applications, it is possible to remove the transformer of a system in order to reduce losses, cost, and size. In transformerless systems, the PV module parasitic capacitance can introduce leakage currents in which the amplitude depends on the converter topology, on the pulsewidth modulation, and on the resonant circuit comprised by the system components. Based on the common-mode voltage model, modulation techniques are proposed to eliminate the leakage current in transformerless PV systems without requiring any modification on the converter and any additional hardware. The main drawback is that the proposed modulation technique for two-level inverters can only be used with 650-V dc link in the case of a 110-V (rms) grid phase voltage. Comparisons among the modulation techniques are discussed, and it is proven that the proposed modulation for two- and three-level inverters presents the best results. To validate the models used in the simulations, an experimental three-phase inverter is used.},
+keywords={PWM invertors;capacitance;leakage currents;photovoltaic power systems;power convertors;PV module parasitic capacitance;common-mode voltage model;converter topology;leakage currents elimination;modulation techniques;transformerless three phase photovoltaic systems;voltage 650 V;Circuit topology;Costs;Inverters;Leakage current;Parasitic capacitance;Photovoltaic systems;Pulse circuits;Pulse transformers;Pulse width modulation converters;Solar power generation;Energy conversion;photovoltaic (PV) power systems;pulsewidth-modulated power converters},
+doi={10.1109/TIE.2009.2029511},
+ISSN={0278-0046},
+month={April},}
+
+
+
+@ARTICLE{6583965,
+author={D. Pan and X. Ruan and C. Bao and W. Li and X. Wang},
+journal={IEEE Transactions on Power Electronics},
+title={Capacitor-Current-Feedback Active Damping With Reduced Computation Delay for Improving Robustness of LCL-Type Grid-Connected Inverter},
+year={2014},
+volume={29},
+number={7},
+pages={3414-3427},
+abstract={This paper investigates the capacitor-current-feedback active damping for the digitally controlled LCL-type grid-connected inverter. It turns out that proportional feedback of the capacitor current is equivalent to virtual impedance connected in parallel with the filter capacitor due to the computation and pulse width modulation (PWM) delays. The LCL-filter resonance frequency is changed by this virtual impedance. If the actual resonance frequency is higher than one-sixth of the sampling frequency (fs/6), where the virtual impedance contains a negative resistor component, a pair of open-loop unstable poles will be generated. As a result, the LCL-type grid-connected inverter becomes much easier to be unstable if the resonance frequency is moved closer to fs/6 due to the variation of grid impedance. To address this issue, this paper proposes a capacitor-current-feedback active damping with reduced computation delay, which is achieved by shifting the capacitor current sampling instant towards the PWM reference update instant. With this method, the virtual impedance exhibits more like a resistor in a wider frequency range, and the open-loop unstable poles are removed; thus, high robustness against the grid-impedance variation is acquired. Experimental results from a 6-kW prototype confirm the theoretical expectations.},
+keywords={PWM invertors;circuit feedback;delays;power capacitors;power filters;power grids;-impedance variation;LCL-filter resonance frequency;PWM;PWM reference update instant;capacitor current sampling;capacitor-current-feedback active damping;digitally controlled LCL-type grid-connected inverter;filter capacitor;open-loop unstable poles;power 6 kW;pulse width modulation delays;reduced computation delay;resistor;sampling frequency;virtual impedance;Capacitors;Damping;Delays;Impedance;Inverters;Pulse width modulation;Resonant frequency;Active damping;LCL filter;grid impedance;grid-connected inverter;open-loop unstable poles},
+doi={10.1109/TPEL.2013.2279206},
+ISSN={0885-8993},
+month={July},}
+
+
+
+@ARTICLE{6140564,
+author={M. Savaghebi and A. Jalilian and J. C. Vasquez and J. M. Guerrero},
+journal={IEEE Transactions on Industrial Electronics},
+title={Autonomous Voltage Unbalance Compensation in an Islanded Droop-Controlled Microgrid},
+year={2013},
+volume={60},
+number={4},
+pages={1390-1402},
+abstract={Recently, there has been an increasing interest in using distributed generators (DGs) not only to inject power into the grid but also to enhance the power quality. In this paper, a stationary-frame control method for voltage unbalance compensation in an islanded microgrid is proposed. This method is based on the proper control of DGs interface converters. The DGs are properly controlled to autonomously compensate for voltage unbalance while sharing the compensation effort and also active and reactive powers. The control system of the DGs mainly consists of active and reactive power droop controllers, a virtual impedance loop, voltage and current controllers, and an unbalance compensator. The design approach of the control system is discussed in detail, and simulation and experimental results are presented. The results demonstrate the effectiveness of the proposed method in the compensation of voltage unbalance.},
+keywords={compensation;distributed power generation;power convertors;power generation control;power grids;power supply quality;reactive power control;voltage control;DG control system;DG interface converters;active power droop controllers;autonomous voltage unbalance compensation;current controllers;distributed generators;islanded droop-controlled microgrid;islanded microgrid;power quality;reactive power droop controllers;stationary-frame control method;virtual impedance loop;voltage controllers;Control systems;Equations;Impedance;Inverters;Mathematical model;Reactive power;Voltage control;Distributed generators (DGs);microgrid;voltage unbalance compensation},
+doi={10.1109/TIE.2012.2185914},
+ISSN={0278-0046},
+month={April},}
+
+
+
+
+@ARTICLE{4488040,
+author={S. Jain and V. Agarwal},
+journal={IEEE Transactions on Energy Conversion},
+title={An Integrated Hybrid Power Supply for Distributed Generation Applications Fed by Nonconventional Energy Sources},
+year={2008},
+volume={23},
+number={2},
+pages={622-631},
+abstract={A new, hybrid integrated topology, fed by photovoltaic (PV) and fuel cell (FC) sources and suitable for distributed generation applications, is proposed. It works as an uninterruptible power source that is able to feed a certain minimum amount of power into the grid under all conditions. PV is used as the primary source of power operating near maximum power point (MPP), with the FC section (block), acting as a current source, feeding only the deficit power. The unique "integrated" approach obviates the need for dedicated communication between the two sources for coordination and eliminates the use of a separate, conventional dc/dc boost converter stage required for PV power processing, resulting in a reduction of the number of devices, components, and sensors. Presence of the FC source in parallel (with the PV source) improves the quality of power fed into the grid by minimizing the voltage dips in the PV output. Another desirable feature is that even a small amount of PV power (e.g., during low insolation), can be fed into the grid. On the other hand, excess power is diverted for auxiliary functions like electrolysis, resulting in an optimal use of the energy sources. The other advantages of the proposed system include low cost, compact structure, and high reliability, which render the system suitable for modular assemblies and "plug-n-play" type applications. All the analytical, simulation, and experimental results of this research are presented.},
+keywords={DC-DC power convertors;distributed power generation;fuel cell power plants;hybrid power systems;photovoltaic power systems;distributed generation;electrolysis;fuel cell sources;integrated hybrid power supply;maximum power point;nonconventional energy sources;photovoltaic sources;power quality;voltage dips;photovoltaic;Buck-boost;distributed generation;fuel cell;grid-connected;hybrid;maximum power point tracking (MPPT)},
+doi={10.1109/TEC.2008.918631},
+ISSN={0885-8969},
+month={June},}
+
+
+
+
+
+@ARTICLE{4785497,
+author={D. Yazdani and M. Mojiri and A. Bakhshai and G. JoÓs},
+journal={IEEE Transactions on Power Electronics},
+title={A Fast and Accurate Synchronization Technique for Extraction of Symmetrical Components},
+year={2009},
+volume={24},
+number={3},
+pages={674-684},
+abstract={This paper introduces an approach for the real-time extraction of the frequency, phase angle, and symmetrical components of the grid signal, which is of great importance for many applications in power systems such as power quality and protection. The proposed method is based on the concept of the adaptive notch filter that provides a fast and accurate estimation of the symmetrical components in the presence of frequency and amplitude variations. In addition, the system offers a high degree of immunity and insensitivity to power system disturbances, harmonics, and other types of pollutions that exist in the grid signal. The simplicity of the structure makes the method suitable for both software and hardware implementations. Moreover, this very simple and very powerful tool can be used as a synchronization technique, which further simplifies the control issues currently challenging the integration of distributed energy technologies into the electricity grid. Mathematical derivations are presented to describe the principles of operation, and experimental results confirm the validity of the analytical work.},
+keywords={adaptive filters;distributed power generation;harmonic analysis;notch filters;power grids;synchronisation;adaptive notch filter;distributed energy technologies;distributed generation system;electricity grid;grid signal;grid-connected converters;mathematical derivations;power quality;power system disturbances;power system protection;real-time extraction;synchronization technique;Adaptive filters;distributed generation (DG) systems;grid-connected converters;grid-synchronization techniques;renewable energy},
+doi={10.1109/TPEL.2008.2010321},
+ISSN={0885-8993},
+month={March},}
+
+
+
+
+@ARTICLE{4897244,
+author={D. Zhi and L. Xu and B. W. Williams},
+journal={IEEE Transactions on Power Electronics},
+title={Improved Direct Power Control of Grid-Connected DC/AC Converters},
+year={2009},
+volume={24},
+number={5},
+pages={1280-1292},
+abstract={This paper proposes new direct power control (DPC) strategies for three-phase DC/AC converters with improved dynamic response and steady-state performance. As with an electrical machine, source and converter flux, which equal the integration of the respective source and converter voltage, are used to define active and reactive power flow. Optimization of the lookup table used in conventional DPC is outlined first so as to improve power control and reduce current distortion. Then, constant switching frequency DPC is developed where the required converter voltage vector within a fixed half switching period is calculated directly from the active and reactive power errors. Detailed angle compensation due to the finite sampling frequency and the use of an integral controller to further improve the power control accuracy are described. Both simulation and experimental results are used to compare conventional DPC and vector control, and to demonstrate the effectiveness and robustness of the proposed control strategies during active and reactive power steps, and line inductance variations.},
+keywords={DC-AC power convertors;dynamic response;optimisation;reactive power control;robust control;switching convertors;table lookup;active power flow;angle compensation;direct power control;dynamic response;electrical machine;finite sampling frequency;grid-connected DC-AC converter;integral controller;lookup table;optimization;reactive power flow;robustness;steady-state performance;switching frequency;three-phase DC/AC converters;Analog-digital conversion;Integral equations;Power control;Reactive power;Sampling methods;Steady-state;Switching converters;Switching frequency;Table lookup;Voltage;DC/AC converter;direct power control (DPC);grid connection},
+doi={10.1109/TPEL.2009.2012497},
+ISSN={0885-8993},
+month={May},}
+
+
+
+
+@ARTICLE{4663839,
+author={V. F. Corasaniti and M. B. Barbieri and P. L. Arnera and M. I. Valla},
+journal={IEEE Transactions on Industrial Electronics},
+title={Hybrid Active Filter for Reactive and Harmonics Compensation in a Distribution Network},
+year={2009},
+volume={56},
+number={3},
+pages={670-677},
+abstract={The problem of reactive power and harmonics in the medium voltage level of a power distribution system is considered in this paper. Reconfiguration of the power delivery network imposes new constraints in a distribution substation so that the reactive compensation should be increased. The alternative of a shunt hybrid active filter connected to the 13.8-kV level to enhance the power quality is analyzed in this paper. This proposal uses the existing capacitor bank to build a hybrid filter in which the complementary compensation is performed by the active filter. The performance of the hybrid filter is evaluated with extensive simulations considering reactive power, harmonics, and unbalance compensation. It shows very good behavior in steady-state and transient conditions.},
+keywords={active filters;distribution networks;harmonic distortion;power harmonic filters;power system harmonics;power system transients;reactive power;substations;capacitor bank;distribution substation;harmonic compensation;power delivery network;power distribution network;power quality enhancement;reactive power compensation;shunt hybrid active filter;steady-state condition;transient condition;voltage 13.8 kV;Active filters;harmonic distortion;power distribution;power quality;reactive power},
+doi={10.1109/TIE.2008.2007997},
+ISSN={0278-0046},
+month={March},}
+
+
+
+
+@ARTICLE{4497163,
+author={A. Ristow and M. Begovic and A. Pregelj and A. Rohatgi},
+journal={IEEE Transactions on Industrial Electronics},
+title={Development of a Methodology for Improving Photovoltaic Inverter Reliability},
+year={2008},
+volume={55},
+number={7},
+pages={2581-2592},
+abstract={In evaluating the energy-generation potential of a photovoltaic (PV) energy system, the system is usually assumed to work without interruptions over its entire life. PV energy systems are fairly reliable, but as any complex system, they may fail. In PV systems, the inverter is responsible for the majority of failures, and most inverter failures are blamed on the aluminum electrolytic capacitors typically used in the dc bus. This paper investigates the effects of common failure modes on the reliability of PV inverters and suggests a model framework for decomposing the inverter into subsystems for more detailed study. The challenges of statistical analysis based on small data sets are discussed, and simulations are performed to illustrate the proposed model using a simple decomposition into subsystems of the inverter used in the 342-kW PV system at the Georgia Tech Aquatic Center.},
+keywords={electrolytic capacitors;invertors;photovoltaic power systems;power system reliability;statistical analysis;Georgia Tech Aquatic Center;aluminum electrolytic capacitors;dc bus;energy generation;inverter failures;photovoltaic energy system;photovoltaic inverter reliability;power 342 kW;statistical analysis;Photovoltaic (PV) power systems;Photovoltaic power systems;power system reliability;power system simulation;power-system simulation;powersystem reliability;reliability modeling;simulation},
+doi={10.1109/TIE.2008.924017},
+ISSN={0278-0046},
+month={July},}
+
+
+
+
+
+@ARTICLE{4668418,
+author={S. Karimi and A. Gaillard and P. Poure and S. Saadate},
+journal={IEEE Transactions on Industrial Electronics},
+title={FPGA-Based Real-Time Power Converter Failure Diagnosis for Wind Energy Conversion Systems},
+year={2008},
+volume={55},
+number={12},
+pages={4299-4308},
+abstract={This paper discusses the design, implementation, experimental validation, and performances of a field-programmable gate array (FPGA)-based real-time power converter failure diagnosis for three-leg fault tolerant converter topologies used in wind energy conversion systems (WECSs). The developed approach minimizes the time interval between the fault occurrence and its diagnosis. We demonstrated the possibility to detect a faulty switch in less than 10 mus by using a diagnosis simultaneously based on a ldquotime criterionrdquo and a ldquovoltage criterion.rdquo To attain such a short detection time, an FPGA fully digital implementation is used. The performances of the proposed FPGA-based fault detection method are evaluated for a new fault tolerant back-to-back converter topology suited for WECS with doubly fed induction generator (DFIG). We examine the failure diagnosis method and the response of the WECS when one of the power switches of the fault tolerant back-to-back converter is faulty. The experimental failure diagnosis implementation based on ldquoFPGA in the looprdquo hardware prototyping verifies the performances of the fault tolerant WECS with DFIG.},
+keywords={asynchronous generators;fault diagnosis;fault tolerance;field programmable gate arrays;power convertors;wind power plants;FPGA-based real-time power converter;doubly fed induction generator;failure diagnosis;fault tolerant back-to-back converter topology;field-programmable gate array;three-leg fault tolerant converter topology;time criterion;voltage criterion;wind energy conversion system;Diagnosis;fault tolerant;field-programmable gate array (FPGA);wind energy conversion system (WECS)},
+doi={10.1109/TIE.2008.2005244},
+ISSN={0278-0046},
+month={Dec},}
+
+
+
+
+@ARTICLE{6515189,
+author={M. Cespedes and J. Sun},
+journal={IEEE Transactions on Power Electronics},
+title={Impedance Modeling and Analysis of Grid-Connected Voltage-Source Converters},
+year={2014},
+volume={29},
+number={3},
+pages={1254-1261},
+abstract={This paper presents small-signal impedance modeling of grid-connected three-phase converters for wind and solar system stability analysis. In the proposed approach, a converter is modeled by a positive-sequence and a negative-sequence impedance directly in the phase domain. It is further demonstrated that the two sequence subsystems are decoupled under most conditions and can be studied independently from each other. The proposed models are verified by experimental measurements and their applications are demonstrated in a system testbed.},
+keywords={circuit stability;electric current control;electric impedance;linearisation techniques;phase locked loops;phase measurement;power convertors;synchronisation;grid-connected three-phase converters;negative-sequence impedance;positive-sequence impedance;small-signal impedance modeling;solar system stability analysis;voltage-source converters;wind system stability analysis;Current control;Frequency-domain analysis;Impedance;Modeling;Phase locked loops;Power conversion;Converter stability;grid-connected converters;harmonic resonance;impedance modeling},
+doi={10.1109/TPEL.2013.2262473},
+ISSN={0885-8993},
+month={March},}
+
+
+
+
+@ARTICLE{4510865,
+author={Y. Ueda and K. Kurokawa and T. Tanabe and K. Kitamura and H. Sugihara},
+journal={IEEE Transactions on Industrial Electronics},
+title={Analysis Results of Output Power Loss Due to the Grid Voltage Rise in Grid-Connected Photovoltaic Power Generation Systems},
+year={2008},
+volume={55},
+number={7},
+pages={2744-2751},
+abstract={This paper describes the connected photovoltaic (PV) power generation system's grid overvoltage protection function and summarizes the occurrence of the output power loss due to the grid voltage rise. Power injection from the PV system will raise the voltage at the power distribution line. A power conditioning subsystem (PCS) needs to regulate its output if the voltage becomes higher than the upper limit in order to avoid the overvoltage at the power grid. Thus, a PV system cannot generate electricity under the high grid voltage. There are 553 residential PV systems installed in Ota, Japan, for the demonstration research project of clustered PV systems. Measurement data of these 2.1-MW grid-connected PV systems are used for the analysis. Only the limited number of PV systems experienced a significant amount of output energy loss due to the high grid voltage in a particular day, whereas the other system's outputs also raise the grid voltage. The causes of this maldistribution of the output energy loss are the difference of the line impedance, the difference of the starting voltage of the PCS's grid overvoltage protection function, and the imbalance of the load in single-phase three-wire power distribution systems. The present control of the PCS successfully avoids the overvoltage on the grid but cannot share the loss.},
+keywords={photovoltaic power systems;power distribution lines;power generation protection;power grids;Japan;grid voltage rise;grid-connected photovoltaic power generation systems;line impedance;output power loss;overvoltage protection function;power 2.1 MW;power conditioning subsystem;power distribution line;single-phase three-wire power distribution systems;Grid disturbances;Loss analysis;Overvoltage protection;Photovoltaic power systems;loss analysis;overvoltage protection;photovoltaic power systems},
+doi={10.1109/TIE.2008.924447},
+ISSN={0278-0046},
+month={July},}
+
+
+
+
+@article{MATHIESEN2015139,
+title = "Smart Energy Systems for coherent 100% renewable energy and transport solutions",
+journal = "Applied Energy",
+volume = "145",
+number = "",
+pages = "139 - 154",
+year = "2015",
+note = "",
+issn = "0306-2619",
+doi = "http://dx.doi.org/10.1016/j.apenergy.2015.01.075",
+url = "http://www.sciencedirect.com/science/article/pii/S0306261915001117",
+author = "B.V. Mathiesen and H. Lund and D. Connolly and H. Wenzel and P.A. Østergaard and B. Möller and S. Nielsen and I. Ridjan and P. Karnøe and K. Sperling and F.K. Hvelplund",
+keywords = "Smart Energy Systems",
+keywords = "100% Renewable energy systems",
+keywords = "Energy storage",
+keywords = "Smart grids",
+keywords = "Thermal grids",
+keywords = "Gas grids",
+abstract = "The hypothesis of this paper is that in order to identify least cost solutions of the integration of fluctuating renewable energy sources into current or future 100% renewable energy supplies one has to take a Smart Energy Systems approach. This paper outline why and how to do so. Traditionally, significant focus is put on the electricity sector alone to solve the renewable energy integration puzzle. Smart grid research traditionally focuses on ICT, smart meters, electricity storage technologies, and local (electric) smart grids. In contrast, the Smart Energy System focuses on merging the electricity, heating and transport sectors, in combination with various intra-hour, hourly, daily, seasonal and biannual storage options, to create the flexibility necessary to integrate large penetrations of fluctuating renewable energy. However, in this paper we present the development and design of coherent Smart Energy Systems as an integrated part of achieving future 100% renewable energy and transport solutions. The transition from fossil fuels towards the integration of more and more renewable energy requires rethinking and redesigning the energy system both on the generation and consumption side. To enable this, the Smart Energy System must have a number of appropriate infrastructures for the different sectors of the energy system, which are smart electricity grids, smart thermal grids (district heating and cooling), smart gas grids and other fuel infrastructures. It enables fluctuating renewable energy (such as wind, solar, wave power and low value heat sources) to utilise new sources of flexibility such as solid, gaseous, and liquid fuel storage, thermal storage and heat pumps and battery electric vehicles. Smart Energy Systems also enable a more sustainable and feasible use of bioenergy than the current types allow. It can potentially pave the way to a bioenergy-free 100% renewable energy and transport system."
+}
+
+
+
+@ARTICLE{4300923,
+author={I. Etxeberria-Otadui and U. Viscarret and M. Caballero and A. Rufer and S. Bacha},
+journal={IEEE Transactions on Industrial Electronics},
+title={New Optimized PWM VSC Control Structures and Strategies Under Unbalanced Voltage Transients},
+year={2007},
+volume={54},
+number={5},
+pages={2902-2914},
+abstract={Control structures and strategies have a critical influence on a power electronic converter's behavior during disturbances. Most of the previous works in the field of pulsewidth modulation voltage-source converter (VSC) operation under unbalanced conditions propose dual vector controllers with dc bus voltage optimization strategies, which have been proven to be well adapted for rectifier applications. In this paper, two major contributions are made. On the one hand, a new optimized operation strategy based on exchanged power maximization is proposed for vector control structures, which permits the extension of optimized operation to other VSC applications (e.g., flexible alternating current transmission system and distributed generation interfaces). On the other hand, a scalar control structure is proposed based on resonant controllers, together with three adapted optimized operation strategies, namely: 1) dc bus voltage optimization; 2) power exchange maximization; and 3) a hybrid strategy (an intermediary mode between the other two strategies). Their main advantage is their simplicity and the lack of real-time symmetrical component extraction techniques. This scalar controller and the proposed optimized operation strategies are compared to conventional vector controllers. It is proven through experimental analysis that the proposed scalar controller offers very good performances with simpler structures and bigger flexibility in terms of operation modes.},
+keywords={PWM power convertors;PWM rectifiers;transient analysis;PWM VSC control structures;dc bus voltage optimization strategies;distributed generation interfaces;dual vector controllers;hybrid strategy;power electronic converter;power exchange maximization;power maximization;pulsewidth modulation voltage-source converter;real-time symmetrical component extraction techniques;rectifier applications;resonant controllers;scalar controller;unbalanced voltage transients;Current control;pulsewidth modulation (PWM) converters;voltage sag (dip);voltage unbalance},
+doi={10.1109/TIE.2007.901373},
+ISSN={0278-0046},
+month={Oct},}
+
+
+
+@ARTICLE{5767533,
+author={Y. A. R. I. Mohamed and A. A. Radwan},
+journal={IEEE Transactions on Smart Grid},
+title={Hierarchical Control System for Robust Microgrid Operation and Seamless Mode Transfer in Active Distribution Systems},
+year={2011},
+volume={2},
+number={2},
+pages={352-362},
+abstract={This paper presents a robust hierarchical control system of distributed generation converters for robust microgrid operation and seamless transfer between grid-connected and isolated modes. The proposed control scheme employs 1) an internal model voltage controller with a variable structure control element to provide means for mitigating fast and dynamic voltage disturbances, such as dynamic voltage disturbance during mode transition and normal operation, and 2) a droop-based power-sharing controller with an active damping feature to mitigate large power-angle swings and oscillations associated with large-signal disturbances (e.g., mode transition and heavy loading conditions). The proposed voltage and power sharing controllers provide high disturbance rejection performance against voltage disturbances and power angle swings, respectively. Accordingly, robust microgrid operation with seamless transfer in the transition mode has been obtained. Comparative experimental results are presented to validate the effectiveness of the proposed control scheme.},
+keywords={PWM invertors;distribution networks;power grids;power system control;active distribution systems;distributed generation converters;dynamic voltage disturbance;hierarchical control system;internal model voltage controller;power sharing controllers;robust microgrid operation;seamless mode transfer;variable structure control element;Converters;Harmonic analysis;Inverters;Robustness;Switches;Voltage control;Distributed generation;grid-connected inverters;microgrids;mode transition;pulsewidth modulated inverters},
+doi={10.1109/TSG.2011.2136362},
+ISSN={1949-3053},
+month={June},}
+
+
+
+@ARTICLE{5462939,
+author={E. Serban and H. Serban},
+journal={IEEE Transactions on Power Electronics},
+title={A Control Strategy for a Distributed Power Generation Microgrid Application With Voltage- and Current-Controlled Source Converter},
+year={2010},
+volume={25},
+number={12},
+pages={2981-2992},
+abstract={This paper presents a pseudodroop control structure integrated within a microgrid system through distributed power generation (DPG) modules capable to function in off-grid islanded, genset-connected, and grid-connected modes of operation. System efficiency has an important role in order to harvest the maximum available renewable energy from dc or ac sources while providing power backup capability. A control strategy is proposed in off-grid islanded mode method based on the microgrid line-frequency control as agent of communication for energy control between the DPG modules. A critical case is where the ac load demand could be lower than the available power from the photovoltaic solar array, where the battery bank can be overcharged with unrecoverable damage consequences. The DPG voltage-forming module controls the battery charge algorithm with a frequency-generator function, and the DPG current source module controls its output current through a frequency-detection function. The physical installation between DPG modules is independent, since no additional communication wiring is needed between power modules, which represent another integration advantage within the microgrid-type application.},
+keywords={distributed power generation;electric current control;power control;voltage control;DPG modules;control strategy;current-controlled source converter;distributed power generation;energy control;frequency-generator function;microgrid system;power backup capability;pseudodroop control;voltage-controlled source converter;voltage-forming module;Batteries;Communication system control;Control systems;Distributed power generation;Frequency control;Photovoltaic systems;Renewable energy resources;Solar power generation;Voltage control;Wiring;Distributed power generation (DPG);PV inverter;genset-connected mode;grid-connected mode;hybrid converter;islanded mode;microgrid;photovoltaic (PV) converter},
+doi={10.1109/TPEL.2010.2050006},
+ISSN={0885-8993},
+month={Dec},}
+
+
+
+
+@ARTICLE{4455586,
+author={M. Cirrincione and M. Pucci and G. Vitale},
+journal={IEEE Transactions on Industrial Electronics},
+title={A Single-Phase DG Generation Unit With Shunt Active Power Filter Capability by Adaptive Neural Filtering},
+year={2008},
+volume={55},
+number={5},
+pages={2093-2110},
+abstract={This paper deals with a single-phase distributed generation (DG) system with active power filtering (APF) capability, devised for utility current harmonic compensation. The idea is to integrate the DG unit functions with shunt APF capabilities, because the DG is connected in parallel to the grid. With the proposed approach, control of the DG unit is performed by injecting into the grid a current with the same phase and frequency of the grid voltage and with an amplitude depending on the power available from renewable sources. On the other hand, load harmonic current compensation is performed by injecting into the alternating current system harmonic currents like those of the load but with an opposite phase, thus keeping the line current almost sinusoidal. Both detection of the grid voltage fundamental and computation of the load harmonic compensation current have been performed by two neural adaptive filters with the same structure, one in a configuration ldquonotchrdquo and the other in the complementary configuration ldquoband.rdquo The ldquonotchrdquo filter has been used to compute the compensation current by eliminating only the contribution of the fundamental of the load current, whereas the ldquobandrdquo configuration is able to extract the fundamental of the coupling point voltage. Furthermore, because the active power generation and the APF features require current control of components at different frequencies, respectively, a multiresonant current controller has been adopted. The methodology has been tested successfully both in numerical simulation and experimentally on a suitably devised test setup. The stability analysis of the proposed control approach has been performed in the discrete domain.},
+keywords={distributed power generation;power harmonic filters;active power filtering;active power generation;adaptive neural filtering;grid voltage;load harmonic current compensation;multiresonant current controller;renewable sources;shunt active power filter capability;single-phase DG generation unit;utility current harmonic compensation;Distributed Generation;Distributed generation;Neural Adaptive Filtering;Power Active Filtering;neural adaptive filtering;power active filtering},
+doi={10.1109/TIE.2008.918642},
+ISSN={0278-0046},
+month={May},}
+
+
+
+@ARTICLE{6134653,
+author={A. Camacho and M. Castilla and J. Miret and J. C. Vasquez and E. Alarcon-Gallo},
+journal={IEEE Transactions on Industrial Electronics},
+title={Flexible Voltage Support Control for Three-Phase Distributed Generation Inverters Under Grid Fault},
+year={2013},
+volume={60},
+number={4},
+pages={1429-1441},
+abstract={Ancillary services for distributed generation (DG) systems become a challenging issue to smartly integrate renewable-energy sources into the grid. Voltage control is one of these ancillary services which can ride through and support the voltage under grid faults. Grid codes from the transmission system operators describe the behavior of the energy source, regulating voltage limits and reactive power injection to remain connected and support the grid under fault. On the basis that different kinds of voltage sags require different voltage support strategies, a flexible control scheme for three-phase grid-connected inverters is proposed. In three-phase balanced voltage sags, the inverter should inject reactive power in order to raise the voltage in all phases. In one- or two-phase faults, the main concern of the DG inverter is to equalize voltages by reducing the negative symmetric sequence and clear the phase jump. Due to system limitations, a balance between these two extreme policies is mandatory. Thus, over- and undervoltage can be avoided, and the proposed control scheme prevents disconnection while achieving the desired voltage support service. The main contribution of this work is the introduction of a control algorithm for reference current generation that provides flexible voltage support under grid faults. Two different voltage sags have been experimentally tested to illustrate the behavior of the proposed voltage support control scheme.},
+keywords={distributed power generation;invertors;power grids;reactive power;voltage control;ancillary services;control scheme;distributed generation systems;energy source;flexible voltage support control;grid codes;grid fault;negative symmetric sequence;reactive power injection;reference current generation;renewable-energy sources;three-phase balanced voltage sags;three-phase distributed generation inverters;three-phase grid-connected inverters;transmission system operators;voltage limits regulation;voltage support control scheme;voltage support service;Generators;Inverters;Power quality;Reactive power;Voltage control;Voltage fluctuations;Voltage measurement;Reactive power control;voltage ride through;voltage sag;voltage support},
+doi={10.1109/TIE.2012.2185016},
+ISSN={0278-0046},
+month={April},}
+
+
+
+@ARTICLE{4126821,
+author={C. T. Pan and Y. H. Liao},
+journal={IEEE Transactions on Industrial Electronics},
+title={Modeling and Coordinate Control of Circulating Currents in Parallel Three-Phase Boost Rectifiers},
+year={2007},
+volume={54},
+number={2},
+pages={825-838},
+abstract={In this paper, definition of the circulating currents of multiphase paralleled converters is first presented, and the circulating-current-generating mechanism is clearly explained. Thus, based on this definition, an averaged model of the circulating current is proposed. It is seen from this model that the circulating current consists of not only the zero-sequence but also the nonzero-sequence components. The governing differential equation also shows explicitly the relation between the circulating currents and the affecting factors such as different pulse width-modulation strategies. With this understanding, a simple coordinate control is then presented to reduce the circulating current. The phenomenon of the intrinsic circulating current is also explained. Furthermore, a prototype system is constructed, and the proposed control is implemented using TMS320F2812 DSP. Both simulation and experimental results verify the validity of the proposed theory and control},
+keywords={PWM power convertors;PWM rectifiers;differential equations;electric current control;PWM converter;TMS320F2812 DSP;circulating current control;coordinate control;governing differential equation;parallel three-phase boost rectifier;Circuit faults;Costs;Impedance;Inductors;Power supplies;Pulse width modulation;Rectifiers;Space vector pulse width modulation;Support vector machines;Switching converters;Circulating current;parallel system;three-phase boost rectifiers},
+doi={10.1109/TIE.2007.891776},
+ISSN={0278-0046},
+month={April},}
+
+
+
+@ARTICLE{4801759,
+author={M. Castilla and J. Miret and J. Matas and L. Garcia de Vicuna and J. M. Guerrero},
+journal={IEEE Transactions on Industrial Electronics},
+title={Control Design Guidelines for Single-Phase Grid-Connected Photovoltaic Inverters With Damped Resonant Harmonic Compensators},
+year={2009},
+volume={56},
+number={11},
+pages={4492-4501},
+abstract={The injection of low-harmonic current to the electrical grid is nowadays regulated by international standards. In order to accomplish these standards, selective harmonic compensation is carried out in grid-connected photovoltaic inverters by means of resonant harmonic compensators. This paper gives a systematic design procedure for selecting the gains and parameters of these harmonic compensators. Other factors considered in the design process include frequency deviation, grid synchronization, and transient response. Both a design example meeting the requirements of grid interconnection and selected experimental results from a digital-signal-processor-based laboratory prototype are also reported.},
+keywords={invertors;photovoltaic power systems;power generation control;power grids;control design guidelines;damped resonant harmonic compensators;digital-signal-processor-based laboratory prototype;frequency deviation;grid synchronization;single-phase grid-connected photovoltaic inverters;transient response;Current harmonic content;grid-connected inverter;linear current regulator;photovoltaic (PV) power system},
+doi={10.1109/TIE.2009.2017820},
+ISSN={0278-0046},
+month={Nov},}
+
+
+
+
+@ARTICLE{4455589,
+author={G. Iwanski and W. Koczara},
+journal={IEEE Transactions on Industrial Electronics},
+title={DFIG-Based Power Generation System With UPS Function for Variable-Speed Applications},
+year={2008},
+volume={55},
+number={8},
+pages={3047-3054},
+abstract={The power generation system with a doubly fed induction generator (DFIG), which can be used as an autonomous power system after the loss of mains in a distributed generation network, is described. After the mains outage, a fixed frequency and an amplitude of the output voltage are obtained, despite the variable rotor speed. For this reason, it can be successfully applied in the variable-speed wind turbines, adjustable speed water plants, or diesel engines. Moreover, the stand-alone operation of DFIG is useful in a flywheel-based high-energy rotary uninterruptible power supply system. An output voltage is controlled directly by the synchronization of an actual voltage vector with the reference vector represented in a synchronously rotating polar frame. The rotor current angular speed is obtained as a result of vectorial phase-locked loop operation. Any sensors or estimators of the rotor speed or position are unnecessary. Both amplitude and angle control loops are linear. The use of stand-alone operation in grid-connected systems requires mains outage detection. Also, the grid voltage recovery requires a method of synchronization and soft connection of a generator to the grid. The proposed methods of output voltage control, synchronization, and detection of mains loss were tested in a laboratory system.},
+keywords={asynchronous generators;distributed power generation;machine vector control;power generation control;uninterruptible power supplies;voltage control;UPS function;adjustable speed water plants;angle control loops;autonomous power system;diesel engines;distributed generation network;doubly fed induction generator;grid voltage recovery;grid-connected systems;output voltage control;power generation system;rotor current angular speed;synchronously rotating polar frame;uninterruptible power supply system;variable rotor speed;variable-speed wind turbines;vectorial phase-locked loop operation;voltage vector;Power generation;power generation;power generation faults;uninterruptible power systems},
+doi={10.1109/TIE.2008.918473},
+ISSN={0278-0046},
+month={Aug},}
+
+
+
+
+@ARTICLE{4547442,
+author={D. Yazdani and A. Bakhshai and G. Joos and M. Mojiri},
+journal={IEEE Transactions on Power Electronics},
+title={A Nonlinear Adaptive Synchronization Techniquefor Grid-Connected Distributed Energy Sources},
+year={2008},
+volume={23},
+number={4},
+pages={2181-2186},
+abstract={This letter introduces a new adaptive notch filtering (ANF) approach as a powerful tool for synchronization of converter-interfaced distributed generation systems that can potentially stimulate much interest in the field and provide improvement solutions for both grid-connected and stand-alone (islanding operation) modes of micro-grids. The proposed technique is simple and offers a high degree of immunity and insensitivity to power system disturbances, harmonics and other types of pollution that exist in the grid signal. A modified structure of the ANF-based synchronization technique is capable of decomposing three-phase quantities into symmetrical components, extracting harmonics, tracking the frequency variations, and providing means for voltage regulation and reactive power control. A prominent advantage of the proposed scheme is that it does not require a phase-locked loop for the synchronization. In addition, this very simple and very powerful power signal processor will simplify the control issues currently challenging the integration of distributed energy technologies onto the electricity grid. All converter-interfaced equipment, such as flexible AC transmission systems, custom power controllers, and active power filters, will benefit from this technique. Theoretical analysis is presented and the performance of the method is evaluated through simulation.},
+keywords={active filters;adaptive filters;distributed power generation;notch filters;power convertors;power filters;power generation control;power grids;reactive power control;synchronisation;voltage control;active power filters;adaptive notch filtering;converter-interfaced distributed generation systems;converter-interfaced equipment;flexible AC transmission systems;grid-connected converters;grid-connected distributed energy sources;micro-grids;nonlinear adaptive synchronization technique;power signal processor;power system disturbances;reactive power control;voltage regulation;Adaptive filters;distributed power generation;grid synchronization;grid-connected converters},
+doi={10.1109/TPEL.2008.926045},
+ISSN={0885-8993},
+month={July},}
+
+
+
+
+@ARTICLE{5580125,
+author={X. Wang and X. Ruan and S. Liu and C. K. Tse},
+journal={IEEE Transactions on Power Electronics},
+title={Full Feedforward of Grid Voltage for Grid-Connected Inverter With LCL Filter to Suppress Current Distortion Due to Grid Voltage Harmonics},
+year={2010},
+volume={25},
+number={12},
+pages={3119-3127},
+abstract={The grid-connected inverter with an LCL filter has the ability of attenuating the high-frequency current harmonics. However, the current distortion caused by harmonics in the grid voltage is difficult to be eliminated. Increasing the loop gain can reduce the current distortion, but this approach is compromised by the system stability requirement. Without increasing the loop gain, applying feedforward of the grid voltage can suppress the effect of grid voltage harmonics. This paper proposes the feedforward function of the grid voltage for the grid-connected inverter with an LCL filter. Specifically, the proposed feedforward function involves proportional, derivative, and second derivative of the grid voltage, and can be simplified according to the dominant harmonics in the grid voltage. The proposed feedforward scheme can effectively suppress the current distortion arising from the grid voltage harmonics, and the steady-state error of the injected current can be substantially reduced even if a conventional proportional and integral regulator is applied. A 6-kW experimental prototype has been tested to verify the effectiveness of the proposed feedforward scheme.},
+keywords={feedforward;invertors;power system harmonics;power system stability;LCL filter;current distortion suppression;dominant harmonics;feedforward function;grid voltage harmonics;grid-connected inverter;high-frequency current harmonics attenuation;integral regulator;power 6 kW;proportional regulator;system stability requirement;Capacitors;Digital filters;Harmonic analysis;Inverters;Power harmonic filters;Regulators;Transfer functions;Damping resonance;LCL filter;dual-loop control;feedforward;total harmonic distortions (THD)},
+doi={10.1109/TPEL.2010.2077312},
+ISSN={0885-8993},
+month={Dec},}
+
+
+
+
+@ARTICLE{5742769,
+author={M. C. Cavalcanti and A. M. Farias and K. C. Oliveira and F. A. S. Neves and J. L. Afonso},
+journal={IEEE Transactions on Industrial Electronics},
+title={Eliminating Leakage Currents in Neutral Point Clamped Inverters for Photovoltaic Systems},
+year={2012},
+volume={59},
+number={1},
+pages={435-443},
+abstract={The main contribution of this paper is the proposal of new modulation techniques for three-phase transformerless neutral point clamped inverters to eliminate leakage currents in photovoltaic systems without requiring any modification on the multilevel inverter or any additional hardware. The modulation techniques are capable of reducing the leakage currents in photovoltaic systems by applying three medium vectors or using only two medium vectors and one specific zero vector to compose the reference vector. In addition, to increase the system utilization, the three-phase neutral point clamped inverter can be designed to also provide functions of active filter using the p-q theory. The proposed system provides maximum power point tracking and compensation of current harmonics and reactive power. To validate the simulation models, an experimental three-phase inverter is used to evaluate leakage currents and the dc link voltage control.},
+keywords={PWM invertors;active filters;leakage currents;maximum power point trackers;photovoltaic power systems;power conversion harmonics;power filters;reactive power;voltage control;active filter;current harmonics;dc link voltage control;leakage currents;maximum power point tracking;medium vectors;multilevel inverter;p-q theory;photovoltaic systems;reactive power;reference vector;three-phase transformerless neutral point clamped inverters;Inverters;Leakage current;Photovoltaic systems;Space vector pulse width modulation;Switches;Energy conversion;photovoltaic power systems;pulse width modulated power converters},
+doi={10.1109/TIE.2011.2138671},
+ISSN={0278-0046},
+month={Jan},}
+
+
+
+
+@ARTICLE{6545383,
+author={C. Bao and X. Ruan and X. Wang and W. Li and D. Pan and K. Weng},
+journal={IEEE Transactions on Power Electronics},
+title={Step-by-Step Controller Design for LCL-Type Grid-Connected Inverter with Capacitor #x2013;Current-Feedback Active-Damping},
+year={2014},
+volume={29},
+number={3},
+pages={1239-1253},
+abstract={The injected grid current regulator and active damping of the LCL filter are essential to the control of LCL-type grid-connected inverters. Generally speaking, the current regulator guarantees the quality of the injected grid current, and the active damping suppresses the resonance peak caused by the LCL filter and makes it easier to stabilize the whole system. Based on the proportional-integral (PI) and proportional-resonant (PR) compensator together with capacitor-current-feedback active-damping which are widely used for their effectiveness and simple implementations, this paper proposes a simple step-by-step controller design method for the LCL-type grid-connected inverter. By carefully dealing with the interaction between the current regulator and active damping, the complete satisfactory regions of the controller parameters for meeting the system specifications are obtained, and from which the controller parameters can be easily picked out. Based on these satisfactory regions, it is more convenient and explicit to optimize the system performance. Besides, the insight of tuning the controller parameters from these satisfactory regions is also discussed. Simulation and experimental results verify the proposed step-by-step design method.},
+keywords={invertors;machine control;power filters;LCL-type grid-connected inverter;capacitor-current-feedback active-damping;controller parameters;injected grid current regulator;proportional-integral compensator;proportional-resonant compensator;resonance peak;step-by-step controller design;Capacitors;Damping;Gain;Inverters;Regulators;Resonant frequency;Steady-state;Active damping;LCL filter;controller design;grid-connected inverter;single-phase},
+doi={10.1109/TPEL.2013.2262378},
+ISSN={0885-8993},
+month={March},}
+
+
+
+
+@ARTICLE{6032093,
+author={F. Gonzalez-Espin and E. Figueres and G. Garcera},
+journal={IEEE Transactions on Industrial Electronics},
+title={An Adaptive Synchronous-Reference-Frame Phase-Locked Loop for Power Quality Improvement in a Polluted Utility Grid},
+year={2012},
+volume={59},
+number={6},
+pages={2718-2731},
+abstract={The proper operation of grid-connected power electronics converters needs using a synchronization technique to estimate the phase of the grid voltage. The performance of this synchronization technique is related to the quality of the consumed or delivered electric power. The synchronous-reference-frame phase-locked loop (SRF-PLL) has been widely used due to its ease of operation and robust behavior. However, the estimated phase can have a considerable amount of unwanted ripple if the grid voltage disturbances are not properly rejected. The aim of this paper is to propose an adaptive SRF-PLL which strongly rejects these disturbances even if the fundamental frequency of the grid voltage varies. This is accomplished by using several adaptive infinite-impulse-response notch filters, implemented by means of an inherently stable Schur-lattice structure. This structure is perfectly suited to be programmed in fixed-point DSPs (i.e., it has high mapping precision, low roundoff accumulation, and suppression of quantization limit cycle oscillations). The proposed adaptive SRF-PLL has been tested by means of the TI TMS320F2812 DSP. The obtained experimental results show that the proposed synchronization method highly rejects the undesired harmonics even if the fundamental harmonic frequency of a highly polluted grid voltage abruptly varies.},
+keywords={IIR filters;adaptive filters;notch filters;phase locked loops;power convertors;power grids;power harmonic filters;power supply quality;synchronisation;TI TMS320F2812 DSP;adaptive SRF-PLL;adaptive infinite-impulse-response notch filters;adaptive synchronous-reference-frame phase-locked loop;electric power;fixed-point DSP;fundamental frequency;fundamental harmonic frequency;grid voltage disturbances;grid-connected power electronics converters;highly polluted grid voltage;inherently stable Schur-lattice structure;polluted utility grid;power quality improvement;quantization limit cycle oscillations;synchronization technique;undesired harmonics;unwanted ripple;Adaptive filters;Adaptive signal processing;Harmonic analysis;IIR filters;Low pass filters;Power harmonic filters;Power system harmonics;Power system stability;Adaptive filters;adaptive signal processing;lattice filters;phase-locked loop;power grids;power quality;power system harmonics;three-phase electric power},
+doi={10.1109/TIE.2011.2166236},
+ISSN={0278-0046},
+month={June},}
+
+
+
+
+@ARTICLE{4801692,
+author={J. C. Moreno and J. M. Espi Huerta and R. G. Gil and S. A. Gonzalez},
+journal={IEEE Transactions on Industrial Electronics},
+title={A Robust Predictive Current Control for Three-Phase Grid-Connected Inverters},
+year={2009},
+volume={56},
+number={6},
+pages={1993-2004},
+abstract={This paper presents a new predictive control algorithm for grid-connected current-controlled inverters. The control combines a two-sample deadbeat control law with a Luenberger observer to estimate the future value of the grid currents. The resulting control offers robustness against the computational delay inherent in the digital implementation and considerably enhances the gain and phase margins of the previous predictive controls while maintaining the high-speed response typical of the deadbeat controllers.},
+keywords={electric current control;invertors;observers;power grids;predictive control;robust control;Luenberger observer;robust predictive current control;three-phase grid-connected inverter;two-sample deadbeat control law;Current-controlled voltage-source inverter (CC-VSI);robust predictive current control (RPCC)},
+doi={10.1109/TIE.2009.2016513},
+ISSN={0278-0046},
+month={June},}
+
+
+
+
+@INPROCEEDINGS{5275191,
+author={F. Z. Peng and Y. W. Li and L. M. Tolbert},
+booktitle={2009 IEEE Power Energy Society General Meeting},
+title={Control and protection of power electronics interfaced distributed generation systems in a customer-driven microgrid},
+year={2009},
+pages={1-8},
+abstract={This paper discusses control and protection of power electronics interfaced distributed generation (DG) systems in a customer-driven microgrid (CDM). Particularly, the following topics will be addressed: microgrid system configurations and features, DG interfacing converter topologies and control, power flow control in grid-connected operation, islanding detection, autonomous islanding operation with load shedding and load demand sharing among DG units, and system/DG protection. Most of the above mentioned control and protection issues should be embedded into the DG interfacing converter control scheme. Some case study results are also shown in this paper to further illustrate the above mentioned issues.},
+keywords={distribution networks;load shedding;power control;power convertors;power grids;power system control;power system protection;DG interfacing converter topologies;autonomous islanding operation;customer-driven microgrid;grid-connected operation;islanding detection;load demand sharing;load shedding;microgrid system configurations;power converters;power electronics interfaced distributed generation systems;power flow control;renewable energy source;Cogeneration;Communication system control;Control systems;Distributed control;Power electronics;Power generation;Power system management;Power system protection;Power system reliability;Voltage control;DG protection;Distributed generation (DG);autonomous operation;customer-driven micro-grid (CDM);grid-connected operation;islanding operation;micro-source;microgrid;power converters;power electronics;renewable energy source (RES)},
+doi={10.1109/PES.2009.5275191},
+ISSN={1932-5517},
+month={July},}
+
+
+
+
+@ARTICLE{5226605,
+author={G. Grandi and C. Rossi and D. Ostojic and D. Casadei},
+journal={IEEE Transactions on Industrial Electronics},
+title={A New Multilevel Conversion Structure for Grid-Connected PV Applications},
+year={2009},
+volume={56},
+number={11},
+pages={4416-4426},
+abstract={A novel scheme for three-phase grid-connected photovoltaic (PV) generation systems is presented in this paper. The scheme is based on two insulated strings of PV panels, each one feeding the dc bus of a standard two-level three-phase voltage-source inverter (VSI). The inverters are connected to the grid by a three-phase transformer having open-end windings on the inverter side. The resulting conversion structure performs as a multilevel power active filter (equivalent to a three-level inverter), doubling the power capability of a single VSI with given voltage and current ratings. The multilevel voltage waveforms are generated by an improved space-vector-modulation algorithm, suitable for the implementation in industrial digital signal processors. An original control method has been introduced to regulate the dc-link voltages of each VSI, according to the voltage reference given by a single maximum power point tracking controller. The proposed regulation system has been verified by numerical simulations and experimental tests with reference to different operating conditions.},
+keywords={active filters;invertors;photovoltaic power systems;power filters;power generation control;power grids;power transformers;voltage control;control method;dc voltage regulation;digital signal processor;insulated string;maximum power point tracking controller;multilevel conversion structure;multilevel power active filter;numerical simulation;space-vector-modulation algorithm;three-phase grid-connected photovoltaic generation system;three-phase transformer;voltage-source inverter;Multilevel systems;photovoltaic (PV) power systems;power conditioning},
+doi={10.1109/TIE.2009.2029587},
+ISSN={0278-0046},
+month={Nov},}
+
+
+
+
+@ARTICLE{4783177,
+author={D. D. C. Lu and V. G. Agelidis},
+journal={IEEE Transactions on Power Electronics},
+title={Photovoltaic-Battery-Powered DC Bus System for Common Portable Electronic Devices},
+year={2009},
+volume={24},
+number={3},
+pages={849-855},
+abstract={Renewable energy sources based on photovoltaic (PV) along with battery-based energy storage necessitate power conditioning to meet load requirements and/or be connected to the electrical grid. The power conditioning is achieved via a dc-dc converter and a DC-AC inverter stages to produce the desired AC source. This is also the case even when the load is of dc type, such as the typical portable electronic devices that require AC adaptors to be powered from the AC mains. The letter presents a hybrid PV-battery-powered dc bus system that eliminates the DC-AC conversion stage, resulting in lower cost and improved overall energy conversion efficiency. It is also shown experimentally that the switching ac adaptors associated with the various commonly used portable electronic devices can be reused with the proposed dc bus system. A novel high-gain hybrid boost-flyback converter is also introduced with several times higher voltage conversion ratio than the conventional boost converter topology. This arrangement results in higher DC bus levels and lower cable conduction losses. Moreover, the voltage stress on the hybrid boost-flyback converter power switch is within half the output voltage. Experimental results taken from a laboratory prototype are presented to confirm the effectiveness of the proposed converter/system.},
+keywords={DC-DC power convertors;battery storage plants;distributed power generation;invertors;photovoltaic power systems;power grids;AC adaptors;DC-AC inverter;DC-DC converter;battery-based energy storage;boost-flyback converter power switch;conventional boost converter topology;electrical grid;energy conversion efficiency;high-gain hybrid boost-flyback converter;higher voltage conversion ratio;photovoltaic power system;photovoltaic-battery-powered dc bus system;portable electronic devices;power conditioning;renewable energy sources;DC bus;dc–dc converter;hybrid boost–flyback converter;photovoltaic (PV) power system},
+doi={10.1109/TPEL.2008.2011131},
+ISSN={0885-8993},
+month={March},}
+
+
+
+
+
+@ARTICLE{4439209,
+author={S. Vazquez and J. A. Sanchez and J. M. Carrasco and J. I. Leon and E. Galvan},
+journal={IEEE Transactions on Industrial Electronics},
+title={A Model-Based Direct Power Control for Three-Phase Power Converters},
+year={2008},
+volume={55},
+number={4},
+pages={1647-1657},
+abstract={The direct power control (DPC) technique has been widely used as a control strategy for three-phase power rectifiers due to its simplicity and good performance. DPC uses the instantaneous active and reactive power to control the power converter. The controller design has been proposed as a direct control with a lookup table and, in recent works, as an indirect control with an inner control loop with proportional-plus-integral controllers for the instantaneous active and reactive power errors. In this paper, a model-based DPC for three-phase power converters is designed, obtaining expressions for the input control signal, which allow the design of an adaptive control law that minimizes the errors introduced by parameter uncertainties as the smoothing inductor value or the grid frequency. A controller design process, a stability study of the system, and experimental results for a synchronous three-phase power rectifier prototype are presented to validate the proposed controller.},
+keywords={PI control;adaptive control;power control;power convertors;rectifying circuits;table lookup;DPC;adaptive control law;controller design;direct power control;lookup table;proportional-plus-integral controllers;reactive power errors;smoothing inductor;three-phase power converters;three-phase power rectifiers;Adaptive control;direct power control;direct power control (DPC);power factor correction;power quality;three-phase power converters},
+doi={10.1109/TIE.2008.917113},
+ISSN={0278-0046},
+month={April},}
+
+
+
+
+@ARTICLE{6323020,
+author={M. Sechilariu and B. Wang and F. Locment},
+journal={IEEE Transactions on Industrial Electronics},
+title={Building Integrated Photovoltaic System With Energy Storage and Smart Grid Communication},
+year={2013},
+volume={60},
+number={4},
+pages={1607-1618},
+abstract={The utility grid challenge is to meet the current growing energy demand. One solution to this problem is to expand the role of microgrids that interact with the utility grid and operate independently in case of a limited availability during peak time or outage. This paper proposes, for urban areas, a building integrated photovoltaic (BIPV) primarily for self-feeding of buildings equipped with PV array and storage. With an aim of elimination of multiple energy conversions, a DC network distribution is considered. The BIPV can supply a tertiary building at the same time as PV array may produce power through a hierarchical supervision able to exchange messages with the smart grid and metadata. The hierarchical control is designed as an interface to expand the system ability for advanced energy management control having regard to the grid availability and user's commands. It consists of four layers: human-machine interface, prediction, cost management, and operation. The operation layer, implemented in an experimental platform, takes into account the grid supply power limits and constrains the DC load. The experimental results validate the approach that may be a solution for the future smart grid communication between BIPV and utility grid.},
+keywords={building integrated photovoltaics;control system synthesis;distributed power generation;energy management systems;energy storage;meta data;photovoltaic power systems;power control;power generation control;power generation reliability;power utilisation;smart power grids;solar energy conversion;BIPV;DC network distribution;PV array;building integrated photovoltaic system;control design;cost management;energy demand;energy management control;energy storage;human-machine interface;load prediction;metadata;microgrid;multiple energy conversion elimination;self-feeding building;smart grid communication;user command;utility grid challenge;Arrays;Buildings;Energy management;Load modeling;Smart grids;System-on-a-chip;Battery;Petri nets;building integrated photovoltaic;distributed power generation;energy management;energy storage;hierarchical control;photovoltaic power system;power converters;power grid;power system control;smart grid},
+doi={10.1109/TIE.2012.2222852},
+ISSN={0278-0046},
+month={April},}
+
+
+
+
+
+@ARTICLE{4305326,
+author={M. Liserre and F. Blaabjerg and R. Teodorescu},
+journal={IEEE Transactions on Industry Applications},
+title={Grid Impedance Estimation via Excitation of LCL -Filter Resonance},
+year={2007},
+volume={43},
+number={5},
+pages={1401-1407},
+abstract={Inverters adopted in distributed power generation, active filter, and uninterruptible power supply are often connected to the grid through an inductance-capacitor-inductance (LCL) filter. The impedance of the LCL filter has a typical frequency characteristic with a resonance peak. Hence, the LCL filter has to be damped in order to avoid instability. However, the resonance of the LCL filter can be also excited in a controlled way in order to individuate the resonance frequency in the spectrum (using for example the fast Fourier transform). This paper proposes to use a controlled excitation in measuring the grid impedance, since this one influences also the resonance frequency. This paper will address some possible limits, some solutions, and some implementation issues (e.g., how to obtain a controlled resonance in the filter without damaging the system) in order to use the resonant peak for grid impedance detection. The analysis is validated both by simulations and experimental results.},
+keywords={circuit resonance;electric impedance measurement;passive filters;power filters;power system measurement;LCL-filter resonance;fast Fourier transform;grid impedance estimation;grid impedance measurement;inductance-capacitor-inductance filter;Active filters;Control systems;Distributed power generation;Fast Fourier transforms;Frequency measurement;Impedance measurement;Inverters;Resonance;Resonant frequency;Uninterruptible power systems;Impedance measurement;power-system parameter estimation;resonance},
+doi={10.1109/TIA.2007.904439},
+ISSN={0093-9994},
+month={Sept},}
+
+
+
+
+@article{PLANAS2013147,
+title = "General aspects, hierarchical controls and droop methods in microgrids: A review",
+journal = "Renewable and Sustainable Energy Reviews",
+volume = "17",
+number = "",
+pages = "147 - 159",
+year = "2013",
+note = "",
+issn = "1364-0321",
+doi = "http://dx.doi.org/10.1016/j.rser.2012.09.032",
+url = "http://www.sciencedirect.com/science/article/pii/S1364032112005333",
+author = "Estefanía Planas and Asier Gil-de-Muro and Jon Andreu and Iñigo Kortabarria and Iñigo Martínez de Alegría",
+keywords = "Distributed generation",
+keywords = "Microgrids control",
+keywords = "Microgrids research",
+abstract = "Distributed generation is emerging as a new technology for supplying the increasing demand for electricity. Microgrids are attracting a great deal of attention since they integrate distributed generation in the main grid reliably and cleanly. When designing the control system of a microgrid, several functions must be considered, such as the management of electrical and thermal energy, load management, synchronisation with the main grid, etc. Both companies and institutions have carried out research into the control of microgrids over recent years and many proposals can be found in the literature. Thus, the design of the control system of a microgrid is a complex task due to its multiple functions and the large number of proposed solutions. This paper presents a complete description of the main features of a microgrid and describes the characteristics of the control systems used. Details are provided of the control tasks involved and of the main types of controls proposed in the literature. In addition, this paper describes the controls used in existing microgrids all over the world and proposes future areas for research."
+}
+
+
+
+@ARTICLE{5196780,
+author={J. M. Espi Huerta and J. Castello and J. R. Fischer and R. Garcia-Gil},
+journal={IEEE Transactions on Industrial Electronics},
+title={A Synchronous Reference Frame Robust Predictive Current Control for Three-Phase Grid-Connected Inverters},
+year={2010},
+volume={57},
+number={3},
+pages={954-962},
+abstract={This paper presents a new predictive current control for three-phase grid-connected inverters in the synchronous reference frame. The control combines a deadbeat control law with a diagonal Luenberger observer to estimate the future value of the grid currents. It provides a decoupled control of the active and reactive power and offers robustness against the computational delay inherent in the digital implementation and against filter and grid-impedance uncertainties. This control exhibits a very fast current response while widely improving the gain and phase margins of the traditional predictive controllers.},
+keywords={electric current control;invertors;predictive control;robust control;current-controlled voltage-source inverter;fast current response;synchronous reference frame robust predictive current control;three-phase grid-connected inverters;Current control;Delay;Digital filters;Displacement control;Inductance;Integrated circuit modeling;Inverters;Robust control;Robust stability;Voltage control;Current-controlled voltage-source inverter (CC-VSI);robust predictive current control (RPCC)},
+doi={10.1109/TIE.2009.2028815},
+ISSN={0278-0046},
+month={March},}
+
+
+
+
+@ARTICLE{5759746,
+author={D. Cao and S. Jiang and X. Yu and F. Z. Peng},
+journal={IEEE Transactions on Power Electronics},
+title={Low-Cost Semi-Z-source Inverter for Single-Phase Photovoltaic Systems},
+year={2011},
+volume={26},
+number={12},
+pages={3514-3523},
+abstract={This paper presents several nonisolated semi-Z-source inverters for a single-phase photovoltaic (PV) system with low cost and doubly grounded features. These semi-Z-source inverters employ the Z-source/quasi-Z-source network and only two active switches to achieve the same output voltage as the traditional voltage-fed full-bridge inverter does. The two active switches of the semi-Z-source inverter are controlled complementarily. Different from the traditional single-phase Z-source/quasi-Z-source inverter, shoot-through zero state is not applicable to the semi-Z-source inverter. The input dc source and the output ac voltage of the semi-Z-source inverter share the same ground, thus leading to less leakage ground current advantages over other nondoubly grounded inverters, such as voltage-fed full-bridge inverter. This is a preferred feature for nonisolated grid-connected inverters, especially in PV application. A revised nonlinear sinusoid pulse width modulation method for a semi-Z-source inverter is also proposed. By using this method, desired duty cycle can be generated to output the sinusoidal voltage. Other dc-dc converters with similar voltage gain curve, which can also be used as a single-phase inverter, are also discussed and summarized. A single-phase semi-Z-source inverter prototype is built; experimental results are provided to verify and demonstrate the special features of the proposed circuit.},
+keywords={DC-DC power convertors;PWM invertors;photovoltaic power systems;DC-DC converters;active switches;lowcost semi-Z-source inverter;nondoubly grounded inverters;nonisolated semi-Z-source inverters;revised nonlinear sinusoid pulse width modulation method;shoot-through zero state;single-phase PV system;single-phase Z-source-quasi-Z-source inverter;single-phase photovoltaic systems;voltage-fed full-bridge inverter;Bridge circuits;Converters;Electronic mail;Inverters;Photovoltaic systems;Switches;Topology;Inverter;low cost;photovoltaic (PV);quasi-Z-source;semi-Z-source},
+doi={10.1109/TPEL.2011.2148728},
+ISSN={0885-8993},
+month={Dec},}
+
+
+
+
+
+@ARTICLE{4550663,
+author={M. Castilla and J. Miret and J. Matas and L. Garcia de Vicuna and J. M. Guerrero},
+journal={IEEE Transactions on Industrial Electronics},
+title={Linear Current Control Scheme With Series Resonant Harmonic Compensator for Single-Phase Grid-Connected Photovoltaic Inverters},
+year={2008},
+volume={55},
+number={7},
+pages={2724-2733},
+abstract={This paper deals with an important aspect in the operation of single-phase grid-connected photovoltaic inverters, i.e., injecting low harmonic current into the electrical grid. Specifically, we propose a linear current control scheme with a resonant harmonic compensator connected in series with a tracking regulator (the standard harmonic compensator location is in parallel with the tracking regulator). The series connection provides an efficient attenuation of the grid voltage background distortion, an accurate synchronization with the grid voltage, and a low computational time in relation to the standard control scheme. Experimental results from a digital signal processor-based laboratory prototype validate the features of the proposed control scheme.},
+keywords={electric current control;photovoltaic power systems;resonant invertors;linear current control scheme;photovoltaic power system;series resonant harmonic compensator;single-phase grid-connected photovoltaic inverters;Attenuation;Current control;Electric current control;Grid computing;Inverters;Low voltage;Photovoltaic systems;Regulators;Resonance;Solar power generation;Current harmonic content;grid-connected inverter;linear current regulator;photovoltaic (PV) power system},
+doi={10.1109/TIE.2008.920585},
+ISSN={0278-0046},
+month={July},}
+
+
+
+
+
+@ARTICLE{6165665,
+author={M. Reyes and P. Rodriguez and S. Vazquez and A. Luna and R. Teodorescu and J. M. Carrasco},
+journal={IEEE Transactions on Power Electronics},
+title={Enhanced Decoupled Double Synchronous Reference Frame Current Controller for Unbalanced Grid-Voltage Conditions},
+year={2012},
+volume={27},
+number={9},
+pages={3934-3943},
+abstract={In the last few years, restrictive grid codes have arisen to ensure the performance and stability of electrical networks, which experience a massive integration of renewable energy sources and distributed generation systems that are normally connected to the grid through electronic power converters. In these codes, the injection of positive- and negative-sequence current components becomes necessary for fulfilling, among others, the low-voltage ride-through requirements during balanced and unbalanced grid faults. However, the performance of classical dq current controllers, applied to power converters, under unbalanced grid-voltage conditions is highly deficient, due to the unavoidable appearance of current oscillations. This paper analyzes the performance of the double synchronous reference frame controller and improves its structure by adding a decoupling network for estimating and compensating the undesirable current oscillations. Experimental results will demonstrate the validity of the proposed decoupled DSRF controller.},
+keywords={distributed power generation;electric current control;power convertors;power generation faults;power grids;power system stability;balanced grid fault;classical dq current controllers;current oscillations;decoupled DSRF controller;decoupling network;distributed generation systems;electrical network stability;electronic power converters;enhanced decoupled double-synchronous reference frame current controller;grid codes;low-voltage ride-through requirements;negative-sequence current component;positive-sequence current component;renewable energy sources;unbalanced grid fault;unbalanced grid-voltage conditions;Educational institutions;Electronic mail;Facsimile;IEEE members;Oscillators;Power system stability;Voltage control;AC–DC power conversion;current control;power electronics},
+doi={10.1109/TPEL.2012.2190147},
+ISSN={0885-8993},
+month={Sept},}
+
+
+
+
+
+@ARTICLE{5229315,
+author={K. Jin and M. Yang and X. Ruan and M. Xu},
+journal={IEEE Transactions on Industrial Electronics},
+title={Three-Level Bidirectional Converter for Fuel-Cell/Battery Hybrid Power System},
+year={2010},
+volume={57},
+number={6},
+pages={1976-1986},
+abstract={A novel three-level (3L) bidirectional converter (BDC) is proposed in this paper. Compared with the traditional BDC, the inductor of the 3L BDC can be reduced significantly so that the dynamic response is greatly improved. Hence, the proposed converter is very suitable for fuel-cell/battery hybrid power systems. In addition, the voltage stress on the switch of the proposed converter is only half of the voltage on the high-voltage side, so it is also suitable for high-voltage applications. The operation principle and the implementation of the control circuit are presented in detail. This paper also proposes a novel bidirectional soft-start control strategy for the BDC. A 1-kW prototype converter is built to verify the theoretical analysis.},
+keywords={DC-DC power convertors;battery storage plants;dynamic response;fuel cell power plants;power inductors;bidirectional soft-start control strategy;control circuit;dynamic response;fuel-cell-battery hybrid power system;high-voltage applications;power 1 kW;three-level bidirectional converter;voltage stress;Battery;bidirectional converter (BDC);fuel cell (FC);three-level (3L) converter},
+doi={10.1109/TIE.2009.2031197},
+ISSN={0278-0046},
+month={June},}
+
+
+
+@article{CHENG2014332,
+title = "The state of the art of wind energy conversion systems and technologies: A review",
+journal = "Energy Conversion and Management",
+volume = "88",
+number = "",
+pages = "332 - 347",
+year = "2014",
+note = "",
+issn = "0196-8904",
+doi = "http://dx.doi.org/10.1016/j.enconman.2014.08.037",
+url = "http://www.sciencedirect.com/science/article/pii/S0196890414007614",
+author = "Ming Cheng and Ying Zhu",
+keywords = "Wind energy",
+keywords = "Wind power generation",
+keywords = "Generator",
+keywords = "MPPT control",
+keywords = "Review",
+keywords = "DFIG",
+keywords = "Permanent magnet",
+keywords = "Direct-drive",
+keywords = "Stator PM",
+keywords = "EVT",
+keywords = "Magnetic-gear",
+abstract = "This paper gives a comprehensive review of the state of the art of wind energy conversion systems (WECS) and technologies, with an emphasis on wind power generator and control. First, different types of common WECSs are classified according to their features and drive train types. The WECSs are compared on the basis of the volume, weight, cost, efficiency, system reliability and fault ride through capability. The maximum power point tracking (MPPT) control, which aims to make the generator speed meet an optimum value to ensure the maximum energy yield, plays a key role in the variable speed WECSs. A comprehensive review and comparison of the four most popular MPPT control methods are carried out and improvements for each method are presented. Furthermore, the latest development of wind energy conversion technologies is introduced, such as the brushless doubly fed induction generator (BDFIG), the stator permanent magnet synchronous generators, the magnetic-geared generators, dual power flow WECS with the electrical variable transmission (EVT) machine, and direct grid-connected WECS. Finally, the future trends of the technologies are discussed."
+}
+
+
+
+
+@ARTICLE{5560869,
+author={M. Castilla and J. Miret and J. L. Sosa and J. Matas and L. G. d. Vicuña},
+journal={IEEE Transactions on Power Electronics},
+title={Grid-Fault Control Scheme for Three-Phase Photovoltaic Inverters With Adjustable Power Quality Characteristics},
+year={2010},
+volume={25},
+number={12},
+pages={2930-2940},
+abstract={The power quality of a three-phase photovoltaic (PV) inverter drastically deteriorates in the presence of grid faults with unbalanced voltages. A ripple in the injected power and an increase in the current harmonic distortion are the main noticeable adverse effects produced by this abnormal grid situation. Several grid-fault control schemes are nowadays available for operating under unbalanced grid voltage. These control schemes usually have extreme power quality characteristics. Some of them have been conceived to completely avoid power ripple during unbalanced voltage sags, but at an expense of high current harmonic distortion. With other schemes, the harmonic distortion is totally eliminated but at an expense of high ripple in the injected power. This paper further explores the performance of PV inverters under unbalanced voltage sags. It has three theoretical contributions: 1) a generalized control scheme, which includes the aforementioned grid-fault controllers as particular cases; 2) a control strategy based on the use of continuous values for the control parameters. This original approach gives adjustable power quality characteristics that cannot be achieved with the previous control schemes; 3) three different control algorithms for calculating the continuous values of the control parameters. These contributions are experimentally validated with a digital signal processor-based laboratory prototype.},
+keywords={harmonic distortion;invertors;photovoltaic power systems;power generation control;power grids;power supply quality;power system faults;PV inverters;adjustable power quality characteristics;current harmonic distortion;digital signal processor;grid-fault control;power ripple;three-phase photovoltaic inverters;voltage sags;Harmonic distortion;Inverters;Oscillators;Photovoltaic systems;Power quality;Voltage fluctuations;DC–AC power conversion;photovoltaic (PV) power systems;power quality},
+doi={10.1109/TPEL.2010.2070081},
+ISSN={0885-8993},
+month={Dec},}
+
+
+
+
+@INPROCEEDINGS{5275343,
+author={C. M. Colson and M. H. Nehrir},
+booktitle={2009 IEEE Power Energy Society General Meeting},
+title={A review of challenges to real-time power management of microgrids},
+year={2009},
+pages={1-8},
+abstract={Microgrid systems show great promise for integrating large numbers of distributed energy resource (DER) systems into future power networks. This paper provides a brief overview of current microgrid technologies and issues associated with their implementation. The case is made for a real-time power management and control system that attempts to optimize microgrid systems based on multiple objectives, such as power demands, fuel consumption, environmental emissions, costs, dispatchable loads, etc. A multi-agent based control architecture that can ensure robust, stable, and optimal microgrid operation is also addressed. In addition to the discussion of power management and control topics, a qualitative classification tool has been proposed for assisting system planners in assessing the impact of microgrid systems on broader grid operations.},
+keywords={distributed power generation;multi-agent systems;power engineering computing;power generation control;power grids;power system management;control system;distributed energy resource systems;microgrid systems;multiagent-based control architecture;power networks;real-time power management;Control systems;Cost function;Density estimation robust algorithm;Energy management;Energy resources;Environmental management;Fuels;Power demand;Power system management;Real time systems;Distributed generation;microgrid},
+doi={10.1109/PES.2009.5275343},
+ISSN={1932-5517},
+month={July},}
+
+
+
+
+@ARTICLE{4559381,
+author={A. Pigazo and M. Liserre and R. A. Mastromauro and V. M. Moreno and A. Dell'Aquila},
+journal={IEEE Transactions on Industrial Electronics},
+title={Wavelet-Based Islanding Detection in Grid-Connected PV Systems},
+year={2009},
+volume={56},
+number={11},
+pages={4445-4455},
+abstract={Distributed power generation systems (DPGSs) based on inverters require reliable islanding detection algorithms (passive or active) in order to determine the electrical grid status and operate the grid-connected inverter properly. These methods are based on the analysis of the DPGS voltage, current, and power in time or frequency domain. This paper proposes a time-frequency detection algorithm based on monitoring the DPGS output power considering the influence of the pulsewidth modulation, the output LCL filter, and the employed current controller. Wavelet analysis is applied to obtain time localization of the islanding condition. Simulation and experimental results show the performance of the proposed detection algorithm in comparison with existing methods.},
+keywords={PWM invertors;distributed power generation;electric current control;photovoltaic power systems;power grids;time-frequency analysis;wavelet transforms;DPGS;current controller;distributed power generation system;grid-connected PV system;pulsewidth modulation inverter;time-frequency detection algorithm;wavelet-based islanding detection algorithm;Islanding;photovoltaic (PV) power systems;wavelet transforms},
+doi={10.1109/TIE.2008.928097},
+ISSN={0278-0046},
+month={Nov},}
+
+
+
+
+@ARTICLE{5657265,
+author={S. Dasgupta and S. K. Sahoo and S. K. Panda},
+journal={IEEE Transactions on Power Electronics},
+title={Single-Phase Inverter Control Techniques for Interfacing Renewable Energy Sources With Microgrid #x2014;Part I: Parallel-Connected Inverter Topology With Active and Reactive Power Flow Control Along With Grid Current Shaping},
+year={2011},
+volume={26},
+number={3},
+pages={717-731},
+abstract={In this paper, a novel current control technique is proposed to control both active and reactive power flow from a renewable energy source feeding a microgrid system through a single-phase parallel-connected inverter. The parallel-connected inverter ensures active and reactive power flow from the grid with low-current total harmonic distortion even in the presence of nonlinear load. A p-q theory-based approach is used to find the reference current of the parallel-connected converter to ensure desired operating conditions at the grid terminal. The proposed current controller is simple to implement and gives superior performance over the conventional current controllers, such as rotating frame proportional-integral controller or stationary frame proportional resonant controller. The stability of the proposed controller is ensured by direct Lyapunov method. A new technique based on the spatial repetitive controller is also proposed to improve the performance of the current controller by estimating the grid and other periodic disturbances. Detailed experimental results are presented to show the efficacy of the proposed current control scheme along with the proposed nonlinear controller to control the active and reactive power flow in a single-phase microgrid under different operating conditions.},
+keywords={Lyapunov methods;PI control;distributed power generation;electric current control;harmonic distortion;invertors;load flow control;nonlinear control systems;power distribution control;reactive power control;current control technique;direct Lyapunov method;grid current shaping;low-current total harmonic distortion;microgrid system;nonlinear controller;proportional resonant controller;proportional-integral controller;reactive power flow control;renewable energy sources;single-phase parallel-connected inverter;spatial repetitive controller;Current control;Harmonic analysis;Inverters;Lyapunov method;Power demand;Reactive power;Renewable energy resources;Lyapunov-function-based controller;p–q theory-based current calculator;parallel-connected current-controlled voltage source inverter (CCVSI) in microgrid application;parallel-connected inverter;spatial repetitive controller (SRC) based disturbance estimator},
+doi={10.1109/TPEL.2010.2096479},
+ISSN={0885-8993},
+month={March},}
+
+
+
+
+@ARTICLE{5559423,
+author={B. Bahrani and S. Kenzelmann and A. Rufer},
+journal={IEEE Transactions on Industrial Electronics},
+title={Multivariable-PI-Based $dq$ Current Control of Voltage Source Converters With Superior Axis Decoupling Capability},
+year={2011},
+volume={58},
+number={7},
+pages={3016-3026},
+abstract={This paper presents a linear direct-quadrature current control strategy for voltage source converters (VSCs) in a rotating reference frame (RRF). The described method is based on multivariable-proportional-integral (PI) regulators and provides fast dynamics and a zero steady-state error. Contrary to the well-known conventional PI-based control strategies in RRFs, the presented method provides practically decoupled axes with a superior disturbance rejection capability. Moreover, its implementation is relatively simple and does not impose excessive structural complexity compared to its conventional PI-based competitors. The method is applicable to both single- and three-phase systems and also to anisotropic three-phase systems, e.g., synchronous motors with different direct and quadrature impedances driven by VSCs. Implementing a three-phase test system, the performance of the presented method is experimentally evaluated.},
+keywords={electric current control;multivariable systems;power convertors;power system control;two-term control;PI-based control strategies;anisotropic three-phase systems;decoupled axes;linear direct-quadrature current control strategy;multivariable-PI-based dq current control;multivariable-proportional-integral regulators;rotating reference frame;structural complexity;superior axis decoupling capability;superior disturbance rejection capability;three-phase test system;voltage source converters;zero steady-state error;Couplings;Current control;Power conversion;Steady-state;Transfer functions;Voltage control;Current control;multivariable-proportional–integral (PI) controllers;stationary and rotating reference frames;vector control;voltage source converters (VSCs)},
+doi={10.1109/TIE.2010.2070776},
+ISSN={0278-0046},
+month={July},}
+
+
+
+
+@ARTICLE{5446355,
+author={A. Luna and F. K. A. Lima and D. Santos and P. Rodriguez and E. H. Watanabe and S. Arnaltes},
+journal={IEEE Transactions on Industrial Electronics},
+title={Simplified Modeling of a DFIG for Transient Studies in Wind Power Applications},
+year={2011},
+volume={58},
+number={1},
+pages={9-20},
+abstract={Improving the fault ride-through (FRT) capability of doubly fed induction generators (DFIGs) in wind power applications is a very important challenge for the wind power industry. The mathematical models of such generators enable us to analyze their response under generic conditions. However, their mathematical complexity does not contribute to simplifying the analysis of the system under transient conditions and hence does not help in finding straightforward solutions for enhancing their FRT. This paper presents a simplified model of the DFIG, which has been extracted from the classical fifth-order model, which can accurately estimate the behavior of the system while significantly reducing its complexity. In this paper, the mathematical deduction of this model will be presented, and simulations and experimental results will be shown to demonstrate the accuracy and reliability of the proposed algorithm.},
+keywords={asynchronous generators;power generation faults;power generation reliability;transient analysis;wind power plants;DFIG modelling;classical fifth-order model;doubly fed induction generators;fault ride-through capability;mathematical complexity;mathematical models;transient study;wind power industry;Induction generators;Mathematical model;PSCAD;Power generation;Power generation economics;Power system reliability;Power system transients;Wind energy;Wind energy generation;Wind power generation;AC generators;current control;electric variables control;wind power generation},
+doi={10.1109/TIE.2010.2044131},
+ISSN={0278-0046},
+month={Jan},}
+
+
+
+
+
+@ARTICLE{6423943,
+author={Y. Zhang and W. Xie and Z. Li and Y. Zhang},
+journal={IEEE Transactions on Power Electronics},
+title={Model Predictive Direct Power Control of a PWM Rectifier With Duty Cycle Optimization},
+year={2013},
+volume={28},
+number={11},
+pages={5343-5351},
+abstract={This paper proposes an improved model predictive direct power control (MPDPC) for a pulse width modulation (PWM) rectifier by using a duty cycle control. The conventional MPDPC achieves good steady-state performance and quick dynamic response by selecting the best voltage vector, which minimizes the errors between the reference power and the real power. However, due to the limited number of voltage vectors in a two-level converter, the sampling frequency has to be high to achieve satisfactory performance. This paper introduces the concept of a duty cycle control in the MPDPC by allocating a fraction of control period for a nonzero voltage vector and the rest time for a zero vector. The nonzero vector is selected by evaluating the effects of each nonzero vector and its duration is obtained based on the principle of power errors minimization. Simulation and experimental results prove that, compared to the conventional MPDPC, the proposed MPDPC with duty cycle achieves further steady-state performance improvement without affecting the dynamic response at a small cost of control complexity increase.},
+keywords={PWM power convertors;PWM rectifiers;dynamic response;power control;predictive control;MPDPC;PWM rectifier;control complexity;control period;duty cycle optimization;dynamic response;model predictive direct power control;nonzero voltage vector;power errors minimization;pulse width modulation rectifier;real power;reference power;sampling frequency;steady-state performance;two-level converter;Cost function;Pulse width modulation;Reactive power;Steady-state;TV;Vectors;Voltage control;Direct power control (DPC);duty cycle;model predictive control;pulse width modulation (PWM) rectifier},
+doi={10.1109/TPEL.2013.2243846},
+ISSN={0885-8993},
+month={Nov},}
+
+
+
+
+@ARTICLE{6092480,
+author={J. R. Massing and M. Stefanello and H. A. Grundling and H. Pinheiro},
+journal={IEEE Transactions on Industrial Electronics},
+title={Adaptive Current Control for Grid-Connected Converters With LCL Filter},
+year={2012},
+volume={59},
+number={12},
+pages={4681-4693},
+abstract={This paper presents a discrete-time adaptive current controller for grid-connected pulse width modulation voltage source converters with LCL filter. The main attribute of the proposed current controller is that, in steady state, the damping of the LCL resonance does not depend on the grid characteristic since the adaptive feedback gains ensure a predefined behavior for the closed-loop current control. An overview of model reference adaptive state feedback theory is presented aiming to give the reader the required background for the adaptive current control design. The digital implementation delay is included in the model, and the stability concerning the variation of the grid parameters is analyzed in detail. Furthermore, current distortions due to the grid background voltage are rejected without using the conventional stationary resonant controllers or the synchronous proportional-plus-integral controllers. Simulation and experimental results are presented to validate the analysis and to demonstrate the good performance of the proposed controller for grid-connected converters subjected to large grid impedance variation and grid voltage disturbances.},
+keywords={PI control;PWM power convertors;adaptive control;closed loop systems;damping;discrete time systems;distortion;electric current control;filters;power grids;resonance;stability;state feedback;LCL filter;LCL resonance damping;adaptive feedback gains;closed-loop current control;current distortions;digital implementation delay;discrete-time adaptive current controller;grid background voltage;grid characteristics;grid impedance variation;grid parameters analysis;grid voltage disturbance;grid-connected pulse width modulation voltage source converters;model reference adaptive state feedback theory;stationary resonant controllers;synchronous proportional-plus-integral controllers;Adaptation models;Current measurement;Impedance;Power system stability;Stability analysis;State feedback;Voltage control;Current control;LCL filter;grid-connected converters;model reference adaptive control (MRAC)},
+doi={10.1109/TIE.2011.2177610},
+ISSN={0278-0046},
+month={Dec},}
+
+
+
+
+@ARTICLE{5427010,
+author={F. Liccardo and P. Marino and G. Raimondo},
+journal={IEEE Transactions on Industrial Electronics},
+title={Robust and Fast Three-Phase PLL Tracking System},
+year={2011},
+volume={58},
+number={1},
+pages={221-231},
+abstract={This paper presents a simple, robust, and fast synchronization method to detect the phase angle of the positive sequence of a three-phase ac system. The algorithm was derived from a standard phase-locked-loop (PLL) circuit based on the pq theory, but a feedforward action is implemented to guarantee high dynamic performance in conjunction with a modified feedback action to reduce the phase-angle estimation error to zero. The result is a fast tracking system that improves the start-up stage and rapid input variations. It guarantees accurate phase locking and is robust with respect to ac distortions such as harmonics, subharmonics, and voltage imbalance. The control model for the proposed PLL system was based on the standard qPLL structure. A linear analysis was performed to show the benefits of the proposed solution, and recommendations are given for tuning its parameters. The proposed technique was tested and compared with other algorithms by means of simulations. The experimental and simulation results are shown and compared.},
+keywords={feedback;feedforward;phase estimation;phase locked loops;power supply quality;synchronisation;feedback;feedforward;linear analysis;phase locked loop circuit;phase-angle estimation error;pq theory;synchronization method;three-phase AC system;three-phase PLL tracking system;Frequency synchronization;Mesh generation;Phase detection;Phase distortion;Phase locked loops;Power system simulation;Robustness;Static VAr compensators;Uninterruptible power systems;Voltage;Phase-locked loop (PLL);power systems;synchronization;utility interface},
+doi={10.1109/TIE.2010.2044735},
+ISSN={0278-0046},
+month={Jan},}
+
+
+
+
+
+

@@ -4,8 +4,10 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponse,  HttpResponseRedirect
 from django.template import RequestContext
 import backup_data
+import models
 from papercollection.models import Author, Journal, Paper, Contributor
 from papercollection.models import AuthorForm, JournalForm, PaperForm
+import urllib2
 
 
 def index(request):
@@ -80,6 +82,99 @@ def insert_articles_into_db(collection_of_articles):
     return
 
 
+def insert_articles_from_web(collection_of_articles):
+    """
+    Insert a dictionary of publications into separate database rows.
+    """
+
+    for paper_item in collection_of_articles:
+        list_of_authors = paper_item["authors"].split(";")
+        list_of_authors_in_paper = []
+        for author_entry in list_of_authors:
+            author_entry = author_entry.strip()
+            new_author_item = Author()
+            new_author_item.full_name = author_entry
+            new_author_item.save()
+            list_of_authors_in_paper.append(new_author_item)
+
+        if "pubtitle" in paper_item.keys():
+            new_journal_entry = Journal()
+            new_journal_entry.name = paper_item["pubtitle"]
+            if "publisher" in paper_item.keys():
+                new_journal_entry.organization = paper_item["publisher"]
+            if "issn" in paper_item.keys():
+                new_journal_entry.issn_number = paper_item["issn"]
+            if "pubtype" in paper_item.keys():
+                new_journal_entry.pub_type = paper_item["pubtype"]
+            new_journal_entry.save()
+
+        new_paper_entry = Paper()
+        new_paper_entry.paper_title = paper_item["title"]
+        new_paper_entry.paper_journal = new_journal_entry
+        new_paper_entry.save()
+        author_position = 1
+        for author_in_paper in list_of_authors_in_paper:
+            paper_contributor = Contributor(paper = new_paper_entry,
+                                            author = author_in_paper,
+                                            position = author_position)
+            author_position += 1
+            paper_contributor.save()
+            new_paper_entry.save()
+
+        if "py" in paper_item.keys():
+            new_paper_entry.paper_year = paper_item["py"]
+        if "month" in paper_item.keys():
+            new_paper_entry.paper_month = paper_item["month"]
+        if "volume" in paper_item.keys():
+            new_paper_entry.paper_volume = paper_item["volume"]
+        if "punumber" in paper_item.keys():
+            new_paper_entry.paper_number = paper_item["punumber"]
+        if "spage" in paper_item.keys():
+            new_paper_entry.paper_pages = paper_item["spage"]+"-"
+        else:
+            new_paper_entry.paper_pages = "-"
+        if "epage" in paper_item.keys():
+            new_paper_entry.paper_pages += paper_item["epage"]
+        if "abstract" in paper_item.keys():
+            new_paper_entry.paper_abstract = paper_item["abstract"]
+        if "doi" in paper_item.keys():
+            new_paper_entry.paper_doi = paper_item["doi"]
+        if "issue" in paper_item.keys():
+            new_paper_entry.paper_issue = paper_item["issue"]
+        if "term" in paper_item.keys():
+            new_paper_entry.paper_keywords = ""
+            for term_item in paper_item["term"]:
+                new_paper_entry.paper_keywords += term_item + ", "
+            new_paper_entry.paper_keywords = new_paper_entry.paper_keywords[:-2]
+        if "mdurl" in paper_item.keys():
+            new_paper_entry.paper_url = paper_item["mdurl"]
+        if "pdf" in paper_item.keys():
+            new_paper_entry.paper_pdflink = paper_item["pdf"]
+        if "publicationId" in paper_item.keys():
+            new_paper_entry.paper_arnumber = paper_item["publicationId"]
+        elif "partnum" in paper_item.keys():
+            new_paper_entry.paper_arnumber = paper_item["partnum"]
+        elif "arnumber" in paper_item.keys():
+            new_paper_entry.paper_arnumber = paper_item["arnumber"]
+        new_paper_entry.save()
+
+        if "affiliations" in paper_item.keys():
+            new_institution = models.Institution()
+            new_institution.name = paper_item["affiliations"]
+            new_institution.save()
+
+            if list_of_authors_in_paper:
+                for author_item in list_of_authors_in_paper:
+                    new_affiliation = models.Affiliation()
+                    new_affiliation.institution = new_institution
+                    new_affiliation.author = author_item
+                    new_affiliation.year = new_paper_entry.paper_year
+                    new_affiliation.save()
+        print(new_paper_entry.id)
+
+    return
+
+
 def dbase_populate(request):
     """
     Extract BibTex items from a BibTex file and insert into
@@ -88,6 +183,57 @@ def dbase_populate(request):
     collection_of_articles = backup_data.read_ref_file()
     insert_articles_into_db(collection_of_articles)
     return HttpResponse("Database written.")
+
+
+def extract_xml_field(xml_line, search_items):
+    for search_item in search_items:
+        if xml_line[1:len(search_item)+1]==search_item:
+            search_entry = xml_line
+            search_entry = search_entry.split(search_item)[1]
+            search_entry = search_entry.split("CDATA")[1]
+            search_entry = search_entry[1:]
+            search_entry = search_entry[:-5]
+            return [search_item, search_entry]
+
+
+def dbase_web(request):
+    search_response = urllib2.urlopen(\
+        'http://ieeexplore.ieee.org/gateway/ipsSearch.jsp?py=2013&issn=0885-8993')
+    collection_of_articles = []
+    start_paper = False
+    search_fields = ["title", "authors", "affiliations", "pubtitle", "punumber", \
+                    "pubtype", "publisher", "volume", "issue", "py", "spage", \
+                    "epage", "abstract", "issn", "arnumber", "doi", "publicationId", \
+                    "partnum", "mdurl", "pdf", "term"]
+    for search_line in search_response:
+        edit_line = search_line.strip()
+        if edit_line=="<document>":
+            record = {}
+            start_paper = True
+        elif start_paper:
+            extracted_fields = extract_xml_field(edit_line, search_fields)
+            if extracted_fields:
+                if extracted_fields[0]=="term":
+                    if extracted_fields[0] in record.keys():
+                        record[extracted_fields[0]].append(extracted_fields[1])
+                    else:
+                        record[extracted_fields[0]] = [extracted_fields[1], ]
+                else:
+                    record[extracted_fields[0]] = extracted_fields[1]
+            if edit_line=="</document>":
+                start_paper = False
+                collection_of_articles.append(record)
+    
+    for item in collection_of_articles:
+        for paper_item in item.keys():
+            print(paper_item, item[paper_item])
+        print
+        print
+
+    insert_articles_from_web(collection_of_articles)
+
+    return HttpResponse("Database written")
+
 
 class BaseView(View):
 

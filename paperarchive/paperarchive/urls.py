@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^admin/$', include(admin.site.urls)),
     url(r'^$', views.index, name='web-homepage'),
     url(r'^start-db/$', views.dbase_populate, name='dbase-init'),
+    url(r'^ieee-db/$', views.dbase_web, name='dbase-ieee'),
     url(r'^display-db/$', views.dbase_display, name='dbase-listall'),
     url(r'^display-papers/$', views.PapersDisplay.as_view(), name='papers-listall'),
     url(r'^edit-paper/$', views.EditPaper.as_view(), name='edit-paper'),
