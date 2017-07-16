@@ -22,7 +22,7 @@ import debug_toolbar
 
 urlpatterns = [
     url(r'^debug-speed/', include(debug_toolbar.urls)),
-    url(r'^admin/$', include(admin.site.urls)),
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.index, name='web-homepage'),
     url(r'^start-db/$', views.dbase_populate, name='dbase-init'),
     url(r'^ieee-db/$', views.dbase_web, name='dbase-ieee'),
