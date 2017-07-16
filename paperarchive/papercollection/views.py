@@ -78,6 +78,7 @@ def insert_articles_into_db(collection_of_articles):
             new_paper_entry.paper_keywords = paper_item["keywords"]
 
         new_paper_entry.save()
+        print(new_paper_entry.id)
 
     return
 
@@ -244,15 +245,15 @@ class BaseView(View):
         self.get_context_data(request)
         return render(request, \
                     self.template_name, \
-                    self.context, \
-                    context_instance = RequestContext(request))
+                    self.context) #, \
+#                    context_instance = RequestContext(request))
 
     def post(self, request, *args, **kwargs):
         self.get_context_data(request)
         return render(request, \
                     self.template_name, \
-                    self.context, \
-                    context_instance = RequestContext(request))
+                    self.context) #, \
+#                    context_instance = RequestContext(request))
 
 
 class PaperAuthors:
@@ -260,16 +261,18 @@ class PaperAuthors:
         article_authors = []
         if "paper_item" in kwargs:
             paper_item = kwargs["paper_item"]
-            authors_in_paper = paper_item.paper_authors.all()
-            author_position = 1
-            while author_position <= len(authors_in_paper):
-                for authors in authors_in_paper:
-                    author_contrib = Contributor.objects.get(paper = paper_item,
-                                                             author = authors)
-                    if author_position == author_contrib.position:
-                        article_authors.append(authors)
-                        author_position += 1
-                        break
+            authors_in_paper = Contributor.objects.filter(paper = paper_item).order_by('position')
+            article_authors = [author_item.author for author_item in authors_in_paper]
+#            authors_in_paper = paper_item.paper_authors.all()
+#            author_position = 1
+#            while author_position <= len(authors_in_paper):
+#                for authors in authors_in_paper:
+#                    author_contrib = Contributor.objects.get(paper = paper_item,
+#                                                             author = authors)
+#                    if author_position == author_contrib.position:
+#                        article_authors.append(authors)
+#                        author_position += 1
+#                        break
         return article_authors
 
     def extract_author_forms(self, request, *args, **kwargs):
@@ -323,7 +326,8 @@ class PapersDisplay(BaseView, PaperAuthors):
 
     def get_context_data(self, request, *args, **kwargs):
         super(PapersDisplay, self).get_context_data(request, *args, **kwargs)
-        all_articles = Paper.objects.all()
+#        all_articles = Paper.objects.all()
+        all_articles = Paper.objects.raw('SELECT * from papercollection_paper')
         collection_of_articles = []
         for paper in all_articles:
             paper_item = []

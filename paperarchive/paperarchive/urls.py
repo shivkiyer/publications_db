@@ -17,9 +17,11 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from papercollection import views
 import settings
+import debug_toolbar
 
 
 urlpatterns = [
+    url(r'^debug-speed/', include(debug_toolbar.urls)),
     url(r'^admin/$', include(admin.site.urls)),
     url(r'^$', views.index, name='web-homepage'),
     url(r'^start-db/$', views.dbase_populate, name='dbase-init'),
