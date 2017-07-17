@@ -4,27 +4,6 @@ from django.forms import ModelForm, Textarea
 
 # Create your models here.
 
-class Journal(models.Model):
-    name = models.CharField(max_length = 100)
-    organization = models.CharField(max_length = 100, blank = True)
-    issn_number = models.CharField(max_length=50, blank=True)
-    pub_type = models.CharField(max_length=100, blank=True)
-
-    def __unicode__(self):
-        return self.name
-
-
-class Author(models.Model):
-    first_name = models.CharField(max_length = 20, blank = True)
-    last_name = models.CharField(max_length = 20, blank = True)
-    middle_name = models.CharField(max_length = 20, blank = True)
-    full_name = models.CharField(max_length = 50)
-    email = models.EmailField(blank = True)
-
-    def __unicode__(self):
-        return self.full_name
-
-
 class Paper(models.Model):
     paper_title = models.CharField(max_length=200)
     paper_year = models.IntegerField(blank = True, null = True)
@@ -36,15 +15,41 @@ class Paper(models.Model):
     paper_doi = models.CharField(max_length = 50, blank = True, null = True)
     paper_abstract = models.TextField(blank = True, null = True)
     paper_keywords = models.TextField(blank = True, null = True)
-    paper_journal = models.ForeignKey(Journal)
-    paper_authors = models.ManyToManyField(Author, through = 'Contributor')
+    paper_journal = models.CharField(max_length = 300)
+    paper_authors = models.CharField(max_length = 300)
     paper_arnumber = models.CharField(max_length = 20, blank=True, null=True, \
                                     verbose_name="Article number")
     paper_url = models.URLField(blank=True, null=True, verbose_name="Paper URL")
     paper_pdflink = models.URLField(blank=True, null=True, verbose_name="PDF download link")
+    publisher_organization = models.CharField(max_length = 100, blank = True)
+    publisher_issn_number = models.CharField(max_length=50, blank=True)
+    publisher_type = models.CharField(max_length=100, blank=True)
 
     def __unicode__(self):
         return self.paper_title
+
+
+class Journal(models.Model):
+    name = models.CharField(max_length = 100)
+    organization = models.CharField(max_length = 100, blank = True)
+    issn_number = models.CharField(max_length=50, blank=True)
+    pub_type = models.CharField(max_length=100, blank=True)
+    paper = models.ManyToManyField(Paper)
+
+    def __unicode__(self):
+        return self.name
+
+
+class Author(models.Model):
+    first_name = models.CharField(max_length = 20, blank = True)
+    last_name = models.CharField(max_length = 20, blank = True)
+    middle_name = models.CharField(max_length = 20, blank = True)
+    full_name = models.CharField(max_length = 50)
+    email = models.EmailField(blank = True)
+    paper = models.ManyToManyField(Paper)
+
+    def __unicode__(self):
+        return self.full_name
 
 
 class Contributor(models.Model):

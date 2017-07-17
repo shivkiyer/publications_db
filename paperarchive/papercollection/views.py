@@ -8,6 +8,7 @@ import models
 from papercollection.models import Author, Journal, Paper, Contributor
 from papercollection.models import AuthorForm, JournalForm, PaperForm
 import urllib2
+from django.db import connection
 
 
 def index(request):
@@ -82,98 +83,228 @@ def insert_articles_into_db(collection_of_articles):
 
     return
 
-
 def insert_articles_from_web(collection_of_articles):
     """
     Insert a dictionary of publications into separate database rows.
     """
 
+    paper_search_fields = ["title", "authors", "affiliations", "pubtitle", "punumber", \
+                    "pubtype", "publisher", "volume", "issue", "py", "spage", \
+                    "epage", "abstract", "issn", "arnumber", "doi", "publicationId", \
+                    "partnum", "mdurl", "pdf", "term", "month"]
+    journal_search_fields = ["pubtitle", "pubtype", "publisher","issn"]
+
+    paper_count = 1
+    author_count = 1
+    journal_count = 1
+#    institution_count = 1
+    
+    all_paper_list = []
+    all_author_list = []
+    all_journal_list = []
+    paper_models = []
+    author_models = []
+    journal_models = []
     for paper_item in collection_of_articles:
-        list_of_authors = paper_item["authors"].split(";")
-        list_of_authors_in_paper = []
-        for author_entry in list_of_authors:
-            author_entry = author_entry.strip()
-            new_author_item = Author()
-            new_author_item.full_name = author_entry
-            new_author_item.save()
-            list_of_authors_in_paper.append(new_author_item)
-
-        if "pubtitle" in paper_item.keys():
-            new_journal_entry = Journal()
-            new_journal_entry.name = paper_item["pubtitle"]
-            if "publisher" in paper_item.keys():
-                new_journal_entry.organization = paper_item["publisher"]
-            if "issn" in paper_item.keys():
-                new_journal_entry.issn_number = paper_item["issn"]
-            if "pubtype" in paper_item.keys():
-                new_journal_entry.pub_type = paper_item["pubtype"]
-            new_journal_entry.save()
-
-        new_paper_entry = Paper()
-        new_paper_entry.paper_title = paper_item["title"]
-        new_paper_entry.paper_journal = new_journal_entry
-        new_paper_entry.save()
-        author_position = 1
-        for author_in_paper in list_of_authors_in_paper:
-            paper_contributor = Contributor(paper = new_paper_entry,
-                                            author = author_in_paper,
-                                            position = author_position)
-            author_position += 1
-            paper_contributor.save()
-            new_paper_entry.save()
-
-        if "py" in paper_item.keys():
-            new_paper_entry.paper_year = paper_item["py"]
-        if "month" in paper_item.keys():
-            new_paper_entry.paper_month = paper_item["month"]
-        if "volume" in paper_item.keys():
-            new_paper_entry.paper_volume = paper_item["volume"]
-        if "punumber" in paper_item.keys():
-            new_paper_entry.paper_number = paper_item["punumber"]
-        if "spage" in paper_item.keys():
-            new_paper_entry.paper_pages = paper_item["spage"]+"-"
+        paper_record = {}
+        journal_record = {}
+        author_record = {}
+        keys_in_paper_item = paper_item.keys()
+        for search_item in paper_search_fields:
+            if not (search_item=="spage" or \
+                    search_item=="epage" or \
+                    search_item=="term" or \
+                    search_item=="publicationId" or \
+                    search_item=="partnum" or \
+                    search_item=="arnumber"
+                    ):
+                if search_item in keys_in_paper_item:
+                    paper_record[search_item] = paper_item[search_item]
+                else:
+                    paper_record[search_item] = ""
+                print(search_item, paper_record[search_item])
+        if "spage" in keys_in_paper_item:
+            paper_record["pages"] = paper_item["spage"]+"-"
         else:
-            new_paper_entry.paper_pages = "-"
-        if "epage" in paper_item.keys():
-            new_paper_entry.paper_pages += paper_item["epage"]
-        if "abstract" in paper_item.keys():
-            new_paper_entry.paper_abstract = paper_item["abstract"]
-        if "doi" in paper_item.keys():
-            new_paper_entry.paper_doi = paper_item["doi"]
-        if "issue" in paper_item.keys():
-            new_paper_entry.paper_issue = paper_item["issue"]
-        if "term" in paper_item.keys():
-            new_paper_entry.paper_keywords = ""
+            paper_record["pages"] = "-"
+        if "epage" in keys_in_paper_item:
+            paper_record["pages"] += paper_item["epage"]
+        if "term" in keys_in_paper_item:
+            paper_record["keywords"] = ""
             for term_item in paper_item["term"]:
-                new_paper_entry.paper_keywords += term_item + ", "
-            new_paper_entry.paper_keywords = new_paper_entry.paper_keywords[:-2]
-        if "mdurl" in paper_item.keys():
-            new_paper_entry.paper_url = paper_item["mdurl"]
-        if "pdf" in paper_item.keys():
-            new_paper_entry.paper_pdflink = paper_item["pdf"]
-        if "publicationId" in paper_item.keys():
-            new_paper_entry.paper_arnumber = paper_item["publicationId"]
-        elif "partnum" in paper_item.keys():
-            new_paper_entry.paper_arnumber = paper_item["partnum"]
-        elif "arnumber" in paper_item.keys():
-            new_paper_entry.paper_arnumber = paper_item["arnumber"]
-        new_paper_entry.save()
+                paper_record["keywords"] += term_item + ", "
+            paper_record["keywords"] = paper_record["keywords"][:-2]
+        else:
+            paper_record["keywords"] = ""
+        if "publicationId" in keys_in_paper_item:
+            paper_record["arnumber"] = paper_item["publicationId"]
+        elif "partnum" in keys_in_paper_item:
+            paper_record["arnumber"] = paper_item["partnum"]
+        elif "arnumber" in keys_in_paper_item:
+            paper_record["arnumber"] = paper_item["arnumber"]
 
-        if "affiliations" in paper_item.keys():
-            new_institution = models.Institution()
-            new_institution.name = paper_item["affiliations"]
-            new_institution.save()
+        for search_item in journal_search_fields:
+            journal_record[search_item] = paper_item[search_item]
 
-            if list_of_authors_in_paper:
-                for author_item in list_of_authors_in_paper:
-                    new_affiliation = models.Affiliation()
-                    new_affiliation.institution = new_institution
-                    new_affiliation.author = author_item
-                    new_affiliation.year = new_paper_entry.paper_year
-                    new_affiliation.save()
-        print(new_paper_entry.id)
+        paper_model_item = models.Paper(paper_title=paper_record["title"], \
+                                        paper_year=paper_record["py"], \
+                                        paper_volume=paper_record["volume"], \
+                                        paper_issue=paper_record["issue"], \
+                                        paper_number=paper_record["punumber"], \
+                                        paper_pages=paper_record["pages"], \
+                                        paper_month=paper_record["month"], \
+                                        paper_doi=paper_record["doi"], \
+                                        paper_abstract=paper_record["abstract"], \
+                                        paper_keywords=paper_record["keywords"], \
+                                        paper_journal=paper_record["pubtitle"], \
+                                        paper_authors=paper_record["authors"], \
+                                        paper_arnumber=paper_record["arnumber"], \
+                                        paper_url=paper_record["mdurl"], \
+                                        paper_pdflink=paper_record["pdf"], \
+                                        publisher_organization=paper_record["publisher"], \
+                                        publisher_issn_number=paper_record["issn"], \
+                                        publisher_type=paper_record["pubtype"]
+                            )
+        paper_models.append(paper_model_item)
+        all_paper_list.append(paper_record)
+        paper_count += 1
 
+        journal_model_item = models.Journal(name=paper_record["pubtitle"], \
+                                            organization=paper_record["publisher"], \
+                                            issn_number=paper_record["issn"], \
+                                            pub_type=paper_record["pubtype"]
+                            )
+        journal_models.append(journal_model_item)
+        all_journal_list.append(journal_record)
+        journal_count += 1
+
+        list_of_authors = paper_item["authors"].split(";")
+        list_of_authors_in_paper = ""
+        for count, author_entry in enumerate(list_of_authors):
+            author_entry = author_entry.strip()
+            author_record["full_name"] = author_entry
+            all_author_list.append(author_record)
+            author_model_item = models.Author(full_name=author_record["full_name"])
+            author_models.append(author_model_item)
+            author_count += 1
+            list_of_authors_in_paper += author_entry
+            if count<len(list_of_authors):
+                list_of_authors_in_paper += " and "
+        paper_record["authors"] = list_of_authors_in_paper
+
+        
+#        if "affiliations" in paper_item.keys():
+#            new_institution = models.Institution()
+#            new_institution.name = paper_item["affiliations"]
+#            new_institution.save()
+#
+#            if list_of_authors_in_paper:
+#                for author_item in list_of_authors_in_paper:
+#                    new_affiliation = models.Affiliation()
+#                    new_affiliation.institution = new_institution
+#                    new_affiliation.author = author_item
+#                    new_affiliation.year = new_paper_entry.paper_year
+#                    new_affiliation.save()
+
+    models.Paper.objects.bulk_create(paper_models)
+    models.Journal.objects.bulk_create(journal_models)
+    models.Author.objects.bulk_create(author_models)
+    print(paper_count, journal_count, all_author_list)
     return
+
+
+
+#def insert_articles_from_web(collection_of_articles):
+#    """
+#    Insert a dictionary of publications into separate database rows.
+#    """
+#
+#    for paper_item in collection_of_articles:
+#        list_of_authors = paper_item["authors"].split(";")
+#        list_of_authors_in_paper = []
+#        for author_entry in list_of_authors:
+#            author_entry = author_entry.strip()
+#            new_author_item = Author()
+#            new_author_item.full_name = author_entry
+#            new_author_item.save()
+#            list_of_authors_in_paper.append(new_author_item)
+#
+#        if "pubtitle" in paper_item.keys():
+#            new_journal_entry = Journal()
+#            new_journal_entry.name = paper_item["pubtitle"]
+#            if "publisher" in paper_item.keys():
+#                new_journal_entry.organization = paper_item["publisher"]
+#            if "issn" in paper_item.keys():
+#                new_journal_entry.issn_number = paper_item["issn"]
+#            if "pubtype" in paper_item.keys():
+#                new_journal_entry.pub_type = paper_item["pubtype"]
+#            new_journal_entry.save()
+#
+#        new_paper_entry = Paper()
+#        new_paper_entry.paper_title = paper_item["title"]
+#        new_paper_entry.paper_journal = new_journal_entry
+#        new_paper_entry.save()
+#        author_position = 1
+#        for author_in_paper in list_of_authors_in_paper:
+#            paper_contributor = Contributor(paper = new_paper_entry,
+#                                            author = author_in_paper,
+#                                            position = author_position)
+#            author_position += 1
+#            paper_contributor.save()
+#            new_paper_entry.save()
+#
+#        if "py" in paper_item.keys():
+#            new_paper_entry.paper_year = paper_item["py"]
+#        if "month" in paper_item.keys():
+#            new_paper_entry.paper_month = paper_item["month"]
+#        if "volume" in paper_item.keys():
+#            new_paper_entry.paper_volume = paper_item["volume"]
+#        if "punumber" in paper_item.keys():
+#            new_paper_entry.paper_number = paper_item["punumber"]
+#        if "spage" in paper_item.keys():
+#            new_paper_entry.paper_pages = paper_item["spage"]+"-"
+#        else:
+#            new_paper_entry.paper_pages = "-"
+#        if "epage" in paper_item.keys():
+#            new_paper_entry.paper_pages += paper_item["epage"]
+#        if "abstract" in paper_item.keys():
+#            new_paper_entry.paper_abstract = paper_item["abstract"]
+#        if "doi" in paper_item.keys():
+#            new_paper_entry.paper_doi = paper_item["doi"]
+#        if "issue" in paper_item.keys():
+#            new_paper_entry.paper_issue = paper_item["issue"]
+#        if "term" in paper_item.keys():
+#            new_paper_entry.paper_keywords = ""
+#            for term_item in paper_item["term"]:
+#                new_paper_entry.paper_keywords += term_item + ", "
+#            new_paper_entry.paper_keywords = new_paper_entry.paper_keywords[:-2]
+#        if "mdurl" in paper_item.keys():
+#            new_paper_entry.paper_url = paper_item["mdurl"]
+#        if "pdf" in paper_item.keys():
+#            new_paper_entry.paper_pdflink = paper_item["pdf"]
+#        if "publicationId" in paper_item.keys():
+#            new_paper_entry.paper_arnumber = paper_item["publicationId"]
+#        elif "partnum" in paper_item.keys():
+#            new_paper_entry.paper_arnumber = paper_item["partnum"]
+#        elif "arnumber" in paper_item.keys():
+#            new_paper_entry.paper_arnumber = paper_item["arnumber"]
+#        new_paper_entry.save()
+#
+#        if "affiliations" in paper_item.keys():
+#            new_institution = models.Institution()
+#            new_institution.name = paper_item["affiliations"]
+#            new_institution.save()
+#
+#            if list_of_authors_in_paper:
+#                for author_item in list_of_authors_in_paper:
+#                    new_affiliation = models.Affiliation()
+#                    new_affiliation.institution = new_institution
+#                    new_affiliation.author = author_item
+#                    new_affiliation.year = new_paper_entry.paper_year
+#                    new_affiliation.save()
+#        print(new_paper_entry.id)
+#
+#    return
 
 
 def dbase_populate(request):
@@ -199,7 +330,7 @@ def extract_xml_field(xml_line, search_items):
 
 def dbase_web(request):
     search_response = urllib2.urlopen(\
-        'http://ieeexplore.ieee.org/gateway/ipsSearch.jsp?py=2013&issn=0885-8993')
+        'http://ieeexplore.ieee.org/gateway/ipsSearch.jsp?py=2015&issn=0885-8993&hc=1000')
     collection_of_articles = []
     start_paper = False
     search_fields = ["title", "authors", "affiliations", "pubtitle", "punumber", \

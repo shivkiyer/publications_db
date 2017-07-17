@@ -14,13 +14,14 @@
 				{% for paper_entry in collection_of_articles %}
 					<li>
 						{{ paper_entry.0.paper_title }} <br>
-						{% for author_entry in paper_entry.1 %}
+						<!-- {% for author_entry in paper_entry.1 %}
 							{% if forloop.last %}
 								{{ author_entry }} <br>
 							{% else %}
 								{{ author_entry }} and 
 							{% endif %}
-						{% endfor %}
+						{% endfor %} -->
+						{{ paper_entry.0.paper_authors }} <br>
 						{% if paper_entry.0.paper_journal %}
 							{{ paper_entry.0.paper_journal }} <br>
 						{% endif %}
