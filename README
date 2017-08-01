@@ -3,3 +3,12 @@ This project aims to build a database of publications for researchers. The objec
 To follow the updates on the project, check out the blog:
 http://djangoforresearch.blogspot.ca/
 
+To get started, start a project using Django-admin:
+$django-admin startproject paperarchive
+
+This will create a paperarchive directory. Within that directory, there will be another directory called paperarchive, along with the file manage.py. Use this file to create an app:
+$ python manage.py startapp papercollection
+
+This will create another directory called papercollection. The directories paperarchive and papercollection are on this repository. The only other file you need to change is settings.py within paperarchive. Check out the link:
+https://docs.djangoproject.com/en/1.11/intro/tutorial02/
+to know how to change settings.py.

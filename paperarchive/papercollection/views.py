@@ -93,9 +93,9 @@ def insert_articles_into_db(collection_of_articles):
     paper_models = []
     author_models = []
     journal_models = []
+    journal_list = []
     for paper_item in collection_of_articles:
         paper_record = {}
-        journal_record = {}
         author_record = {}
         keys_in_paper_item = paper_item.keys()
         for search_item in paper_search_fields:
@@ -123,8 +123,10 @@ def insert_articles_into_db(collection_of_articles):
             author_model_item = models.Author(full_name=author_record["full_name"])
             author_models.append(author_model_item)
 
-        journal_model_item = models.Journal(name=paper_record["journal"],)
-        journal_models.append(journal_model_item)
+        if paper_record["journal"] not in journal_list:
+            journal_model_item = models.Journal(name=paper_record["journal"],)
+            journal_models.append(journal_model_item)
+            journal_list.append(paper_record["journal"])
 
         paper_model_item = models.Paper(paper_title=paper_record["title"], \
                                         paper_year=paper_record["year"], \
@@ -568,6 +570,14 @@ class EditAuthor(AuthorsDisplay, PaperAuthors):
                 self.context["journal"] = []
                 self.context["other_paper"] = chosen_paper
                 self.context["other_paper_authors"] = author_matches_in_paper
+
+
+class JournalsDisplay(BaseView):
+    template_name = "list_journals.html"
+
+    def get_context_data(self, request, *args, **kwargs):
+        all_journals = models.Journal.objects.all()
+        self.context = {'all_journals' : all_journals,}
 
 
 def new_paper(request):

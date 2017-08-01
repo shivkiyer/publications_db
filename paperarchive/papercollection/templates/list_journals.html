@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+{% extends "base_framework.html" %}
+
+<head>
+	<title>
+	</title>
+</head>
+
+<body>
+	{% block main_body_content %}
+		{% if all_journals %}
+			<ol>
+				{% for journal_entry in all_journals %}
+					<li>
+						{{ journal_entry.name }}
+						<form action="/edit-journal/" method="post">
+							<input type="hidden" name="journal_srno" value="{{ journal_entry.id }}">
+							<input type="submit" name="edit_journal" value="Edit publisher">
+							{% csrf_token %}
+						</form>
+					</li>
+					<br>
+				{% endfor %}
+			</ol>
+			<br>
+		{% else %}
+			<p> No journals in database. </p>
+		{% endif %}
+	{% endblock %}
+</body>
+
