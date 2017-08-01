@@ -113,7 +113,10 @@ def extract_bibtex_entries(input_file):
                     record["abstract"] = scrub_elements(new_item[1])
 
                 if scrub_elements(new_item[0][0:9]).lower()=="keywords":
-                    record["keywords"] = scrub_elements(new_item[1])
+                    if "keywords" in record.keys():
+                        record["keywords"] += ", " + scrub_elements(new_item[1])
+                    else:
+                        record["keywords"] = scrub_elements(new_item[1])
 
     if record:
         collection_of_articles.append(record)

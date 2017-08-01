@@ -19,29 +19,10 @@
 			{% endfor %}
 		</table>
 
-			{% for author in authors %}
-				<b> Author {{ forloop.counter }} </b> <br>
-				{{ author.0 }} <br>
-				 <br> <br>
-			{% empty %}
-				<p> No authors?
-				</p>
-			{% endfor %}
-			<input type="submit" name="add_author"  value="Add author manually">
-			<br> <br>
-			{% if journal %}
-				<b> Journal conference or book: </b> <br>
-				{% for journal_item in journal %}
-					<b>{{ journal_item.label }}: </b>{{ journal_item }} <br>
-				{% endfor %}
-			{% else %}
-				<p> No journal?
-				</p>
-			{% endif %}
-			<input type="hidden" name="paper_srno" value="{{ paper_id }}">
-			<input type="submit" name="paper_submit"  value="Submit paper">
-			<input type="submit" name="cancel_edit"  value="Cancel">
-			{% csrf_token %}
+		<input type="hidden" name="paper_srno" value="{{ paper_id }}">
+		<input type="submit" name="paper_submit"  value="Submit paper">
+		<input type="submit" name="cancel_edit"  value="Cancel">
+		{% csrf_token %}
 		</form>
 	{% endblock %}
 </body>

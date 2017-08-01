@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+{{ paper_entry.paper_title }} <br>
+{{ paper_entry.paper_authors }} <br>
+{% if paper_entry.paper_journal %}
+	{{ paper_entry.paper_journal }} <br>
+{% endif %}
+{% if paper_entry.paper_month %}
+	{{ paper_entry.paper_month }}, 
+{% endif %}
+{% if paper_entry.paper_year %}
+	{{ paper_entry.paper_year }}
+{% endif %}
+<br>
+
+{% if paper_entry.paper_volume %}
+	Vol: {{ paper_entry.paper_volume }}, 
+{% endif %}
+{% if paper_entry.paper_number %}
+	No: {{ paper_entry.paper_number }},
+{% else %}
+	{% if paper_entry.paper_issue %}
+		No: {{ paper_entry.paper_issue }},
+	{% endif %}
+{% endif %}
+{% if paper_entry.paper_pages %}
+	{{ paper_entry.paper_pages }}
+{% endif %}
+<br>
+{% if paper_entry.paper_url %}
+	<a href="{{ paper_entry.paper_url }}">{{ paper_entry.paper_url }}</a>
+{% endif %}

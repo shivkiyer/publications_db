@@ -6,9 +6,9 @@ from django.forms import ModelForm, Textarea
 
 class Paper(models.Model):
     paper_title = models.CharField(max_length=200)
-    paper_year = models.IntegerField(blank = True, null = True)
-    paper_volume = models.IntegerField(blank = True, null = True)
-    paper_issue = models.IntegerField(blank = True, null = True)
+    paper_year = models.CharField(max_length = 15, blank = True, null = True)
+    paper_volume = models.CharField(max_length = 10, blank = True, null = True)
+    paper_issue = models.CharField(max_length = 10, blank = True, null = True)
     paper_number = models.CharField(max_length = 100, blank = True, null = True)
     paper_pages = models.CharField(max_length = 100, blank = True, null = True)
     paper_month = models.CharField(max_length = 15, blank = True, null = True)
@@ -46,7 +46,7 @@ class Author(models.Model):
     middle_name = models.CharField(max_length = 20, blank = True)
     full_name = models.CharField(max_length = 50)
     email = models.EmailField(blank = True)
-    paper = models.ManyToManyField(Paper)
+    paper = models.ManyToManyField(Paper, through="Contributor")
 
     def __unicode__(self):
         return self.full_name
@@ -85,10 +85,12 @@ class PaperForm(ModelForm):
     class Meta:
         model = Paper
         fields = ('paper_title',
+                  'paper_authors',
                   'paper_year',
                   'paper_volume',
                   'paper_number',
                   'paper_issue',
+                  'paper_journal',
                   'paper_pages',
                   'paper_month',
                   'paper_doi',
@@ -100,6 +102,8 @@ class PaperForm(ModelForm):
                   )
         widgets = {
             'paper_title': forms.TextInput(attrs={'size': 80}),
+            'paper_authors': forms.TextInput(attrs={'size': 80}),
+            'paper_journal': forms.TextInput(attrs={'size': 80}),
             'paper_doi': forms.TextInput(attrs={'size': 40}),
             'paper_url': forms.TextInput(attrs={'size': 80}),
             'paper_pdflink': forms.TextInput(attrs={'size': 80}),

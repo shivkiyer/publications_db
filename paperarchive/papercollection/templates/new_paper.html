@@ -1,5 +1,18 @@
-<form action="" method="post" id="usrform">
-	BibTex entry: <textarea name="paperbibtex" form="usrform" rows="20" cols="70" wrap="soft">Enter BibTex items here</textarea> <br>
-	<input type="submit"  value="Submit paper">
-	{% csrf_token %}
-</form>
+<!DOCTYPE html>
+
+{% extends "base_framework.html" %}
+
+<head>
+	<title>
+	</title>
+</head>
+
+<body>
+	{% block main_body_content %}
+		<p>Copy/paste BibTex entries into the form below.</p>
+		<form action="" method="post" id="usrform">
+			BibTex entry: <textarea name="paperbibtex" form="usrform" rows="20" cols="70" wrap="soft">Enter BibTex items here</textarea> <br>
+			<input type="submit"  value="Submit paper">
+			{% csrf_token %}
+		</form>
+	{% endblock %}

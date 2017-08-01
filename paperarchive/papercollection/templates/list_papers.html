@@ -13,38 +13,9 @@
 			<ol>
 				{% for paper_entry in collection_of_articles %}
 					<li>
-						{{ paper_entry.0.paper_title }} <br>
-						<!-- {% for author_entry in paper_entry.1 %}
-							{% if forloop.last %}
-								{{ author_entry }} <br>
-							{% else %}
-								{{ author_entry }} and 
-							{% endif %}
-						{% endfor %} -->
-						{{ paper_entry.0.paper_authors }} <br>
-						{% if paper_entry.0.paper_journal %}
-							{{ paper_entry.0.paper_journal }} <br>
-						{% endif %}
-						{% if paper_entry.0.paper_month %}
-							{{ paper_entry.0.paper_month }}, 
-						{% endif %}
-						{% if paper_entry.0.paper_year %}
-							{{ paper_entry.0.paper_year }}
-						{% endif %}
-						<br>
-						
-						{% if paper_entry.0.paper_volume %}
-							Vol: {{ paper_entry.0.paper_volume }}, 
-						{% endif %}
-						{% if paper_entry.0.paper_number %}
-							No: {{ paper_entry.0.paper_number }}, 
-						{% endif %}
-						{% if paper_entry.0.paper_pages %}
-							{{ paper_entry.0.paper_pages }}
-						{% endif %}
-						<br>
+						{% include "paper_framework.html" %}
 						<form action="/edit-paper/" method="post">
-							<input type="hidden" name="paper_srno" value="{{ paper_entry.0.id }}">
+							<input type="hidden" name="paper_srno" value="{{ paper_entry.id }}">
 							<input type="submit" name="edit_paper" value="Edit paper">
 							{% csrf_token %}
 						</form>
